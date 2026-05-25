@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2代目・3代目経営者の「人の問題」を根本から解決する｜和奏人事パートナーズ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      color: #1a2a4a;
+      background-color: #f8fafc;
+      line-height: 1.8;
+    }
+
+    :root {
+      --navy: #1a2a6c;
+      --navy-dark: #0f1a45;
+      --teal: #0097a7;
+      --teal-light: #26c6da;
+      --green: #43a047;
+      --green-light: #66bb6a;
+      --grad-main: linear-gradient(135deg, #1a2a6c 0%, #0097a7 60%, #43a047 100%);
+      --grad-teal: linear-gradient(135deg, #0097a7, #43a047);
+      --grad-hero: linear-gradient(160deg, #0f1a45 0%, #1a2a6c 40%, #005f6b 100%);
+      --white: #ffffff;
+      --off-white: #f8fafc;
+      --gray-light: #eef2f7;
+      --gray-mid: #dde4ee;
+      --text-dark: #1a2a4a;
+      --text-mid: #3a4a6a;
+      --accent-amber: #f59e0b;
+    }
+
+    .page-wrapper { max-width: 960px; margin: 0 auto; background: #fff; box-shadow: 0 0 60px rgba(0,0,0,0.08); }
+
+    /* ===== Profile Logo ===== */
+    .profile-logo-pc {
+      display: block;
+      max-width: 320px;
+      width: 100%;
+      margin: 1.5rem 0 0;
+    }
+    .profile-logo-sp {
+      display: none;
+      max-width: 200px;
+      width: 100%;
+      margin: 1.5rem auto 0;
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      background: var(--grad-hero);
+      padding: 4rem 2.5rem 3.5rem;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -40%; left: -20%;
+      width: 70%; height: 160%;
+      background: radial-gradient(ellipse, rgba(0,151,167,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -30%; right: -10%;
+      width: 50%; height: 120%;
+      background: radial-gradient(ellipse, rgba(67,160,71,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-target {
+      display: inline-block;
+      font-family: "Noto Serif JP", serif;
+      font-size: clamp(1.7rem, 5.5vw, 2.8rem);
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: 0.04em;
+      line-height: 1.3;
+      margin-bottom: 1.75rem;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-target::after {
+      content: "";
+      display: block;
+      height: 3px;
+      background: var(--grad-teal);
+      border-radius: 2px;
+      margin-top: 0.6rem;
+    }
+
+    /* 事例バナー */
+    .hero-result-banner {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(0,151,167,0.5);
+      border-radius: 12px;
+      padding: 2rem 2rem;
+      margin: 0 auto 2.25rem;
+      max-width: 720px;
+      position: relative;
+      z-index: 1;
+      backdrop-filter: blur(4px);
+    }
+    .hero-result-banner::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(0,151,167,0.08), rgba(67,160,71,0.08));
+      pointer-events: none;
+    }
+    .banner-label {
+      font-size: clamp(1.35rem, 4.5vw, 1.95rem);
+      font-weight: 900;
+      color: var(--teal-light);
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.06em;
+    }
+    .banner-main {
+      font-size: clamp(1.6rem, 4.5vw, 2.6rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.4;
+    }
+    .banner-main .num-highlight {
+      color: #7fffb2;
+      font-size: 1.15em;
+      text-shadow: 0 0 20px rgba(0,200,100,0.4);
+    }
+    .banner-sub {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.75);
+      margin-top: 0.85rem;
+      letter-spacing: 0.02em;
+    }
+    .banner-divider { display: none; border: none; }
+
+    /* PC/SP切り替え */
+    .banner-main-sp { display: none; }
+
+    /* h1 */
+    .hero-main {
+      font-family: "Noto Serif JP", serif;
+      font-size: clamp(1.2rem, 3vw, 1.75rem);
+      font-weight: 700;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-main .text-teal { color: var(--teal-light); }
+
+    /* チェックリスト */
+    .hero-points {
+      list-style: none;
+      margin: 0 auto 2.25rem;
+      max-width: 640px;
+      text-align: left;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-points li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 0.6rem;
+      padding: 0.6rem 0.75rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 6px;
+      border-left: 3px solid var(--teal);
+      line-height: 1.5;
+    }
+    .hero-points li::before {
+      content: "✓";
+      color: var(--teal-light);
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    /* CTA */
+    .cta-area {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+    .btn-cta-main {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--grad-teal);
+      color: var(--white);
+      font-size: 1.15rem;
+      font-weight: 900;
+      padding: 1rem 2.25rem;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(0,151,167,0.45);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-cta-main:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,151,167,0.55); }
+    .btn-label { display: flex; flex-direction: column; }
+    .btn-sub { font-size: 0.75rem; font-weight: 500; opacity: 0.9; }
+    .cta-note { font-size: 0.8rem; color: rgba(255,255,255,0.6); }
+
+    /* ===== Section Common ===== */
+    .sec-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--teal);
+      border-bottom: 2px solid var(--teal);
+      padding-bottom: 0.2rem;
+      margin-bottom: 1rem;
+    }
+    .sec-label-white { color: var(--white); border-color: var(--teal-light); }
+    .sec-title {
+      font-family: "Noto Serif JP", serif;
+      font-size: clamp(1.35rem, 3.5vw, 2rem);
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+    .sec-title.white { color: var(--white); }
+    .accent-teal { color: var(--teal); }
+    .accent-green { color: var(--green); }
+    .accent-navy { color: var(--navy); }
+    .accent-amber { color: var(--accent-amber); }
+    .body-p { font-size: 0.9375rem; color: var(--text-mid); line-height: 1.9; margin-bottom: 1.25rem; }
+    .body-p.white { color: rgba(255,255,255,0.88); }
+    .em { font-weight: 700; color: var(--teal); }
+    .red { color: #e53e3e; font-weight: 700; }
+
+    /* ===== Sections ===== */
+    .white-section { background: var(--white); padding: 4rem 3rem; }
+    .gray-section { background: var(--off-white); padding: 4rem 3rem; }
+    .navy-section { background: var(--navy-dark); padding: 4rem 3rem; }
+    .section-divider {
+      height: 4px;
+      background: var(--grad-main);
+      border: none;
+    }
+
+    /* ===== はじめに two-col ===== */
+    .two-col { display: flex; gap: 2.5rem; align-items: flex-start; margin-top: 1.5rem; }
+    .col-text { flex: 1; }
+    .col-image { flex: 0 0 220px; }
+    .col-image-box {
+      background: var(--grad-hero);
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(26,42,108,0.25);
+    }
+    .big-label { font-size: 0.875rem; font-weight: 700; color: rgba(255,255,255,0.7); margin-bottom: 0.25rem; }
+    .big-num { font-size: 2.4rem; font-weight: 900; color: var(--white); line-height: 1.1; }
+    .col-image-arrow { color: var(--teal-light); font-size: 1.5rem; font-weight: 900; margin: 0.5rem 0; }
+
+    /* ===== 問題カード ===== */
+    .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 2rem 0; }
+    .problem-card {
+      background: var(--white);
+      border: 1px solid var(--gray-mid);
+      border-top: 3px solid var(--teal);
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .problem-card h4 { font-size: 1rem; font-weight: 900; color: var(--navy); margin: 0.5rem 0 0.5rem; }
+    .problem-card p { font-size: 0.875rem; color: var(--text-mid); line-height: 1.75; }
+    .num-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem; height: 2rem;
+      background: var(--grad-teal);
+      color: var(--white);
+      font-size: 0.875rem;
+      font-weight: 900;
+      border-radius: 50%;
+    }
+    .consequence-list { list-style: none; margin: 1rem 0 1.5rem; padding: 0; }
+    .consequence-list li {
+      font-size: 0.9375rem;
+      color: var(--text-mid);
+      padding: 0.6rem 0.75rem 0.6rem 1.25rem;
+      margin-bottom: 0.5rem;
+      border-left: 3px solid #e53e3e;
+      background: #fff5f5;
+      border-radius: 0 6px 6px 0;
+      line-height: 1.7;
+    }
+    .quote-block {
+      background: var(--gray-light);
+      border-left: 4px solid var(--teal);
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      font-size: 0.9375rem;
+      color: var(--text-mid);
+      line-height: 1.9;
+    }
+
+    /* ===== Navy Section ===== */
+    .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+    .feature-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(0,151,167,0.3);
+      border-radius: 10px;
+      padding: 1.75rem;
+    }
+    .feature-card h4 { font-size: 1rem; font-weight: 900; color: var(--teal-light); margin: 0.5rem 0 0.75rem; }
+    .feature-card p { font-size: 0.875rem; color: rgba(255,255,255,0.82); line-height: 1.85; }
+    .highlight-box-navy {
+      background: rgba(0,151,167,0.12);
+      border: 1.5px solid rgba(0,151,167,0.4);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    /* ===== Story ===== */
+    .story-box { font-size: 0.9375rem; color: var(--text-mid); line-height: 1.95; margin-bottom: 1.25rem; }
+    .story-box p { margin-bottom: 1rem; }
+    .dialogue-box {
+      background: var(--gray-light);
+      border-left: 4px solid var(--navy);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.5rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 1.5rem 0;
+      font-family: "Noto Serif JP", serif;
+    }
+
+    /* ===== 実績 ===== */
+    .result-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(0,151,167,0.35);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .result-industry-tag {
+      display: block;
+      font-size: 1rem;
+      font-weight: 900;
+      color: var(--teal-light);
+      background: rgba(0,151,167,0.15);
+      border: 1px solid rgba(0,151,167,0.4);
+      border-radius: 6px;
+      padding: 0.6rem 1rem;
+      margin-bottom: 1.25rem;
+      text-align: center;
+      letter-spacing: 0.03em;
+    }
+    .result-numbers {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    .stat-before { font-size: 1.3rem; font-weight: 700; color: rgba(255,255,255,0.55); }
+    .stat-arrow { font-size: 1.8rem; font-weight: 900; color: var(--teal-light); }
+    .stat-after { font-size: 2.4rem; font-weight: 900; color: #7fffb2; text-shadow: 0 0 16px rgba(0,200,100,0.35); }
+    .stat-label { font-size: 1.1rem; font-weight: 700; color: var(--white); }
+
+    /* ===== Steps ===== */
+    .step-item {
+      display: flex;
+      gap: 1.75rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--gray-mid);
+    }
+    .step-item:last-of-type { border-bottom: none; }
+    .step-num-col { flex: 0 0 60px; text-align: center; }
+    .step-num {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px; height: 52px;
+      background: var(--grad-teal);
+      color: var(--white);
+      font-size: 1.4rem;
+      font-weight: 900;
+      border-radius: 50%;
+      margin: 0 auto 0.5rem;
+      box-shadow: 0 4px 16px rgba(0,151,167,0.35);
+    }
+    .step-num.primary {
+      background: var(--grad-main);
+      box-shadow: 0 4px 16px rgba(26,42,108,0.35);
+    }
+    .step-badge-tag {
+      font-size: 0.65rem;
+      font-weight: 900;
+      color: var(--teal);
+      border: 1.5px solid var(--teal);
+      border-radius: 4px;
+      padding: 0.15rem 0.3rem;
+      line-height: 1.3;
+      text-align: center;
+    }
+    .step-body h3 {
+      font-family: "Noto Serif JP", serif;
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+    .step-body p { font-size: 0.9375rem; color: var(--text-mid); line-height: 1.9; margin-bottom: 0.75rem; }
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(0,151,167,0.06), rgba(67,160,71,0.06));
+      border: 1.5px solid rgba(0,151,167,0.25);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin: 1rem 0;
+      font-size: 0.9375rem;
+      color: var(--text-mid);
+      line-height: 1.9;
+    }
+
+    /* ===== Check list ===== */
+    .check-list { list-style: none; padding: 0; margin: 0.75rem 0 1.25rem; }
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.9375rem;
+      color: var(--text-mid);
+      margin-bottom: 0.4rem;
+      line-height: 1.6;
+    }
+    .check-list li::before { content: "✓"; color: var(--teal); font-weight: 900; flex-shrink: 0; }
+
+    /* ===== Profile ===== */
+    .profile-wrap { display: flex; gap: 2.5rem; align-items: flex-start; margin-top: 1.5rem; }
+    .profile-photo { flex: 0 0 180px; }
+    .profile-photo img { width: 100%; border-radius: 10px; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.12); }
+    .profile-name-sp { display: none; }
+    .profile-info { flex: 1; }
+    .profile-name { font-family: "Noto Serif JP", serif; font-size: 1.2rem; font-weight: 900; color: var(--navy); margin-bottom: 0.4rem; }
+    .profile-title { font-size: 0.8125rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 1rem; border-left: 3px solid var(--teal); padding-left: 0.75rem; }
+    .profile-body p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.9; margin-bottom: 0.75rem; }
+
+    /* ===== Empathy ===== */
+    .empathy-section {
+      background: var(--grad-hero);
+      padding: 4.5rem 3rem;
+      text-align: center;
+    }
+    .empathy-lead {
+      font-family: "Noto Serif JP", serif;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: rgba(255,255,255,0.88);
+      line-height: 2.1;
+      margin-bottom: 2rem;
+    }
+    .empathy-solo {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--teal-light);
+      margin-bottom: 2rem;
+    }
+    .empathy-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(0,151,167,0.4);
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 640px;
+      margin: 0 auto 2rem;
+      text-align: left;
+    }
+    .emp-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--teal-light);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+    }
+    .empathy-card p { font-size: 0.9375rem; color: rgba(255,255,255,0.85); line-height: 1.9; }
+    .empathy-final {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 2;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* ===== CTA Section ===== */
+    .cta-section {
+      background: var(--navy-dark);
+      padding: 4.5rem 3rem;
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-family: "Noto Serif JP", serif;
+      font-size: clamp(1.3rem, 3.5vw, 2rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+    }
+    .cta-section h2 .gold { color: var(--teal-light); }
+    .cta-sub { font-size: 0.9375rem; color: rgba(255,255,255,0.8); line-height: 1.9; margin-bottom: 2rem; }
+    .cta-benefits {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(0,151,167,0.35);
+      border-radius: 10px;
+      padding: 1.5rem 2rem;
+      margin: 0 auto 2.5rem;
+      max-width: 560px;
+      text-align: left;
+    }
+    .cta-benefits-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--teal-light);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+    }
+    .cta-benefits ul { list-style: none; padding: 0; }
+    .cta-benefits li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 0.6rem;
+      line-height: 1.65;
+    }
+    .cta-benefits li::before { content: "✓"; color: var(--teal-light); font-weight: 900; flex-shrink: 0; }
+    .btn-cta-large {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--grad-teal);
+      color: var(--white);
+      font-size: 1.25rem;
+      font-weight: 900;
+      padding: 1.1rem 3rem;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 6px 28px rgba(0,151,167,0.5);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-cta-large:hover { transform: translateY(-3px); box-shadow: 0 10px 36px rgba(0,151,167,0.6); }
+    .cta-note-white { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-top: 1rem; }
+
+    /* ===== Footer ===== */
+    .site-footer {
+      background: var(--navy-dark);
+      border-top: 3px solid transparent;
+      border-image: var(--grad-main) 1;
+      padding: 2rem 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.8;
+    }
+    .site-footer a { color: rgba(255,255,255,0.6); text-decoration: none; margin: 0 0.75rem; }
+    .site-footer a:hover { color: var(--teal-light); }
+
+    /* ===== Responsive ===== */
+      @media (max-width: 700px) {
+      .profile-logo-pc { display: none !important; }
+      .profile-logo-sp { display: block !important; }
+      .sp-br { display: inline; }
+      .banner-divider { display: block; border: none; border-top: 1px solid rgba(255,255,255,0.2); margin: 0.75rem 0; }
+      .banner-main-pc { display: none; }
+      .banner-main-sp { display: block !important; }
+      .col-image-arrow { font-size: 2.5rem !important; }
+      .hero { padding: 2.75rem 1.25rem 2.25rem; }
+      .hero-target { font-size: clamp(1.55rem, 7vw, 2rem); }
+      .hero-result-banner { padding: 1.5rem 1rem; }
+      .hero-result-banner .banner-main { font-size: clamp(1.45rem, 6.5vw, 2.2rem); }
+      .hero-result-banner .banner-label { font-size: clamp(1.2rem, 4.5vw, 1.5rem); }
+      .two-col { flex-direction: column; }
+      .col-image { width: 100%; }
+      .problem-grid { grid-template-columns: 1fr; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .profile-wrap { flex-direction: column; align-items: center; }
+      .profile-photo { width: 160px; }
+      .profile-name-pc { display: none; }
+      .profile-name-sp { display: block; }
+      .step-item { flex-direction: column; gap: 1rem; }
+      .step-num-col { display: flex; align-items: center; gap: 0.75rem; }
+      .white-section, .gray-section, .navy-section { padding: 3rem 1.25rem; }
+      .empathy-section { padding: 3rem 1.25rem; }
+      .cta-section { padding: 3rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="hero-target">創業家の2代目・3代目<br>経営者の方へ</div>
+
+    <div class="hero-result-banner">
+      <div class="banner-label">✔ 事例</div>
+      <!-- PC用 -->
+      <div class="banner-main banner-main-pc" style="line-height:1.5;">
+        大手求人媒体の<span class="num-highlight">3倍以上</span>の応募<br>
+        離職率<span class="num-highlight">46.8%</span>が<span class="num-highlight">15.1%</span>に改善
+      </div>
+      <!-- スマホ用 -->
+      <div class="banner-main banner-main-sp" style="font-size:clamp(1.45rem,6.5vw,2.2rem);line-height:1.5;display:none;">
+        大手の求人媒体の<br>
+        <span class="num-highlight">3倍以上</span>の応募
+        <hr class="banner-divider">
+        離職率<span class="num-highlight">46.8%</span>が<br>
+        <span class="num-highlight">15.1%</span>に改善
+      </div>
+      <div class="banner-sub">変えたのは「創業家の方向性と価値観」から</div>
+    </div>
+
+    <h1 class="hero-main">
+      2代目・3代目が経営する企業の<br class="sp-br">「人の問題」は、<br>
+      採用の前に<span class="text-teal">解くべき問題がある</span>
+    </h1>
+
+    <ul class="hero-points">
+      <li>同族経営の当事者だったコンサルタントが伴走</li>
+      <li>採用・定着・育成を一貫してサポート</li>
+      <li>創業家のガバナンスから組織を根本から変える</li>
+    </ul>
+
+    <div class="cta-area">
+      <a class="btn-cta-main" href="/consultation" rel="noopener" target="_blank">
+        <span>✉</span>
+        <span class="btn-label">
+          <span class="btn-sub">お気軽にご相談ください</span>
+          無料相談する
+        </span>
+      </a>
+      <div class="cta-note">※完全無料・秘密厳守・先着順</div>
+    </div>
+  </section>
+
+  <!-- ===== はじめに ===== -->
+  <hr class="section-divider">
+
+  <section class="white-section">
+    <span class="sec-label">はじめに</span>
+    <div class="two-col">
+      <div class="col-text">
+        <p class="body-p">私は、創業家の2・3代目経営者が抱える人材採用・定着・育成の悩みを解決するコンサルタントです。</p>
+        <p class="body-p">具体的には、売上は順調なのに「人を採用できない、辞める、育たない」の三重苦で悩まれている創業家が経営する企業に対し、<span class="em">伴走・参謀型で問題解決するコンサルティング</span>を提供しています。</p>
+        <p class="body-p">一般的なコンサルティングはノウハウや仕組みだけで組織を動かそうとしますが、同族経営ではまず<span class="em">「家族や親族間の感情とビジョン」を揃えなければ何も機能しません。</span></p>
+        <p class="body-p">私は、創業家の想いを言語化し、それを評価制度と採用に直結させることで、優秀な人材が自ら定着し、経営者が真の経営に専念できる強靭な組織の仕組みを提供します。</p>
+      </div>
+      <div class="col-image">
+        <div class="col-image-box">
+          <div class="big-label">離職率</div>
+          <div class="big-num">46.8%</div>
+          <div class="col-image-arrow">⇓</div>
+          <div class="big-num">15.1%</div>
+          <div style="color:rgba(255,255,255,0.7);font-size:0.85rem;margin-top:0.5rem;">に改善した実績</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5つの問題 ===== -->
+  <hr class="section-divider">
+
+  <section class="gray-section">
+    <span class="sec-label">こんなお悩みはありませんか？</span>
+    <h2 class="sec-title">創業家が経営する企業には<br><span class="accent-teal">5つの特有の問題</span>があります</h2>
+    <p class="body-p">人が辞めていく創業家が経営する会社には、5つの特有の問題があります。</p>
+
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="num-badge">1</div>
+        <h4>価値観の衝突</h4>
+        <p>経営陣（家族・同族）の間で意見や方向性がバラバラ。誰の指示に従えばいいのか、社員は混乱していませんか？</p>
+      </div>
+      <div class="problem-card">
+        <div class="num-badge">2</div>
+        <h4>ダブルボス状態</h4>
+        <p>先代会長と現社長の役割が曖昧なまま。社員はどちらの顔色を窺えばいいか分からず、組織が機能不全に陥っていませんか？</p>
+      </div>
+      <div class="problem-card">
+        <div class="num-badge">3</div>
+        <h4>先代との比較</h4>
+        <p>「先代ならこう判断した」——そう言われるたびに、自分の決断への自信が揺らぐことはありませんか？</p>
+      </div>
+      <div class="problem-card">
+        <div class="num-badge">4</div>
+        <h4>古参幹部との衝突</h4>
+        <p>古参幹部の「先代の時はこうだった」という言葉が、変革の足かせになっていませんか？</p>
+      </div>
+      <div class="problem-card" style="grid-column: 1 / -1;">
+        <div class="num-badge">5</div>
+        <h4>幹部候補が育たない</h4>
+        <p>自分を支えてくれる右腕が見当たらない、育っていない……気づけばいつも、社長一人が色々と抱え込んでいませんか？</p>
+      </div>
+    </div>
+
+    <h3 style="font-size:1.05rem;font-weight:900;color:var(--navy);margin-bottom:1rem;">このような環境が続くと——</h3>
+    <ul class="consequence-list">
+      <li>自分で考えて動く社員が育ちにくく、<strong>指示待ちの文化が根づいてしまう</strong></li>
+      <li>上の顔色を窺う社員が増え、<strong>生産性が上がらない</strong></li>
+      <li>採用しても定着しないスパイラルに陥り、<strong>採用コストだけが膨らんでいく</strong></li>
+    </ul>
+    <p class="body-p">という問題が起きます。</p>
+    <p class="body-p">どの企業にも大なり小なり起きている問題ですが、創業家が経営する企業には特にこの問題が顕著です。</p>
+    <div class="quote-block">
+      <p>これは「あ・うんの呼吸」の副作用によるものです。創業家は日常生活からのコミュニケーションが土台にあるため、このあ・うんの呼吸が自然に生まれます。しかし、他人である社員とはコミュニケーションの度合いが圧倒的に違います。なのに、ある程度の関係構築が出来た段階で、家族と同じコミュニケーションをやりがちです。社員にとっては理解不能であり、ストレスでしかありません。</p>
+    </div>
+  </section>
+
+  <!-- ===== 変わらない理由 ===== -->
+  <hr class="section-divider">
+
+  <section class="navy-section">
+    <span class="sec-label sec-label-white">なぜ上手くいかないのか</span>
+    <h2 class="sec-title white">どれだけ取り組んでも<br><span class="accent-teal">変わらない本当の理由</span></h2>
+
+    <p class="body-p white">このような状況から脱却しなければ……と、多くの経営者が外部の講師を招き社員研修を行ったり、コンサルタントや人材マネジメントのシステム導入などの対策をされてきています。特に、同業者での成功事例は経営者にとって大変魅力的です。出来そう……と感じやすいのです。特に、新しもの好きの経営者には……。</p>
+    <p class="body-p white" style="font-weight:700;color:var(--teal-light);">それでも大きな改善は見られない、変わらないのです。なぜでしょうか？</p>
+    <p class="body-p white">成功事例には「目に見えるノウハウ」と、目に見えない「それを動かすエンジン」があります。エンジンとは、事業への魂・想い——つまり経営理念です。仕組みだけ移植しても、エンジンのない船は動きません。</p>
+    <p class="body-p white">そして、創業家の企業の場合は、これに<span style="color:var(--teal-light);font-weight:700;">「同族間の感情と方向性」を揃えること</span>が加わってきます。</p>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="num-badge">①</div>
+        <h4>「エンジン」なき仕組みは動かない</h4>
+        <p>どれほど優れた仕組みを入れたり社員に研修を行っても、人の心がバラバラなままでは機能しません。特に同族経営では、感情と経営が混ざり合い、言語化されないまま積み上がっていく。それが、すべての問題の根っこにあります。</p>
+      </div>
+      <div class="feature-card">
+        <div class="num-badge">②</div>
+        <h4>同族間の感情と方向性が揃っていない</h4>
+        <p>バケツに穴が空いたまま、新しい人材を注ぎ込んでも——また、こぼれていくだけです。だからまず取り組むべきは、採用や育成の「前」にある、創業家のガバナンスです。この順番を間違えると、どんなノウハウも仕組みも、空回りし続けます。</p>
+      </div>
+    </div>
+
+    <div class="highlight-box-navy">
+      <p style="font-size:1.05rem;font-weight:900;color:var(--teal-light);line-height:1.7;">バケツに穴が空いたまま、新しい人材を注ぎ込んでも——<br>また、こぼれていくだけです。</p>
+      <p style="font-size:0.9375rem;color:rgba(255,255,255,0.85);margin-top:0.75rem;line-height:1.8;">だからまず取り組むべきは、採用や育成の「前」にある、<strong style="color:var(--teal-light);">創業家のガバナンス</strong>です。<br>この順番を間違えると、どんなノウハウも仕組みも、空回りし続けます。</p>
+    </div>
+  </section>
+
+  <!-- ===== ストーリー ===== -->
+  <hr class="section-divider">
+
+  <section class="white-section">
+    <span class="sec-label">なぜ、私がこの問題を解決できるのか</span>
+    <h2 class="sec-title">私自身が同族企業の<br><span class="accent-navy">「当事者」でした</span></h2>
+
+    <div class="story-box">
+      <p>実は、私自身が同族企業の「当事者」でした。叔父が経営する着物専門店に大卒後から勤務していたのです。</p>
+      <p>30数店舗の着物専門店と染織メーカーを別会社に持つ、当時それなりに名前が知れ渡っていた会社でしたが、<span class="em">同族間の関係が酷かった企業</span>でした。</p>
+      <p>この企業には私にとって叔父にあたる方が3名おり、本家の長男が社長（2代目）、社長の弟と義兄、社長の息子や生え抜きの社員2名が取締役を務めていました。</p>
+      <p>ある店の店長を務めていた時、こんなことがありました。店が営業中に社長から電話がかかってきたのですが——</p>
+    </div>
+
+    <div class="dialogue-box">「お前から常務に伝えてほしい——」</div>
+
+    <div class="story-box">
+      <p>常務（弟）の部屋は社長室の2つ隣にありますが、<span class="em">直接話せないほど、兄弟の仲は壊れていた</span>のです。</p>
+      <p>会議でも意見の食い違いから口論に達し、弟の常務は会議の部屋から出ていってしまう……。社内を見渡せば、<span class="em">社長派と常務派に分かれた社員たち</span>。どちらにもいい顔をする人、無関心を装う人——こんな小さな会社にも、派閥というものが生まれていました。</p>
+      <p>さらに、ここに社長の息子が加わります。この息子（従兄弟）が父親である社長に反発していただけでなく、叔父の常務とも衝突していましたので、まさに<span class="red">三つ巴の争い</span>……。</p>
+      <p>社長と息子は親子だけに、叔父との兄弟関係とは別の意味で難しいものでした。普通の会話がそもそもできないのです、仕事でも生活でも。お互い相当なストレスだったと思います。叔父と息子の2人の間で笑い合うことは、結局見ることはなかったと思います。</p>
+      <p><span class="em">3人の間で板挟みになりながら、私は調整役を担い続けました。</span>当時を思い出すと、まさに骨肉の争いだったと思います。何度も夜中に目が覚めました。</p>
+      <p>2人の叔父の名誉のためにいうと、いずれの叔父も人として好きな方でしたし、尊敬の念もありました。この2人の叔父には教えられたこともたくさんありました。だからこそ、何とかしたかったのです。当時、すでに経営が傾いていましたので、こんなことをやっている場合ではないと、何とかお互いの意見の食い違いや誤解を解くために、間に入りながら関係改善を探りました。</p>
+      <p>しかし……</p>
+    </div>
+  </section>
+
+  <!-- ===== まさかの終焉 ===== -->
+  <hr class="section-divider">
+
+  <section class="gray-section">
+    <span class="sec-label">まさかの終焉——3.11</span>
+    <h2 class="sec-title">声を出すことが<br class="sp-br"><span class="accent-teal">出来なかった</span></h2>
+
+    <div class="two-col">
+      <div class="col-text">
+        <p class="body-p">常務だった叔父は元々患っていた病気で亡くなり、その後を受けるように私が常務取締役になりました。</p>
+        <p class="body-p">その際、社長から告げられた会社の財務の数字を見た時、私は声を出すことが出来ませんでした。</p>
+        <div class="quote-block">
+          <p>「終わっている……」。メーカー卸の事業の赤字があまりにも莫大かつ、それが何年も続いていたのです。融資で何とか繋いでいたに過ぎなかったのです。</p>
+        </div>
+        <p class="body-p">ここまで悪いとは……。私が担当していた事業部の売上は好調でしたので、思いも寄らぬことでした。そこから必死に各事業部の立て直しを始めました。あらゆる対策を打ち、業績が向上し始めました。</p>
+        <p class="body-p">しかし、あの3.11の時にすべてが終わってしまいました。全体の3分の1ほどの店舗に被害や影響が出た上、銀行から予定していた融資が立て続けに見送りに……。<strong style="color:#e53e3e;">残念ながら3ヶ月後に倒産しました。</strong></p>
+      </div>
+      <div class="col-image">
+        <div class="col-image-box" style="text-align:left;">
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:0.5rem;">あの時の教訓</div>
+          <p style="font-size:0.875rem;color:rgba(255,255,255,0.9);line-height:1.8;">同族間の感情の問題を放置したまま経営を続けると、どんなに業績改善に取り組んでも、根本的な解決にはならない。</p>
+          <div style="border-top:1px solid rgba(255,255,255,0.2);margin:1rem 0;"></div>
+          <p style="font-size:0.875rem;color:var(--teal-light);font-weight:700;line-height:1.7;">「あの時味わった痛みを、あなたには絶対に経験させたくない」</p>
+          <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin-top:0.5rem;">——その思いが、今も私を動かしています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 独立後 ===== -->
+  <hr class="section-divider">
+
+  <section class="white-section">
+    <span class="sec-label">私にできること</span>
+    <h2 class="sec-title">独立後、すべてのクライアントは<br><span class="accent-navy">同族会社</span></h2>
+
+    <p class="body-p">残務整理をしてからコンサルタントとして独立し、少しずつ契約を獲得することが出来たクライアント、そしてこれまでのクライアントもすべて同族会社です。クライアントごとに抱えている課題は異なりますが、一つだけ同じ悩みがあります。<span class="em">「人」の問題</span>です。</p>
+    <ul class="check-list">
+      <li>求人を出しても応募が来ない</li>
+      <li>応募が来ても希望した人材ではなかった</li>
+    </ul>
+    <p class="body-p">ここ数年こそ、あらゆる業界で"応募が来ない""採用ができない"と云われるようになりましたが、私のいた着物業界は昔から厳しかったです（今はもっと厳しいですが）。<span class="em">年間1,000万円のコストをかけて採用できたのは、"たったの2名"……しかもその2名も半年で退職</span>……なんてことが、あるクライアントであったぐらいです。</p>
+    <p class="body-p">元々、着物店向けの集客コンサルタントとしてクライアントに貢献してましたが、クライアントの窮状を見て何か出来ないかと考えました。</p>
+    <div class="quote-block">
+      <p>その時、私の中で「採用求人とは働きたい人の集客」では？とのパラダイムシフトが起き、ある求人法を試したところ、一気に応募者が集まりました。この結果がクチコミや紹介等で広まり、他業界でも結果を出すことが出来ましたのです。</p>
+    </div>
+    <p class="body-p">但し、支援したクライアントから「入社した人が辞めてしまったので、また求人お願いします。」とのご依頼が時を経てありました。しかも、ほぼすべてのクライアントからです。</p>
+    <p class="body-p" style="font-weight:900;color:#e53e3e;font-size:1.05rem;">なぜだ……？</p>
+    <p class="body-p">これが今回ご案内することになったサービスのきっかけです。いくらあらゆる手法で人を集め、採用しても、入社後の社内環境が整っていなければ、同じことの繰り返しになります。<span class="em">バケツに穴が空いた状態でこれを繰り返せば、莫大なコストが嵩み、企業体質を弱体化させるだけです。</span></p>
+    <p class="body-p">特に、創業家の企業の場合、世間で知られている組織戦略や人事戦略だけでは上手くいかないのです。先ほども述べた「同族間の感情と方向性」を揃えることから始める必要があります。これまで創業家のガバナンス、社内ガバナンスの支援を数多くして参りましたが、<span class="em">ほとんどのクライアントの社員の定着率が劇的に変わりました。</span></p>
+  </section>
+
+  <!-- ===== 実績 ===== -->
+  <hr class="section-divider">
+
+  <section class="navy-section">
+    <span class="sec-label sec-label-white">実績・成果事例</span>
+    <h2 class="sec-title white">方向性と価値観を揃えると、<br><span class="accent-teal">組織は劇的に変わります</span></h2>
+
+    <div class="result-card">
+      <div class="result-industry-tag">着物専門店（3店舗）｜創業家の2代目｜従業員43名</div>
+      <div class="result-numbers">
+        <span class="stat-before">離職率 46.8%</span>
+        <span class="stat-arrow">⇒</span>
+        <span class="stat-after">15.1%</span>
+        <span class="stat-label">に改善</span>
+      </div>
+      <p style="font-size:0.9375rem;color:rgba(255,255,255,0.85);line-height:1.9;">先代の御父様と後継者のお嬢様、御父様の弟の間で三つ巴状態が続き、不安定な経営状態でした。徹底した話し合いを重ねた後にビジョンを明確にし、採用求人の支援まで実施。<strong style="color:var(--teal-light);">年間の正社員採用は平均3〜4名から11名へと増加</strong>しました。</p>
+    </div>
+
+    <div class="result-card">
+      <div class="result-industry-tag">製造業｜創業3代目｜従業員数51名</div>
+      <div class="result-numbers">
+        <span class="stat-before">離職率 52.7%</span>
+        <span class="stat-arrow">⇒</span>
+        <span class="stat-after" style="color:#7fffb2;">12.9%</span>
+        <span class="stat-label">に改善</span>
+      </div>
+      <p style="font-size:0.9375rem;color:rgba(255,255,255,0.85);line-height:1.9;">採用しても半分以上の社員が辞めてしまっていたS社。同族間の価値観を統一後、経営理念を一から見直し、評価システムや給与体系を理念と一貫性が持てるものに再構築。<strong style="color:var(--teal-light);">離職率が大幅に改善</strong>しました。</p>
+    </div>
+  </section>
+
+  <!-- ===== 3ステップ ===== -->
+  <hr class="section-divider">
+
+  <section class="white-section">
+    <span class="sec-label">解決の3ステップ</span>
+    <h2 class="sec-title">人の問題を根本から解決する<br><span class="accent-teal">3つのステップ</span></h2>
+    <p class="body-p" style="margin-bottom:2.5rem;">あらゆる経験から、同族企業における人材採用・定着・育成の問題を解決するには、3つのステップを踏む必要があります。</p>
+
+    <div class="step-item">
+      <div class="step-num-col">
+        <div class="step-num primary">①</div>
+        <div class="step-badge-tag">最重要<br>全ての起点</div>
+      </div>
+      <div class="step-body">
+        <h3>創業家のガバナンス整備</h3>
+        <p>同族間の感情・方向性を言語化し、「心を揃える」ところから始めます。第三者だからこそできる、客観的な調整と仕組みづくりです。ここを手抜きすると、経営の好循環のスパイラルに入ることは出来ません。</p>
+        <div class="highlight-box">
+          <p><strong>社員は上をよく見ています。</strong>創業家の価値観や方向性が揃うと、社員も変わるのです、不思議に。このステップは自身の心への問いや言葉にならない想いを言語化することが中心になりますので、思わず逃げたくなることもあります。しかし、その効果は絶大です。</p>
+        </div>
+        <p>また、これと連動しますが、<strong>誰にも相談できない経営者の"想い"の言語化を支援</strong>できます。要は相談相手です。経営者は孤独と言われますが、創業家の経営者の孤独感は一般のサラリーマン社長には分からない苦労があります。先代に気遣い、社員には弱みを見せられない……外部に相談しても通り一遍の言葉しか返ってこないことが多いのではないでしょうか。そんな言葉にならないモヤモヤを解消し、次の行動に移せるよう支援させていただきます。</p>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <div class="step-num-col">
+        <div class="step-num">②</div>
+      </div>
+      <div class="step-body">
+        <h3>社内組織の最適化</h3>
+        <p>バケツに穴が空いた状態で人材を採用しても、また辞めていくだけです。企業文化の礎になる<strong>経営理念の見直し</strong>から、<strong>行動指針の整理</strong>、<strong>評価システム・給与体系の再構築</strong>を通じて離職率の低下、幹部育成に繋げます。</p>
+        <p>理念から価値観、行動指針、成長・評価制度まで一貫性のあるものにすることが重要です。</p>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <div class="step-num-col">
+        <div class="step-num">③</div>
+      </div>
+      <div class="step-body">
+        <h3>大手求人媒体に頼らない採用・求人戦略</h3>
+        <p>知名度のない中小企業は、荒波に晒される大手求人媒体では埋もれてしまい勝負になりません。来てほしい人材からダイレクトに応募を集める独自手法で、コストを抑えながら質の高い人材を集めます。</p>
+        <p>着物業界という採用が極めて難しい業界で編み出したこの手法は、他業界でも着物業界以上の結果を出しています。</p>
+      </div>
+    </div>
+
+    <div class="quote-block" style="margin-top:2rem;">
+      <p>この中で最も重要なのが①の創業家のガバナンスです。ここが全ての起点です。社員は上をよく見ています。創業家の価値観や方向性が揃うと、社員も変わるのです、不思議に。このステップは自身の心への問いや言葉にならない想いを言語化することが中心になりますので、思わず逃げたくなることもあります。しかし、その効果は絶大です。</p>
+    </div>
+  </section>
+
+  <!-- ===== プロフィール ===== -->
+  <hr class="section-divider">
+
+  <section class="gray-section">
+    <span class="sec-label">コンサルタント紹介</span>
+    <h2 class="sec-title">和奏人事パートナーズ<br><span class="accent-navy">廣瀬 祥久<br class="sp-br">（ひろせ よしひさ）</span></h2>
+
+    <div class="profile-wrap">
+      <div class="profile-photo">
+        <img src="hirose.jpg" alt="廣瀬祥久">
+        <div class="profile-name profile-name-sp" style="display:none; text-align:center; margin-top:0.75rem; font-size:1.1rem; font-weight:900; color:var(--navy);">廣瀬 祥久（ひろせ よしひさ）</div>
+        <!-- スマホ用：縦型ロゴ -->
+        <img src="logo-vertical.png" alt="和奏人事パートナーズ" class="profile-logo-sp">
+      </div>
+      <div class="profile-info">
+        <div class="profile-name profile-name-pc">廣瀬 祥久（ひろせ よしひさ）</div>
+        <div class="profile-title">
+          和奏人事パートナーズ 代表<br>
+          株式会社和装コンサルタンツ 代表取締役<br>
+          採用人事・組織コンサルタント<br>
+          東京都港区高輪2－14－17　グレイス高輪ビル8階
+        </div>
+        <div class="profile-body">
+          <p>叔父が経営する30数店舗の着物専門店（染織メーカーも別会社に保有）に大卒後から勤務。社長・常務・後継者の三つ巴の争いの中で<span class="em">調整役を担い続け</span>、常務取締役として経営再建に奔走。しかし東日本大震災の影響で融資が途絶え、<span class="em">150名の社員を路頭に迷わせた</span>という経験を持ちます。</p>
+          <p>「あの時味わった痛みを、あなたには絶対に経験させたくない」——その思いが、今も私を動かしています。</p>
+        </div>
+        <!-- PC用：横型ロゴ -->
+        <img src="logo-a.png" alt="和奏人事パートナーズ" class="profile-logo-pc">
+      </div>
+    </div>
+
+    <div class="highlight-box" style="margin-top:2rem;">
+      <p>独立後も、すべてのクライアントは同族会社。着物業界で編み出した「ダイレクト求人採用法（Google広告×求人LP）」は他業界でも劇的な結果を出しています。しかし採用の前に「定着できる組織」を作ることこそが、最も重要だと確信しています。</p>
+    </div>
+    <div class="highlight-box">
+      <p>同族会社のいざこざや特有の問題に対する対処方法・運営方法についても、自身が同族会社で勤務していたからこそのノウハウを持っています。また、採用求人からでも、定着の各メニューからでも、各企業の「人の問題」を解決できる用意があります。</p>
+    </div>
+  </section>
+
+  <!-- ===== クロージング ===== -->
+  <hr class="section-divider">
+
+  <section class="white-section">
+    <span class="sec-label">最後に</span>
+    <h2 class="sec-title">その悔しさが、<br><span class="accent-navy">今も私を動かしています。</span></h2>
+
+    <div class="story-box">
+      <p>あの時、最後に残っていた150名の社員を路頭に迷わせた——その悔しさが、今も私を動かしています。</p>
+      <p>会社は倒産させてはいけない。あの時味わった痛みを、あなたには絶対に経験させたくない。それが、私がこの仕事をしている理由です。</p>
+      <p>独立後も、同じような創業家企業の会長・社長を数多くサポートしてきました。試行錯誤しながら、<span class="em">社員と経営者が一体化していく瞬間を目の当たりにするたびに</span>——あの倒産の日に感じた無力感が、少しずつ別の何かに変わっていくのを感じます。それが、私が今も前へ進み続ける理由ですし、喜びとやりがいです。</p>
+      <p>同族経営には、その形だからこそ果たせる社会的な役割があります。同族だからこそ継続できるサービスや製品があり、世代を超えて守れるものがある。私は心の底からそう信じています。</p>
+    </div>
+  </section>
+
+  <!-- ===== 共感メッセージ ===== -->
+  <section class="empathy-section">
+    <div style="max-width:720px; margin:0 auto;">
+      <p class="empathy-lead">
+        そして、もう一つだけ正直に言わせてください。<br>
+        あの頃の私には、話せる相手が誰もいませんでした。<br>
+        叔父たちへの敬意もあり、外に出せなかった。<br class="sp-br">
+        誰かに話せていたら——<br>
+        あのストレスも、時間コストも、<br class="sp-br">もう少し違ったはずだと今でも思います。
+      </p>
+
+      <p class="empathy-solo">これは、私だけの話ではないはずです。</p>
+
+      <div class="empathy-card">
+        <div class="emp-label">2代目・3代目の社長であるあなたへ</div>
+        <p>先代会長の目が気になる。社員には弱みを見せられない。「先代ならこう判断した」と言われるたびに、自分の決断への自信が揺らぐ。それでも誰にも言えないまま、一人で抱え込んでいませんか。</p>
+      </div>
+
+      <div class="empathy-final">
+        <p>創業家の経営者の孤独は、<br class="sp-br">一般のサラリーマン社長には<br class="sp-br">分からない重さがあります。<br>
+        先代に気を遣い、社員には弱みを見せられない。<br>
+        外部に相談しても、<br class="sp-br">通り一遍の言葉しか返ってこない。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section" id="cta">
+    <h2>答えを出す必要はありません。<br>断片的でも構いません。<br><span class="gold">話すだけで、<br class="sp-br">霧が晴れることがあります。</span></h2>
+    <p class="cta-sub" style="text-align:left;margin-top:1.5rem;">
+      まず、私と話してみませんか？お待ちしています。<br>
+      ——和奏人事パートナーズ　廣瀬祥久
+    </p>
+    <div class="cta-benefits">
+      <div class="cta-benefits-title">この60分で得られること</div>
+      <ul>
+        <li>同族ならではの話で、今まで誰にも話せなかったことが整理できた</li>
+        <li>自社の「人の問題」の根本原因が明確になった</li>
+        <li>次に取るべき具体的な一手が見えた</li>
+      </ul>
+    </div>
+    <a class="btn-cta-large" href="/consultation" rel="noopener" target="_blank">
+      <span style="font-size:1.4rem;">✉</span>
+      無料相談(60分)はこちら
+    </a>
+    <p class="cta-note-white">※この相談は完全無料・秘密厳守です</p>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <p style="margin-bottom:0.5rem;">
+      <a href="#">特定商取引法に基づく表記</a>
+      <a href="#">プライバシーポリシー</a>
+    </p>
+    <p>© 2025 和奏人事パートナーズ | 株式会社和装コンサルタンツ</p>
+  </footer>
+
+</div>
+</body>
+</html>
