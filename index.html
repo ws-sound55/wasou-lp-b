@@ -401,47 +401,23 @@
 
     /* ===== Steps ===== */
     .step-item {
-      display: flex;
-      gap: 1.75rem;
+      display: block;
       margin-bottom: 2.5rem;
       padding-bottom: 2.5rem;
       border-bottom: 1px solid var(--gray-mid);
     }
     .step-item:last-of-type { border-bottom: none; }
-    .step-num-col { flex: 0 0 60px; text-align: center; }
-    .step-num {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 52px; height: 52px;
-      background: var(--grad-teal);
-      color: var(--white);
-      font-size: 1.4rem;
-      font-weight: 900;
-      border-radius: 50%;
-      margin: 0 auto 0.5rem;
-      box-shadow: 0 4px 16px rgba(0,151,167,0.35);
-    }
-    .step-num.primary {
-      background: var(--grad-main);
-      box-shadow: 0 4px 16px rgba(26,42,108,0.35);
-    }
-    .step-badge-tag {
-      font-size: 0.65rem;
-      font-weight: 900;
-      color: var(--teal);
-      border: 1.5px solid var(--teal);
-      border-radius: 4px;
-      padding: 0.15rem 0.3rem;
-      line-height: 1.3;
-      text-align: center;
-    }
+    .step-num-col { display: none; }
+    .step-badge-tag { display: none; }
     .step-body h3 {
       font-family: "Noto Serif JP", serif;
-      font-size: 1.15rem;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
       font-weight: 900;
       color: var(--navy);
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.9rem;
+      padding: 0.5rem 0 0.5rem 1rem;
+      border-left: 5px solid var(--teal);
+      line-height: 1.35;
     }
     .step-body p { font-size: 1.1rem; color: var(--text-mid); line-height: 1.9; margin-bottom: 0.85rem; }
     .highlight-box {
@@ -896,10 +872,6 @@
     <p class="body-p" style="margin-bottom:2.5rem;">あらゆる経験から、同族企業における人材採用・定着・育成の問題を解決するには、3つのステップを踏む必要があります。</p>
 
     <div class="step-item">
-      <div class="step-num-col">
-        <div class="step-num primary">①</div>
-        <div class="step-badge-tag">最重要<br>全ての起点</div>
-      </div>
       <div class="step-body">
         <h3>①　創業家のガバナンス</h3>
         <p>同族間の感情・方向性を言語化し、「心を揃える」ところから始めます。第三者だからこそできる、客観的な調整と仕組みづくりです。ここを手抜きすると、経営の好循環のスパイラルに入ることは出来ません。</p>
@@ -911,9 +883,6 @@
     </div>
 
     <div class="step-item">
-      <div class="step-num-col">
-        <div class="step-num">②</div>
-      </div>
       <div class="step-body">
         <h3>②　社内組織の最適化</h3>
         <p>バケツに穴が空いた状態で人材を採用しても、また辞めていくだけです。企業文化の礎になる<strong>経営理念の見直し</strong>から、<strong>行動指針の整理</strong>、<strong>評価システム・給与体系の再構築</strong>を通じて離職率の低下、幹部育成に繋げます。</p>
@@ -922,9 +891,6 @@
     </div>
 
     <div class="step-item">
-      <div class="step-num-col">
-        <div class="step-num">③</div>
-      </div>
       <div class="step-body">
         <h3>③　大手求人媒体に頼らない採用求人方法</h3>
         <p>知名度のない中小企業は、荒波に晒される大手求人媒体では埋もれてしまい勝負になりません。来てほしい人材からダイレクトに応募を集める独自手法で、コストを抑えながら質の高い人材を集めます。</p>
