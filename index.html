@@ -332,19 +332,21 @@
       line-height: 1.9;
     }
 
-    /* ===== Navy Section ===== */
+    /* ===== Feature Section (旧Navy → 白ベース) ===== */
     .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
     .feature-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(0,151,167,0.3);
+      background: var(--white);
+      border: 1px solid var(--gray-mid);
+      border-top: 3px solid var(--teal);
       border-radius: 10px;
       padding: 1.75rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
     }
-    .feature-card h4 { font-size: 1rem; font-weight: 900; color: var(--teal-light); margin: 0.5rem 0 0.75rem; }
-    .feature-card p { font-size: 1rem; color: rgba(255,255,255,0.82); line-height: 1.9; }
+    .feature-card h4 { font-size: 1rem; font-weight: 900; color: var(--navy); margin: 0.5rem 0 0.75rem; }
+    .feature-card p { font-size: 1rem; color: var(--text-mid); line-height: 1.9; }
     .highlight-box-navy {
-      background: rgba(0,151,167,0.12);
-      border: 1.5px solid rgba(0,151,167,0.4);
+      background: linear-gradient(135deg, rgba(0,151,167,0.07), rgba(26,42,108,0.05));
+      border: 2px solid rgba(0,151,167,0.35);
       border-radius: 8px;
       padding: 1.5rem;
       margin-top: 2rem;
@@ -368,19 +370,21 @@
 
     /* ===== 実績 ===== */
     .result-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(0,151,167,0.35);
+      background: var(--white);
+      border: 1px solid var(--gray-mid);
+      border-left: 5px solid var(--teal);
       border-radius: 12px;
       padding: 2rem;
       margin-bottom: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
     }
     .result-industry-tag {
       display: block;
       font-size: 1rem;
       font-weight: 900;
-      color: var(--teal-light);
-      background: rgba(0,151,167,0.15);
-      border: 1px solid rgba(0,151,167,0.4);
+      color: var(--navy);
+      background: linear-gradient(135deg, rgba(0,151,167,0.08), rgba(26,42,108,0.06));
+      border: 1px solid rgba(0,151,167,0.3);
       border-radius: 6px;
       padding: 0.6rem 1rem;
       margin-bottom: 1.25rem;
@@ -394,10 +398,10 @@
       flex-wrap: wrap;
       margin-bottom: 1rem;
     }
-    .stat-before { font-size: 1.3rem; font-weight: 700; color: rgba(255,255,255,0.55); }
-    .stat-arrow { font-size: 1.8rem; font-weight: 900; color: var(--teal-light); }
-    .stat-after { font-size: 2.4rem; font-weight: 900; color: #7fffb2; text-shadow: 0 0 16px rgba(0,200,100,0.35); }
-    .stat-label { font-size: 1.1rem; font-weight: 700; color: var(--white); }
+    .stat-before { font-size: 1.3rem; font-weight: 700; color: var(--text-mid); }
+    .stat-arrow { font-size: 1.8rem; font-weight: 900; color: var(--teal); }
+    .stat-after { font-size: 2.4rem; font-weight: 900; color: #ff5c6a; font-family: "Noto Serif JP", serif; }
+    .stat-label { font-size: 1.1rem; font-weight: 700; color: var(--navy); }
 
     /* ===== Steps ===== */
     .step-item {
@@ -456,43 +460,47 @@
 
     /* ===== Empathy ===== */
     .empathy-section {
-      background: var(--grad-hero);
+      background: var(--off-white);
       padding: 4.5rem 3rem;
       text-align: center;
+      border-top: 4px solid transparent;
+      border-image: var(--grad-main) 1;
     }
     .empathy-lead {
       font-family: "Noto Serif JP", serif;
       font-size: clamp(1.15rem, 2.8vw, 1.45rem);
-      color: rgba(255,255,255,0.88);
+      color: var(--text-dark);
       line-height: 2.1;
       margin-bottom: 2rem;
     }
     .empathy-solo {
       font-size: 1.1rem;
       font-weight: 900;
-      color: var(--teal-light);
+      color: var(--teal);
       margin-bottom: 2rem;
     }
     .empathy-card {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(0,151,167,0.4);
+      background: var(--white);
+      border: 1px solid var(--gray-mid);
+      border-left: 5px solid var(--navy);
       border-radius: 12px;
       padding: 2rem;
       max-width: 640px;
       margin: 0 auto 2rem;
       text-align: left;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
     }
     .emp-label {
       font-size: 0.8rem;
       font-weight: 700;
-      color: var(--teal-light);
+      color: var(--teal);
       letter-spacing: 0.1em;
       margin-bottom: 0.75rem;
     }
-    .empathy-card p { font-size: 1.05rem; color: rgba(255,255,255,0.85); line-height: 1.9; }
+    .empathy-card p { font-size: 1.05rem; color: var(--text-mid); line-height: 1.9; }
     .empathy-final {
       font-size: 1rem;
-      color: rgba(255,255,255,0.8);
+      color: var(--text-mid);
       line-height: 2;
       max-width: 560px;
       margin: 0 auto;
@@ -726,14 +734,14 @@
   <!-- ===== 変わらない理由 ===== -->
   <hr class="section-divider">
 
-  <section class="navy-section">
-    <span class="sec-label sec-label-white">なぜ上手くいかないのか</span>
-    <h2 class="sec-title white">どれだけ取り組んでも<br><span class="accent-teal">変わらない本当の理由</span></h2>
+  <section class="gray-section">
+    <span class="sec-label">なぜ上手くいかないのか</span>
+    <h2 class="sec-title">どれだけ取り組んでも<br><span class="accent-teal">変わらない本当の理由</span></h2>
 
-    <p class="body-p white">このような状況から脱却しなければ……と、多くの経営者が外部の講師を招き社員研修を行ったり、コンサルタントや人材マネジメントのシステム導入などの対策をされてきています。特に、同業者での成功事例は経営者にとって大変魅力的です。出来そう……と感じやすいのです。特に、新しもの好きの経営者には……。</p>
-    <p class="body-p white" style="font-weight:700;color:var(--teal-light);">それでも大きな改善は見られない、変わらないのです。なぜでしょうか？</p>
-    <p class="body-p white">成功事例には「目に見えるノウハウ」と、目に見えない「それを動かすエンジン」があります。エンジンとは、事業への魂・想い——つまり経営理念です。仕組みだけ移植しても、エンジンのない船は動きません。</p>
-    <p class="body-p white">そして、創業家の企業の場合は、これに<span style="color:var(--teal-light);font-weight:700;">「同族間の感情と方向性」を揃えること</span>が加わってきます。</p>
+    <p class="body-p">このような状況から脱却しなければ……と、多くの経営者が外部の講師を招き社員研修を行ったり、コンサルタントや人材マネジメントのシステム導入などの対策をされてきています。特に、同業者での成功事例は経営者にとって大変魅力的です。出来そう……と感じやすいのです。特に、新しいもの好きの経営者には……。</p>
+    <p class="body-p" style="font-weight:700;color:var(--teal);">それでも大きな改善は見られない、変わらないのです。なぜでしょうか？</p>
+    <p class="body-p">成功事例には「目に見えるノウハウ」と、目に見えない「それを動かすエンジン」があります。エンジンとは、事業への魂・想い——つまり経営理念です。仕組みだけ移植しても、エンジンのない船は動きません。</p>
+    <p class="body-p">そして、創業家の企業の場合は、これに<span style="color:var(--teal);font-weight:700;">「同族間の感情と方向性」を揃えること</span>が加わってきます。</p>
 
     <div class="feature-grid">
       <div class="feature-card">
@@ -749,8 +757,8 @@
     </div>
 
     <div class="highlight-box-navy">
-      <p style="font-size:1.05rem;font-weight:900;color:var(--teal-light);line-height:1.7;">バケツに穴が空いたまま、新しい人材を注ぎ込んでも——<br>また、こぼれていくだけです。</p>
-      <p style="font-size:1rem;color:rgba(255,255,255,0.85);line-height:1.85;">だからまず取り組むべきは、採用や育成の「前」にある、<strong style="color:var(--teal-light);">創業家のガバナンス</strong>です。<br>この順番を間違えると、どんなノウハウも仕組みも、空回りし続けます。</p>
+      <p style="font-size:1.05rem;font-weight:900;color:var(--teal);line-height:1.7;">バケツに穴が空いたまま、新しい人材を注ぎ込んでも——<br>また、こぼれていくだけです。</p>
+      <p style="font-size:1rem;color:var(--text-mid);line-height:1.85;">だからまず取り組むべきは、採用や育成の「前」にある、<strong style="color:var(--navy);">創業家のガバナンス</strong>です。<br>この順番を間違えると、どんなノウハウも仕組みも、空回りし続けます。</p>
     </div>
   </section>
 
@@ -836,9 +844,9 @@
   <!-- ===== 実績 ===== -->
   <hr class="section-divider">
 
-  <section class="navy-section">
-    <span class="sec-label sec-label-white">実績・成果事例</span>
-    <h2 class="sec-title white">方向性と価値観を揃えると、<br><span class="accent-teal">組織は劇的に変わります</span></h2>
+  <section class="white-section">
+    <span class="sec-label">実績・成果事例</span>
+    <h2 class="sec-title">方向性と価値観を揃えると、<br><span class="accent-teal">組織は劇的に変わります</span></h2>
 
     <div class="result-card">
       <div class="result-industry-tag">着物専門店（3店舗）｜創業家の2代目｜従業員43名</div>
@@ -848,7 +856,7 @@
         <span class="stat-after">15.1%</span>
         <span class="stat-label">に改善</span>
       </div>
-      <p style="font-size:1.05rem;color:rgba(255,255,255,0.85);line-height:1.9;">先代の御父様と後継者のお嬢様、御父様の弟の間で三つ巴状態が続き、不安定な経営状態でした。徹底した話し合いを重ねた後にビジョンを明確にし、採用求人の支援まで実施。<strong style="color:var(--teal-light);">年間の正社員採用は平均3〜4名から11名へと増加</strong>しました。</p>
+      <p style="font-size:1.05rem;color:var(--text-mid);line-height:1.9;">先代の御父様と後継者のお嬢様、御父様の弟の間で三つ巴状態が続き、不安定な経営状態でした。徹底した話し合いを重ねた後にビジョンを明確にし、採用求人の支援まで実施。<strong style="color:var(--teal);">年間の正社員採用は平均３〜４名から１１名へと増加</strong>しました。</p>
     </div>
 
     <div class="result-card">
@@ -856,10 +864,10 @@
       <div class="result-numbers">
         <span class="stat-before">離職率 52.7%</span>
         <span class="stat-arrow">⇒</span>
-        <span class="stat-after" style="color:#7fffb2;">12.9%</span>
+        <span class="stat-after">12.9%</span>
         <span class="stat-label">に改善</span>
       </div>
-      <p style="font-size:1.05rem;color:rgba(255,255,255,0.85);line-height:1.9;">採用しても半分以上の社員が辞めてしまっていたS社。同族間の価値観を統一後、経営理念を一から見直し、評価システムや給与体系を理念と一貫性が持てるものに再構築。<strong style="color:var(--teal-light);">離職率が大幅に改善</strong>しました。</p>
+      <p style="font-size:1.05rem;color:var(--text-mid);line-height:1.9;">採用しても半分以上の社員が辞めてしまっていたＳ社。同族間の価値観を統一後、経営理念を一から見直し、評価システムや給与体系を理念と一貫性が持てるものに再構築。<strong style="color:var(--teal);">離職率が大幅に改善</strong>しました。</p>
     </div>
   </section>
 
