@@ -297,16 +297,22 @@
       padding: 1.5rem;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
-    .problem-card h4 { font-size: 1rem; font-weight: 900; color: var(--navy); margin: 0.5rem 0 0.5rem; }
-    .problem-card p { font-size: 1rem; color: var(--text-mid); line-height: 1.8; }
+    .problem-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .problem-card h4 { font-size: clamp(1.15rem, 2.5vw, 1.5rem); font-weight: 900; color: var(--navy); margin: 0; }
     .num-badge {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 2rem; height: 2rem;
+      width: 2.4rem; height: 2.4rem;
+      min-width: 2.4rem;
       background: var(--grad-teal);
       color: var(--white);
-      font-size: 0.875rem;
+      font-size: clamp(1rem, 2vw, 1.3rem);
       font-weight: 900;
       border-radius: 50%;
     }
@@ -692,28 +698,38 @@
 
     <div class="problem-grid">
       <div class="problem-card">
-        <div class="num-badge">1</div>
-        <h4>価値観の衝突</h4>
+        <div class="problem-card-header">
+          <div class="num-badge">1</div>
+          <h4>価値観の衆突</h4>
+        </div>
         <p>経営陣（家族・同族）の間で意見や方向性がバラバラ。誰の指示に従えばいいのか、社員は混乱していませんか？</p>
       </div>
       <div class="problem-card">
-        <div class="num-badge">2</div>
-        <h4>ダブルボス状態</h4>
+        <div class="problem-card-header">
+          <div class="num-badge">2</div>
+          <h4>ダブルボス状態</h4>
+        </div>
         <p>先代会長と現社長の役割が曖昧なまま。社員はどちらの顔色を窺えばいいか分からず、組織が機能不全に陥っていませんか？</p>
       </div>
       <div class="problem-card">
-        <div class="num-badge">3</div>
-        <h4>先代との比較</h4>
+        <div class="problem-card-header">
+          <div class="num-badge">3</div>
+          <h4>先代との比較</h4>
+        </div>
         <p>「先代ならこう判断した」——そう言われるたびに、自分の決断への自信が揺らぐことはありませんか？</p>
       </div>
       <div class="problem-card">
-        <div class="num-badge">4</div>
-        <h4>古参幹部との衝突</h4>
+        <div class="problem-card-header">
+          <div class="num-badge">4</div>
+          <h4>古参幹部との衆突</h4>
+        </div>
         <p>古参幹部の「先代の時はこうだった」という言葉が、変革の足かせになっていませんか？</p>
       </div>
       <div class="problem-card" style="grid-column: 1 / -1;">
-        <div class="num-badge">5</div>
-        <h4>幹部候補が育たない</h4>
+        <div class="problem-card-header">
+          <div class="num-badge">5</div>
+          <h4>幹部候補が育たない</h4>
+        </div>
         <p>自分を支えてくれる右腕が見当たらない、育っていない……気づけばいつも、社長一人が色々と抱え込んでいませんか？</p>
       </div>
     </div>
