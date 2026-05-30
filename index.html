@@ -100,50 +100,40 @@
 
     /* 事例バナー */
     .hero-result-banner {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(0,151,167,0.5);
-      border-radius: 12px;
+      background: #ffffff;
+      border: none;
+      border-radius: 14px;
       padding: 2rem 2rem;
       margin: 0 auto 2.25rem;
       max-width: 720px;
       position: relative;
       z-index: 1;
-      backdrop-filter: blur(4px);
-    }
-    .hero-result-banner::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 12px;
-      background: linear-gradient(135deg, rgba(0,151,167,0.08), rgba(67,160,71,0.08));
-      pointer-events: none;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.28);
     }
     .banner-label {
       font-size: clamp(1.35rem, 4.5vw, 1.95rem);
       font-weight: 900;
-      color: var(--teal-light);
+      color: var(--teal);
       margin-bottom: 0.75rem;
       letter-spacing: 0.06em;
     }
     .banner-main {
       font-size: clamp(1.6rem, 4.5vw, 2.6rem);
       font-weight: 900;
-      color: var(--white);
+      color: var(--navy-dark);
       line-height: 1.4;
     }
     .banner-main .num-highlight {
-      color: #7fffb2;
+      color: var(--teal);
       font-size: 1.15em;
-      text-shadow: 0 0 20px rgba(0,200,100,0.4);
     }
     .banner-main .num-highlight.accent-red {
       color: #ff5c6a;
-      text-shadow: 0 0 20px rgba(255,60,80,0.45);
     }
     .banner-sub {
       font-size: 0.9375rem;
       font-weight: 500;
-      color: rgba(255,255,255,0.75);
+      color: #666;
       margin-top: 0.85rem;
       letter-spacing: 0.02em;
     }
@@ -180,17 +170,18 @@
       gap: 0.6rem;
       font-size: 0.9375rem;
       font-weight: 700;
-      color: rgba(255,255,255,0.9);
+      color: var(--navy-dark);
       margin-bottom: 0.6rem;
-      padding: 0.6rem 0.75rem;
-      background: rgba(255,255,255,0.05);
-      border-radius: 6px;
-      border-left: 3px solid var(--teal);
+      padding: 0.75rem 1rem;
+      background: #f0fbfc;
+      border-radius: 8px;
+      border-left: 4px solid var(--teal);
       line-height: 1.5;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.18);
     }
     .hero-points li::before {
       content: "✓";
-      color: var(--teal-light);
+      color: var(--teal);
       font-weight: 900;
       flex-shrink: 0;
     }
