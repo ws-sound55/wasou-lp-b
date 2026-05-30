@@ -267,11 +267,26 @@
     .gray-section { background: var(--off-white); padding: 4rem 3rem; }
     .navy-section { background: var(--navy-dark); padding: 4rem 3rem; }
     .section-divider {
-      height: 4px;
+      position: relative;
+      height: 6px;
       background: var(--grad-main);
       border: none;
+      margin: 0;
+      overflow: visible;
     }
-
+    .section-divider::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 6px;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 18px solid transparent;
+      border-right: 18px solid transparent;
+      border-top: 14px solid var(--teal);
+      z-index: 10;
+    }
     /* ===== はじめに two-col ===== */
     .two-col { display: flex; gap: 2.5rem; align-items: flex-start; margin-top: 1.5rem; }
     .col-text { flex: 1; }
