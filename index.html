@@ -354,7 +354,8 @@
       padding: 1.75rem;
       box-shadow: 0 2px 12px rgba(0,0,0,0.06);
     }
-    .feature-card h4 { font-size: clamp(1rem, 2.2vw, 1.35rem); font-weight: 900; color: var(--navy); margin: 0.5rem 0 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .feature-card-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
+    .feature-card h4 { font-size: clamp(1rem, 2.2vw, 1.35rem); font-weight: 900; color: var(--navy); margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .feature-card p { font-size: 1rem; color: var(--text-mid); line-height: 1.9; }
     .highlight-box-navy {
       background: linear-gradient(135deg, rgba(0,151,167,0.07), rgba(26,42,108,0.05));
@@ -767,13 +768,17 @@
 
     <div class="feature-grid">
       <div class="feature-card">
-        <div class="num-badge">①</div>
-        <h4>エンジンなき仕組みは動かない</h4>
+        <div class="feature-card-header">
+          <div class="num-badge">1</div>
+          <h4>エンジンなき仕組みは動かない</h4>
+        </div>
         <p>どれほど優れた仕組みを入れたり社員に研修を行っても、人の心がバラバラなままでは機能しません。特に同族経営では、感情と経営が混ざり合い、言語化されないまま積み上がっていく。それが、すべての問題の根っこにあります。</p>
       </div>
       <div class="feature-card">
-        <div class="num-badge">②</div>
-        <h4>感情と方向性が揃っていない</h4>
+        <div class="feature-card-header">
+          <div class="num-badge">2</div>
+          <h4>感情と方向性が揃っていない</h4>
+        </div>
         <p>バケツに穴が空いたまま、新しい人材を注ぎ込んでも——また、こぼれていくだけです。だからまず取り組むべきは、採用や育成の「前」にある、創業家のガバナンスです。この順番を間違えると、どんなノウハウも仕組みも、空回りし続けます。</p>
       </div>
     </div>
