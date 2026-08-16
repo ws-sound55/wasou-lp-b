@@ -67,6 +67,9 @@
       color: #1a2a4a;
       background-color: #f8fafc;
       line-height: 1.8;
+      line-break: strict;
+      word-break: normal;
+      overflow-wrap: break-word;
     }
 
     :root {
@@ -434,6 +437,7 @@
     .stat-arrow { font-size: 1.8rem; font-weight: 900; color: var(--teal); }
     .stat-after { font-size: 2.4rem; font-weight: 900; color: #ff5c6a; font-family: "Noto Serif JP", serif; }
     .stat-label { font-size: 1.1rem; font-weight: 700; color: var(--navy); }
+    .stat-result { display: inline-flex; align-items: baseline; gap: 0.4rem; white-space: nowrap; }
 
     /* ===== Steps ===== */
     .step-item {
@@ -603,6 +607,7 @@
     .btn-cta-large:hover { transform: translateY(-3px); box-shadow: 0 10px 40px rgba(255,60,100,0.65); }
     .cta-note-white { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-top: 1rem; }
     .sp-br-inline { display: none; }
+    .sp-only-br { display: none; }
 
     /* ===== 因果ループ図 ===== */
     .loop-wrap { margin: 3rem 0 0; }
@@ -772,6 +777,27 @@
       flex-shrink: 0;
     }
 
+    /* ===== 日本語組版：本文の両端揃え ===== */
+    .body-p,
+    .story-box p,
+    .quote-block p,
+    .problem-card p,
+    .feature-card p,
+    .step-body p,
+    .highlight-box p,
+    .result-card p,
+    .empathy-card p,
+    .empathy-lead,
+    .empathy-final p,
+    .profile-body p,
+    .faq-answer > div,
+    .consequence-list li,
+    .check-list li {
+      text-align: justify;
+      text-justify: inter-character;
+    }
+    .nw { white-space: nowrap; }
+
     /* ===== Footer ===== */
     .site-footer {
       background: var(--navy-dark);
@@ -815,7 +841,19 @@
       .loop-pc { display: none; }
       .loop-sp { display: block; }
       .loop-wrap { margin-top: 2rem; }
+      .sec-label { font-size: clamp(1.25rem, 5.6vw, 1.75rem); padding-left: 0.85rem; border-left-width: 5px; }
+      .cta-mid h3 { font-size: clamp(1.05rem, 4.4vw, 1.3rem); }
+      .empathy-solo { font-size: clamp(1.25rem, 5.4vw, 1.7rem); line-height: 1.55; padding-left: 1rem; }
+      .empathy-lead, .empathy-final { padding-left: 1rem; }
+      .result-card { padding: 1.5rem 1.25rem; }
+      .stat-before { font-size: 1.15rem; }
+      .stat-after { font-size: 2rem; }
+      .stat-label { font-size: 1rem; }
+      .pc-br { display: none; }
+      .profile-info { width: 100%; }
+      .profile-info > img { margin-left: auto; margin-right: auto; }
       .sp-br-inline { display: inline; }
+      .sp-only-br { display: inline; }
       .btn-cta-large { font-size: 1.15rem; padding: 1.2rem 2rem; white-space: nowrap; }
     }
   </style>
@@ -851,7 +889,7 @@
     </h1>
 
     <ul class="hero-points">
-      <li>同族経営の当事者だったコンサルタントが伴走</li>
+      <li>同族経営の当事者だった<span class="nw">コンサルタント</span>が<span class="nw">伴走</span></li>
       <li>採用・定着・育成を一貫してサポート</li>
       <li>創業家のガバナンスから組織を根本から変える</li>
     </ul>
@@ -993,7 +1031,7 @@
   <hr class="section-divider">
 
   <section class="gray-section">
-    <span class="sec-label">こんなお悩みはありませんか？</span>
+    <span class="sec-label">こんなお悩みは<br class="sp-only-br">ありませんか？</span>
     <h2 class="sec-title">創業家が経営する企業には<br><span class="accent-teal">5つの特有の問題</span>があります</h2>
     <p class="body-p">人が辞めていく創業家が経営する会社には、5つの特有の問題があります。</p>
 
@@ -1089,7 +1127,7 @@
   <hr class="section-divider">
 
   <section class="white-section">
-    <span class="sec-label">なぜ、私がこの問題を解決できるのか</span>
+    <span class="sec-label">なぜ、私がこの問題を<br class="sp-only-br">解決できるのか</span>
     <h2 class="sec-title">私自身が同族企業の<br><span class="accent-navy">「当事者」でした</span></h2>
 
     <div class="story-box">
@@ -1145,7 +1183,7 @@
   <hr class="section-divider">
 
   <section class="white-section">
-    <span class="sec-label">独立後に、突きつけられた現実</span>
+    <span class="sec-label">独立後に、<br class="sp-only-br">突きつけられた現実</span>
     <h2 class="sec-title">独立後、すべてのクライアントは<br><span class="accent-navy">同族会社</span></h2>
 
     <p class="body-p">残務整理をしてからコンサルタントとして独立し、少しずつ契約を獲得することが出来たクライアント、そしてこれまでのクライアントもすべて同族会社です。クライアントごとに抱えている課題は異なりますが、一つだけ同じ悩みがあります。<span class="em">「人」の問題</span>です。</p>
@@ -1176,8 +1214,7 @@
       <div class="result-numbers">
         <span class="stat-before">離職率 46.8%</span>
         <span class="stat-arrow">⇒</span>
-        <span class="stat-after">15.1%</span>
-        <span class="stat-label">に改善</span>
+        <span class="stat-result"><span class="stat-after">15.1%</span><span class="stat-label">に改善</span></span>
       </div>
       <p style="font-size:1.05rem;color:var(--text-mid);line-height:1.9;">先代の御父様と後継者のお嬢様、御父様の弟の間で三つ巴状態が続き、不安定な経営状態でした。徹底した話し合いを重ねた後にビジョンを明確にし、採用求人の支援まで実施。<strong style="color:var(--teal);">年間の正社員採用は平均３〜４名から１１名へと増加</strong>しました。</p>
     </div>
@@ -1187,8 +1224,7 @@
       <div class="result-numbers">
         <span class="stat-before">離職率 52.7%</span>
         <span class="stat-arrow">⇒</span>
-        <span class="stat-after">12.9%</span>
-        <span class="stat-label">に改善</span>
+        <span class="stat-result"><span class="stat-after">12.9%</span><span class="stat-label">に改善</span></span>
       </div>
       <p style="font-size:1.05rem;color:var(--text-mid);line-height:1.9;">採用しても半分以上の社員が辞めてしまっていたＳ社。同族間の価値観を統一後、経営理念を一から見直し、評価システムや給与体系を理念と一貫性が持てるものに再構築。<strong style="color:var(--teal);">離職率が大幅に改善</strong>しました。</p>
     </div>
@@ -1342,12 +1378,12 @@
   <section class="empathy-section">
     <div style="max-width:720px; margin:0 auto;">
       <p class="empathy-lead">
-        そして、もう一つだけ正直に言わせてください。あの頃の私には、話せる相手が誰もいませんでした。<br>
-        叔父たちへの敬意もあり、外に出せなかった。<br>
+        そして、もう一つだけ正直に言わせてください。あの頃の私には、話せる相手が誰もいませんでした。<br class="pc-br">
+        叔父たちへの敬意もあり、外に出せなかった。<br class="pc-br">
         誰かに話せていたら、あのストレスも、時間コストも、もう少し違ったはずだと今でも思います。
       </p>
 
-      <p class="empathy-solo">これは、私だけの話ではないはずです。</p>
+      <p class="empathy-solo">これは、私だけの<br class="sp-only-br">話ではないはずです。</p>
 
       <div class="empathy-card">
         <div class="emp-label">2代目・3代目の社長であるあなたへ</div>
