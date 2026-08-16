@@ -90,20 +90,6 @@
 
     .page-wrapper { max-width: 960px; margin: 0 auto; background: #fff; box-shadow: 0 0 60px rgba(0,0,0,0.08); }
 
-    /* ===== Profile Logo ===== */
-    .profile-logo-pc {
-      display: block;
-      max-width: 320px;
-      width: 100%;
-      margin: 1.5rem 0 0;
-    }
-    .profile-logo-sp {
-      display: none;
-      max-width: 200px;
-      width: 100%;
-      margin: 1.5rem auto 0;
-    }
-
     /* ===== Hero ===== */
     .hero {
       background: var(--grad-hero);
@@ -248,25 +234,6 @@
       position: relative;
       z-index: 1;
     }
-    .btn-cta-main {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      background: linear-gradient(135deg, #ff5c6a 0%, #e8336e 100%);
-      color: var(--white);
-      font-size: 1.45rem;
-      font-weight: 900;
-      padding: 1.35rem 3rem;
-      border-radius: 50px;
-      text-decoration: none;
-      box-shadow: 0 4px 24px rgba(255,60,100,0.45);
-      transition: transform 0.2s, box-shadow 0.2s;
-      cursor: pointer;
-      border: none;
-    }
-    .btn-cta-main:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(255,60,100,0.6); }
-    .btn-sub { font-size: 0.95rem; font-weight: 500; opacity: 0.9; }
-    .btn-label { display: flex; flex-direction: column; }
     .cta-note { font-size: 0.8rem; color: rgba(255,255,255,0.6); }
 
     /* ===== Section Common ===== */
@@ -407,7 +374,7 @@
       box-shadow: 0 2px 12px rgba(0,0,0,0.06);
     }
     .feature-card-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
-    .feature-card h4 { font-size: clamp(1rem, 2.2vw, 1.35rem); font-weight: 900; color: var(--navy); margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .feature-card h4 { font-size: clamp(1rem, 2.2vw, 1.35rem); font-weight: 900; color: var(--navy); margin: 0; white-space: normal; line-height: 1.4; }
     .feature-card p { font-size: 1rem; color: var(--text-mid); line-height: 1.9; }
     .highlight-box-navy {
       background: linear-gradient(135deg, rgba(0,151,167,0.07), rgba(26,42,108,0.05));
@@ -476,8 +443,6 @@
       border-bottom: 1px solid var(--gray-mid);
     }
     .step-item:last-of-type { border-bottom: none; }
-    .step-num-col { display: none; }
-    .step-badge-tag { display: none; }
     .step-body h3 {
       font-family: "Noto Serif JP", serif;
       font-size: clamp(1.5rem, 4vw, 2.2rem);
@@ -517,8 +482,6 @@
     .profile-wrap { display: flex; gap: 2.5rem; align-items: flex-start; margin-top: 1.5rem; }
     .profile-photo { flex: 0 0 180px; }
     .profile-photo img { width: 100%; border-radius: 10px; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.12); }
-    .profile-name-sp { display: none; }
-    .profile-name-sp-title { display: none; }
     .profile-info { flex: 1; }
     .profile-name { font-family: "Noto Serif JP", serif; font-size: 1.2rem; font-weight: 900; color: var(--navy); margin-bottom: 0.4rem; }
     .profile-title { font-size: 0.8125rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 1rem; border-left: 3px solid var(--teal); padding-left: 0.75rem; }
@@ -657,8 +620,6 @@
 
     /* ===== Responsive ===== */
       @media (max-width: 700px) {
-      .profile-logo-pc { display: none !important; }
-      .profile-logo-sp { display: block !important; }
       .sp-br { display: inline; }
       .banner-divider { display: block; border: none; border-top: 1px solid rgba(255,255,255,0.2); margin: 0.75rem 0; }
       .banner-main-pc { display: none; }
@@ -675,11 +636,7 @@
       .feature-grid { grid-template-columns: 1fr; }
       .profile-wrap { flex-direction: column; align-items: center; }
       .profile-photo { width: 160px; }
-      .profile-name-pc { display: none; }
-      .profile-name-sp { display: block; }
-      .profile-name-sp-title { display: block; }
       .step-item { flex-direction: column; gap: 1rem; }
-      .step-num-col { display: none; }
       .step-body h3 { font-size: clamp(1.1rem, 4.5vw, 1.4rem); padding: 0.4rem 0 0.4rem 0.8rem; white-space: normal; }
       .white-section, .gray-section, .navy-section { padding: 3rem 1.25rem; }
       .empathy-section { padding: 3rem 1.25rem; }
@@ -743,7 +700,9 @@
       <div class="col-text">
         <p class="body-p">私は、創業家の2・3代目経営者が抱える人材採用・定着・育成の悩みを解決するコンサルタントです。</p>
         <p class="body-p">具体的には、売上は順調なのに「人を採用できない、辞める、育たない」の三重苦で悩まれている創業家が経営する企業に対し、<span class="em">伴走・参謀型で問題解決するコンサルティング</span>を提供しています。</p>
-        <p class="body-p">一般的なコンサルティングはノウハウや仕組みだけで組織を動かそうとしますが、同族経営ではまず<span class="em">「家族や親族間の感情とビジョン」を揃えなければ何も機能しません。</span></p>
+        <p class="body-p">一般的なコンサルティングは、ノウハウや仕組みだけで組織を動かそうとします。しかし同族経営の場合、それだけでは動きません。</p>
+        <p class="body-p" style="font-weight:700;color:var(--teal);">なぜ、制度でも研修でもなく、「家族や親族間の感情とビジョン」を揃えることが先なのでしょうか。</p>
+        <p class="body-p">その理由を、私自身が同族企業の中で経験したこと——そして最後は「倒産」という形で突きつけられたこと——とあわせて、このページでお話しします。</p>
         <p class="body-p">私は、創業家の想いを言語化し、それを評価制度と採用に直結させることで、優秀な人材が自ら定着し、経営者が真の経営に専念できる強靭な組織の仕組みを提供します。</p>
       </div>
       <div class="col-image">
@@ -828,7 +787,9 @@
     <p class="body-p" style="font-weight:700;color:var(--teal);">それでも大きな改善は見られない、変わらないのです。なぜでしょうか？</p>
     <p class="body-p">成功事例には「目に見えるノウハウ」と、目に見えない「それを動かすエンジン」があります。エンジンとは、事業への魂・想い——つまり経営理念です。仕組みだけ移植しても、エンジンのない船は動きません。</p>
     <p class="body-p">そして、創業家の企業の場合は、これに<span style="color:var(--teal);font-weight:700;">「同族間の感情と方向性」を揃えること</span>が加わってきます。</p>
-
+    <div class="quote-block">
+      <p>これは私の持論ではありません。経済産業省も、同族企業（ファミリービジネス）においては、事業の承継と同時に「家族としての合意形成」を整えることが経営上の重要課題であるとして、ガバナンスの指針を示しています。つまり、家族の問題は「私的なこと」ではなく、経営そのものなのです。</p>
+    </div>
     <div class="feature-grid">
       <div class="feature-card">
         <div class="feature-card-header">
@@ -842,7 +803,7 @@
           <div class="num-badge">2</div>
           <h4>感情と方向性が揃っていない</h4>
         </div>
-        <p>バケツに穴が空いたまま、新しい人材を注ぎ込んでも——また、こぼれていくだけです。だからまず取り組むべきは、採用や育成の「前」にある、創業家のガバナンスです。この順番を間違えると、どんなノウハウも仕組みも、空回りし続けます。</p>
+        <p>同族企業では、経営の判断に「家族としての感情」が入り込みます。兄弟の序列、先代への遠慮、後継者への期待、言えなかった一言。それらは誰も口に出さないまま、意思決定に影響を与え続けます。言葉にされていないから、話し合うこともできない。社員から見れば「なぜその判断なのか」が分からないまま、方針だけが揺れる。これが、すべての問題の根っこにあります。</p>
       </div>
     </div>
 
@@ -912,7 +873,7 @@
   <hr class="section-divider">
 
   <section class="white-section">
-    <span class="sec-label">私にできること</span>
+    <span class="sec-label">独立後に、突きつけられた現実</span>
     <h2 class="sec-title">独立後、すべてのクライアントは<br><span class="accent-navy">同族会社</span></h2>
 
     <p class="body-p">残務整理をしてからコンサルタントとして独立し、少しずつ契約を獲得することが出来たクライアント、そしてこれまでのクライアントもすべて同族会社です。クライアントごとに抱えている課題は異なりますが、一つだけ同じ悩みがあります。<span class="em">「人」の問題</span>です。</p>
