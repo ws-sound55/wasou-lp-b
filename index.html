@@ -604,6 +604,97 @@
     .cta-note-white { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-top: 1rem; }
     .sp-br-inline { display: none; }
 
+    /* ===== 中間CTA ===== */
+    .cta-mid {
+      background: var(--navy-dark);
+      padding: 2.75rem 3rem;
+      text-align: center;
+    }
+    .cta-mid h3 {
+      font-family: "Noto Serif JP", serif;
+      font-size: clamp(1.15rem, 3vw, 1.5rem);
+      font-weight: 900;
+      color: var(--teal-light);
+      line-height: 1.55;
+      margin-bottom: 0.85rem;
+    }
+    .cta-mid p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+    }
+    .btn-cta-mid {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: linear-gradient(135deg, #ff5c6a 0%, #e8336e 100%);
+      color: var(--white);
+      font-size: 1.2rem;
+      font-weight: 900;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(255,60,100,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-cta-mid:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(255,60,100,0.55); }
+    .cta-mid-note { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-top: 0.9rem; }
+
+    /* ===== FAQ ===== */
+    .faq-section { background: var(--off-white); padding: 4rem 3rem; }
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--gray-mid);
+      border-left: 4px solid var(--teal);
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1.25rem 1.5rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.7;
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::before {
+      content: "Q";
+      font-family: "Noto Serif JP", serif;
+      color: var(--teal);
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .faq-item summary::after {
+      content: "＋";
+      margin-left: auto;
+      color: var(--teal);
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .faq-item[open] summary::after { content: "−"; }
+    .faq-answer {
+      padding: 0 1.5rem 1.5rem;
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      line-height: 1.9;
+      display: flex;
+      gap: 0.75rem;
+    }
+    .faq-answer::before {
+      content: "A";
+      font-family: "Noto Serif JP", serif;
+      color: var(--green);
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
     /* ===== Footer ===== */
     .site-footer {
       background: var(--navy-dark);
@@ -641,6 +732,9 @@
       .white-section, .gray-section, .navy-section { padding: 3rem 1.25rem; }
       .empathy-section { padding: 3rem 1.25rem; }
       .cta-section { padding: 3rem 1.25rem; }
+      .cta-mid { padding: 2.25rem 1.25rem; }
+      .btn-cta-mid { font-size: 1rem; padding: 0.9rem 1.75rem; white-space: nowrap; }
+      .faq-section { padding: 3rem 1.25rem; }
       .sp-br-inline { display: inline; }
       .btn-cta-large { font-size: 1.15rem; padding: 1.2rem 2rem; white-space: nowrap; }
     }
@@ -922,6 +1016,19 @@
     </div>
   </section>
 
+  <!-- ===== 中間CTA① ===== -->
+  <section class="cta-mid">
+    <h3>あなたの会社では、いま何が起きているのか</h3>
+    <p>この2社も、最初は「採用がうまくいかない」というご相談でした。<br>
+    しかし本当の原因は、別のところにありました。<br>
+    まずは60分、状況をお聞かせいただけませんか。</p>
+    <a class="btn-cta-mid" href="https://wasou-jinji.jp/consultation.html">
+      <span style="font-size:1.1rem;">✉</span>
+      無料相談（60分）はこちら
+    </a>
+    <p class="cta-mid-note">※完全無料・秘密厳守</p>
+  </section>
+
   <!-- ===== 3ステップ ===== -->
   <hr class="section-divider">
 
@@ -962,6 +1069,19 @@
     </div>
   </section>
 
+  <!-- ===== 中間CTA② ===== -->
+  <section class="cta-mid">
+    <h3>どのステップから始めるべきかは、会社によって違います</h3>
+    <p>3つのステップのうち、御社がどこから着手すべきか。<br>
+    それは現状をお聞きしなければ分かりません。<br>
+    まずはお話を聞かせてください。</p>
+    <a class="btn-cta-mid" href="https://wasou-jinji.jp/consultation.html">
+      <span style="font-size:1.1rem;">✉</span>
+      無料相談（60分）はこちら
+    </a>
+    <p class="cta-mid-note">※完全無料・秘密厳守</p>
+  </section>
+
   <!-- ===== プロフィール ===== -->
   <hr class="section-divider">
 
@@ -995,6 +1115,34 @@
     <div class="highlight-box">
       <p>同族会社のいざこざや特有の問題に対する対処方法・運営方法についても、自身が同族会社で勤務していたからこそのノウハウを持っています。また、採用求人からでも、定着の各メニューからでも、各企業の「人の問題」を解決できる用意があります。</p>
     </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <hr class="section-divider">
+
+  <section class="faq-section">
+    <span class="sec-label">よくあるご質問</span>
+    <h2 class="sec-title">ご相談の前に、<br class="sp-br"><span class="accent-teal">よくいただく質問</span></h2>
+
+    <details class="faq-item">
+      <summary>顧問の税理士や社労士がいますが、何が違うのでしょうか？</summary>
+      <div class="faq-answer"><div>税理士は数字、社労士は労務手続きの専門家です。どちらも会社に不可欠な存在です。私がお手伝いするのは、その手前にある「家族と組織の関係」の部分です。就業規則を整えても、評価制度を入れても、創業家の方向性がバラバラなままでは運用されません。顧問の先生方と役割が重なることはなく、むしろ制度が実際に機能するための土台をつくる役割だとお考えください。</div></div>
+    </details>
+
+    <details class="faq-item">
+      <summary>先代（会長）が外部のコンサルタントを嫌がるのですが、それでも大丈夫でしょうか？</summary>
+      <div class="faq-answer"><div>むしろ、よくあるご相談です。私は「改革案を持ち込んで説得する外部の人間」という立場は取りません。まずは先代のお話を、丁寧にお聞きするところから始めます。先代には先代の、譲れない想いと、これまで背負ってこられた重さがあります。それを否定せずに言語化することが、結果として次の世代への移行を早めます。最初のご相談は、社長お一人でも構いません。</div></div>
+    </details>
+
+    <details class="faq-item">
+      <summary>家族の問題を、他人に話すことに抵抗があります。</summary>
+      <div class="faq-answer"><div>当然のお気持ちだと思います。私自身、同族企業の中でその渦中にいた頃、誰にも話せませんでした。叔父たちへの敬意もあり、外に出せなかったのです。だからこそ申し上げますが、話せないまま時間が過ぎることのほうが、はるかに大きな損失になります。すべてを話していただく必要はありません。話せる範囲で、断片的で構いません。守秘義務は厳守いたします。</div></div>
+    </details>
+
+    <details class="faq-item">
+      <summary>相談したら、契約を迫られるのではないでしょうか？</summary>
+      <div class="faq-answer"><div>その場で契約をお勧めすることはありません。60分の相談は、御社の「人の問題」がどこから来ているのかを一緒に整理する時間です。その結果、自社で対応できると判断されれば、それが最善です。私が伴走したほうが早いと感じていただけた場合にのみ、あらためてご提案の機会をいただければと考えています。</div></div>
+    </details>
   </section>
 
   <!-- ===== クロージング ===== -->
