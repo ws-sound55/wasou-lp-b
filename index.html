@@ -604,6 +604,83 @@
     .cta-note-white { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-top: 1rem; }
     .sp-br-inline { display: none; }
 
+    /* ===== 因果ループ図 ===== */
+    .loop-wrap { margin: 3rem 0 0; }
+    .loop-title {
+      font-family: "Noto Serif JP", serif;
+      font-size: clamp(1.1rem, 2.8vw, 1.45rem);
+      font-weight: 900;
+      color: var(--navy);
+      text-align: center;
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+    }
+    .loop-diagram {
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      margin: 0 auto;
+      font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    }
+    .loop-caption {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      text-align: center;
+      line-height: 1.85;
+      margin-top: 1.25rem;
+    }
+    .loop-sp { display: none; }
+    .loop-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      background: var(--white);
+      border: 1.5px solid var(--navy);
+      border-radius: 10px;
+      padding: 0.9rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.6;
+    }
+    .loop-step.is-origin { border: 2.5px solid #ff5c6a; background: #fff5f6; }
+    .loop-step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.75rem; height: 1.75rem;
+      min-width: 1.75rem;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 900;
+      border-radius: 50%;
+    }
+    .loop-step.is-origin .loop-step-num { background: #ff5c6a; }
+    .loop-arrow-sp { text-align: center; color: var(--teal); font-size: 1.4rem; font-weight: 900; line-height: 1; margin: 0.4rem 0; }
+    .loop-center-sp {
+      background: linear-gradient(135deg, rgba(0,151,167,0.07), rgba(26,42,108,0.05));
+      border: 2px solid rgba(0,151,167,0.35);
+      border-radius: 8px;
+      padding: 1.1rem 1rem;
+      text-align: center;
+      margin: 1.25rem 0;
+    }
+    .loop-center-sp .lbl { font-family: "Noto Serif JP", serif; font-size: 1.15rem; font-weight: 900; color: var(--teal); display: block; margin-bottom: 0.4rem; }
+    .loop-center-sp .txt { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
+    .loop-return {
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--teal);
+      border: 1.5px dashed var(--teal);
+      border-radius: 8px;
+      padding: 0.75rem;
+      margin-top: 0.4rem;
+    }
+
+
     /* ===== 中間CTA ===== */
     .cta-mid {
       background: var(--navy-dark);
@@ -735,6 +812,9 @@
       .cta-mid { padding: 2.25rem 1.25rem; }
       .btn-cta-mid { font-size: 1rem; padding: 0.9rem 1.75rem; white-space: nowrap; }
       .faq-section { padding: 3rem 1.25rem; }
+      .loop-pc { display: none; }
+      .loop-sp { display: block; }
+      .loop-wrap { margin-top: 2rem; }
       .sp-br-inline { display: inline; }
       .btn-cta-large { font-size: 1.15rem; padding: 1.2rem 2rem; white-space: nowrap; }
     }
@@ -808,6 +888,104 @@
           <div style="color:rgba(255,255,255,0.7);font-size:0.85rem;margin-top:0.5rem;">に改善した実績</div>
         </div>
       </div>
+    </div>
+
+    <div class="loop-wrap">
+      <p class="loop-title">人が辞め続ける会社で、実際に起きていること</p>
+
+      <!-- PC用：円環図 -->
+      <div class="loop-pc">
+        <svg class="loop-diagram" viewBox="0 0 900 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="創業家の感情と方向性が揃っていないことを起点に、経営方針のブレ、社員の混乱、離職、欠員補充の採用、育成不足へと循環する悪循環の図">
+          <circle cx="450" cy="300" r="240" fill="none" stroke="#0097a7" stroke-width="2.5" stroke-dasharray="10 8"/>
+
+          <g fill="#0097a7">
+            <g transform="translate(570,92) rotate(30)"><path d="M -9 -10 L 12 0 L -9 10 Z"/></g>
+            <g transform="translate(690,300) rotate(90)"><path d="M -9 -10 L 12 0 L -9 10 Z"/></g>
+            <g transform="translate(570,508) rotate(150)"><path d="M -9 -10 L 12 0 L -9 10 Z"/></g>
+            <g transform="translate(330,508) rotate(210)"><path d="M -9 -10 L 12 0 L -9 10 Z"/></g>
+            <g transform="translate(210,300) rotate(270)"><path d="M -9 -10 L 12 0 L -9 10 Z"/></g>
+            <g transform="translate(330,92) rotate(330)"><path d="M -9 -10 L 12 0 L -9 10 Z"/></g>
+          </g>
+
+          <text x="450" y="286" text-anchor="middle" font-family="Noto Serif JP, serif" font-size="26" font-weight="900" fill="#0097a7">穴の空いたバケツ</text>
+          <line x1="350" y1="302" x2="550" y2="302" stroke="#dde4ee" stroke-width="1.5"/>
+          <text x="450" y="332" text-anchor="middle" font-size="15" fill="#3a4a6a">起点は「1」。ここを断たない限り、</text>
+          <text x="450" y="356" text-anchor="middle" font-size="15" fill="#3a4a6a">このループは回り続けます。</text>
+
+          <g>
+            <rect x="320" y="24" width="260" height="72" rx="10" fill="#fff5f6" stroke="#ff5c6a" stroke-width="2.5"/>
+            <circle cx="348" cy="60" r="17" fill="#ff5c6a"/>
+            <text x="348" y="66" text-anchor="middle" font-size="16" font-weight="900" fill="#ffffff">1</text>
+            <text x="374" y="55" font-size="14" font-weight="700" fill="#1a2a6c">創業家の感情と</text>
+            <text x="374" y="75" font-size="14" font-weight="700" fill="#1a2a6c">方向性が揃っていない</text>
+          </g>
+
+          <g>
+            <rect x="528" y="144" width="260" height="72" rx="10" fill="#ffffff" stroke="#1a2a6c" stroke-width="1.5"/>
+            <circle cx="556" cy="180" r="17" fill="#1a2a6c"/>
+            <text x="556" y="186" text-anchor="middle" font-size="16" font-weight="900" fill="#ffffff">2</text>
+            <text x="582" y="175" font-size="14" font-weight="700" fill="#1a2a6c">経営方針がブレる／</text>
+            <text x="582" y="195" font-size="14" font-weight="700" fill="#1a2a6c">指示系統が二重になる</text>
+          </g>
+
+          <g>
+            <rect x="528" y="384" width="260" height="72" rx="10" fill="#ffffff" stroke="#1a2a6c" stroke-width="1.5"/>
+            <circle cx="556" cy="420" r="17" fill="#1a2a6c"/>
+            <text x="556" y="426" text-anchor="middle" font-size="16" font-weight="900" fill="#ffffff">3</text>
+            <text x="582" y="415" font-size="14" font-weight="700" fill="#1a2a6c">社員が混乱し、</text>
+            <text x="582" y="435" font-size="14" font-weight="700" fill="#1a2a6c">上の顔色を窺うようになる</text>
+          </g>
+
+          <g>
+            <rect x="320" y="504" width="260" height="72" rx="10" fill="#ffffff" stroke="#1a2a6c" stroke-width="1.5"/>
+            <circle cx="348" cy="540" r="17" fill="#1a2a6c"/>
+            <text x="348" y="546" text-anchor="middle" font-size="16" font-weight="900" fill="#ffffff">4</text>
+            <text x="374" y="535" font-size="14" font-weight="700" fill="#1a2a6c">「長く働けない」と感じ、</text>
+            <text x="374" y="555" font-size="14" font-weight="700" fill="#1a2a6c">辞めていく</text>
+          </g>
+
+          <g>
+            <rect x="112" y="384" width="260" height="72" rx="10" fill="#ffffff" stroke="#1a2a6c" stroke-width="1.5"/>
+            <circle cx="140" cy="420" r="17" fill="#1a2a6c"/>
+            <text x="140" y="426" text-anchor="middle" font-size="16" font-weight="900" fill="#ffffff">5</text>
+            <text x="166" y="415" font-size="14" font-weight="700" fill="#1a2a6c">欠員補充のための</text>
+            <text x="166" y="435" font-size="14" font-weight="700" fill="#1a2a6c">採用に追われる</text>
+          </g>
+
+          <g>
+            <rect x="112" y="144" width="260" height="72" rx="10" fill="#ffffff" stroke="#1a2a6c" stroke-width="1.5"/>
+            <circle cx="140" cy="180" r="17" fill="#1a2a6c"/>
+            <text x="140" y="186" text-anchor="middle" font-size="16" font-weight="900" fill="#ffffff">6</text>
+            <text x="166" y="175" font-size="14" font-weight="700" fill="#1a2a6c">育成が追いつかず、</text>
+            <text x="166" y="195" font-size="14" font-weight="700" fill="#1a2a6c">組織力がさらに落ちる</text>
+          </g>
+        </svg>
+      </div>
+
+      <!-- スマートフォン用：縦一列 -->
+      <div class="loop-sp">
+        <div class="loop-step is-origin"><span class="loop-step-num">1</span><span>創業家の感情と方向性が揃っていない</span></div>
+        <div class="loop-arrow-sp">↓</div>
+        <div class="loop-step"><span class="loop-step-num">2</span><span>経営方針がブレる／指示系統が二重になる</span></div>
+        <div class="loop-arrow-sp">↓</div>
+        <div class="loop-step"><span class="loop-step-num">3</span><span>社員が混乱し、上の顔色を窺うようになる</span></div>
+
+        <div class="loop-center-sp">
+          <span class="lbl">穴の空いたバケツ</span>
+          <span class="txt">起点は「1」。ここを断たない限り、このループは回り続けます。</span>
+        </div>
+
+        <div class="loop-step"><span class="loop-step-num">4</span><span>「長く働けない」と感じ、辞めていく</span></div>
+        <div class="loop-arrow-sp">↓</div>
+        <div class="loop-step"><span class="loop-step-num">5</span><span>欠員補充のための採用に追われる</span></div>
+        <div class="loop-arrow-sp">↓</div>
+        <div class="loop-step"><span class="loop-step-num">6</span><span>育成が追いつかず、組織力がさらに落ちる</span></div>
+        <div class="loop-arrow-sp">↓</div>
+        <div class="loop-return">そして再び「1」へ戻り、繰り返されます</div>
+      </div>
+
+      <p class="loop-caption">多くの企業は「4」と「5」——つまり定着と採用——から手をつけます。<br>
+      しかし、原因は「1」にあります。</p>
     </div>
   </section>
 
