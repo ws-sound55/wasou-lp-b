@@ -777,6 +777,49 @@
       flex-shrink: 0;
     }
 
+    /* ===== 実績サマリー ===== */
+    .fact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 2rem 0 0;
+    }
+    .fact-card {
+      background: var(--white);
+      border: 1px solid var(--gray-mid);
+      border-top: 3px solid var(--teal);
+      border-radius: 8px;
+      padding: 1.35rem 0.75rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .fact-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-mid);
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+    }
+    .fact-num {
+      font-family: "Noto Serif JP", serif;
+      font-size: clamp(1.7rem, 4.2vw, 2.3rem);
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.15;
+    }
+    .fact-num .unit { font-size: 0.5em; margin-left: 0.12em; color: var(--teal); }
+    .fact-note {
+      background: linear-gradient(135deg, rgba(0,151,167,0.06), rgba(67,160,71,0.06));
+      border: 1.5px solid rgba(0,151,167,0.25);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 1.25rem;
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      line-height: 1.9;
+    }
+    .fact-asof { display: block; font-size: 0.8rem; color: var(--text-mid); opacity: 0.75; margin-top: 0.6rem; }
+
     /* ===== 日本語組版：本文の両端揃え ===== */
     .body-p,
     .story-box p,
@@ -857,6 +900,11 @@
       .hero-points li { font-size: 1rem; }
       .result-industry-tag { font-size: 1.05rem; }
       .profile-title { font-size: 0.9rem; }
+      .fact-grid { grid-template-columns: 1fr; gap: 0.7rem; margin-top: 1.5rem; }
+      .fact-card { display: flex; align-items: baseline; justify-content: space-between; gap: 0.75rem; text-align: left; padding: 0.95rem 1.1rem; }
+      .fact-label { margin-bottom: 0; font-size: 0.95rem; }
+      .fact-num { font-size: 1.55rem; }
+      .fact-note { font-size: 1rem; padding: 1.1rem 1.15rem; }
       .empathy-lead, .empathy-final { padding-left: 1rem; }
       .result-card { padding: 1.5rem 1.25rem; }
       .stat-before { font-size: 1.15rem; }
@@ -1334,6 +1382,26 @@
           <p>「あの時味わった痛みを、あなたには絶対に経験させたくない」その思いが今も私を動かしています。</p>
         </div>
       </div>
+        </div>
+
+    <div class="fact-grid">
+      <div class="fact-card">
+        <div class="fact-label">独立してから</div>
+        <div class="fact-num">14<span class="unit">年</span></div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-label">支援した同族企業</div>
+        <div class="fact-num">34<span class="unit">社</span></div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-label">平均支援期間</div>
+        <div class="fact-num">3<span class="unit">年</span>3<span class="unit">ヶ月</span></div>
+      </div>
+    </div>
+
+    <div class="fact-note">
+      <p>最も長いお付き合いは、<strong style="color:var(--navy);">14年</strong>になります。独立した年にご縁をいただいた会社と、いまも続いています。短期の支援を数多く重ねるよりも、一社と長く向き合う——そういう関わり方を選んできました。</p>
+      <span class="fact-asof">※数値はいずれも2026年5月時点</span>
     </div>
 
     <div class="highlight-box" style="margin-top:2rem;">
