@@ -63,9 +63,14 @@
 
     .hero { padding: 56px 0 64px; }
     .hero-target { font-size: 16px; font-weight: 700; margin-bottom: 14px; }
-    .hero-title { font-size: clamp(30px, 8.6vw, 46px); margin-bottom: 28px; letter-spacing: -0.025em; }
+    .hero-title { font-size: 36px; margin-bottom: 28px; letter-spacing: -0.035em; white-space: nowrap; }
     .metric, .free { color: var(--wine); }
+    .hero-speaker { display: flex; align-items: center; gap: 12px; margin: 24px 0; text-align: left; }
+    .hero-speaker-photo { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; object-position: center top; flex: 0 0 56px; }
+    .hero-speaker-name { margin: 0; color: var(--navy); font-size: 16px; font-weight: 900; line-height: 1.5; letter-spacing: -0.07em; white-space: nowrap; }
+    .hero-speaker-role { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; letter-spacing: -0.06em; white-space: nowrap; }
     .cta-wrap { margin: 40px 0; text-align: center; }
+    .hero .cta-wrap { margin: 0 0 40px; }
     .cta-button {
       width: min(100%, 540px);
       min-height: 56px;
@@ -102,8 +107,8 @@
     .step { padding: 20px 0; border-top: 1px solid var(--teal); }
     .step:last-child { border-bottom: 1px solid var(--teal); }
     .step-number { color: var(--teal); font-size: 13px; font-weight: 900; letter-spacing: 0.05em; }
-    .step-title { margin: 4px 0; font-size: 18px; }
-    .step-detail { margin: 0; color: var(--muted); font-size: 14px; }
+    .step-title { margin: 4px 0; font-size: 23px; }
+    .step-detail { margin: 0; color: var(--muted); font-size: 18px; }
     .step-conclusion { margin: 32px 0 0; }
 
     .result-list { margin-top: 32px; }
@@ -141,7 +146,8 @@
     .faq-answer { padding: 0 0 20px; color: var(--muted); line-height: 1.8; }
 
     .closing { background: var(--navy); color: var(--white); }
-    .closing-title { margin-bottom: 24px; font-size: 23px; }
+    .closing-title { margin-bottom: 24px; font-size: 16px; letter-spacing: -0.04em; white-space: nowrap; }
+    .closing .container { width: min(100% - 20px, 800px); }
     .closing .cta-note { color: var(--pale); }
 
     .site-footer { padding: 40px 0 32px; background: var(--white); }
@@ -187,6 +193,7 @@
       .page-section { padding: 88px 0; }
       .hero { padding: 96px 0; }
       .hero-title { font-size: 46px; }
+      .closing-title { font-size: 23px; letter-spacing: normal; }
       .intro-grid { grid-template-columns: 120px 1fr; align-items: start; }
       .profile-grid { grid-template-columns: 280px 1fr; align-items: start; }
       .steps, .result-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -208,7 +215,14 @@
     <section class="hero">
       <div class="container">
         <p class="hero-target">2代目・3代目経営者の方へ</p>
-        <h1 class="hero-title">応募が、<span class="metric">2〜3倍以上</span>に。<br>しかも、辞めない。</h1>
+        <h1 class="hero-title">応募が<span class="metric">2〜3倍以上</span>に<br>しかも辞めない</h1>
+        <div class="hero-speaker">
+          <img class="hero-speaker-photo" src="assets/hirose-square.jpg" alt="廣瀬祥久">
+          <div>
+            <p class="hero-speaker-name">廣瀬 祥久／和奏人事パートナーズ 代表</p>
+            <p class="hero-speaker-role">着物業界から転身した、採用・人事コンサルタント</p>
+          </div>
+        </div>
         <div class="cta-wrap">
           <a class="cta-button" href="https://reserve.peraichi.com/r/b194f80c">開催日を確認して申し込む</a>
           <p class="cta-note">参加費<span class="free">無料</span>／毎月12社限定／所要2時間（本編60分・以降は任意）</p>
@@ -223,7 +237,7 @@
         <img class="intro-photo" src="assets/hirose-square.jpg" alt="廣瀬祥久">
         <div class="section-copy">
           <div class="section-rule"></div>
-          <h2 class="intro-title">日本で最も、人が集まらない業界にいました。</h2>
+          <h2 class="intro-title">日本で最も人が集まらない業界にいました。</h2>
           <p>着物業界です。転職を考えたとき、「着物店で働こう」と思う人は、ほとんどいません。着物の知識もない。だから「自分にできそうだ」とも思えない。</p>
           <p class="strong">買い手市場と言われた時代でさえ、応募が来ませんでした。</p>
           <p>私はその業界で、常務取締役として14年、求人と向き合ってきました。</p>
@@ -234,12 +248,12 @@
     <section class="page-section">
       <div class="container section-copy">
         <div class="section-rule"></div>
-        <h2 class="section-title">だから、他の業界のほうが「まだ、やりやすい」のです。</h2>
+        <h2 class="section-title">だから、他の業界のほうが<br>「まだ、やりやすい」のです。</h2>
         <p>誤解を恐れずに言えば——建設業も、運送業も、慢性的な人手不足と言われますが、「きつくても、やってみようか」と考える人は一定数います。市場が存在するのです。</p>
         <p>着物業界には、それすらありませんでした。</p>
         <p>選択肢に上がらない会社に、どうすれば人が来るのか。それを14年考え続けた結果が、いまお伝えしている方法です。</p>
         <div class="data-band">
-          <p>いま支援しているのは、歯科衛生士の採用です。</p>
+          <p>いま支援しているクライアントの1社は<br>歯科衛生士の採用です。</p>
           <p class="data-number">求人倍率 <span class="metric">23.1倍</span></p>
           <p class="source-note">※全国歯科衛生士教育協議会／令和8年6月公表。養成校の就職者に対する求人人数倍率。<br>おそらく、いま日本で最も採用が難しい職種のひとつです。</p>
         </div>
@@ -249,7 +263,7 @@
     <section class="page-section">
       <div class="container section-copy">
         <div class="section-rule"></div>
-        <h2 class="section-title">採用がうまくいかない原因は、求人票ではありません。</h2>
+        <h2 class="section-title">採用がうまくいかない原因は、<br>求人票ではありません。</h2>
         <p>人事コンサルタントからの提案を、これまで何度も受けてこられたと思います。</p>
         <p>求人票の書き方、媒体の選び方、面接の手法——そのどれもが「伝える」段階の話です。</p>
         <p>私たちがお伝えするのは、その手前の2段階です。</p>
@@ -280,7 +294,7 @@
     <section class="page-section pale">
       <div class="container section-copy">
         <div class="section-rule"></div>
-        <h2 class="section-title">当日の流れを、すべて先にお伝えします。</h2>
+        <h2 class="section-title">当日の流れを、<br>すべて先にお伝えします。</h2>
         <p>「無料セミナー」と聞くと、売り込みを警戒される方が多いと思います。当然のことです。ですので、当日の時間の使い方を、申し込む前にすべて公開します。</p>
         <div class="schedule">
           <div class="schedule-row"><div class="schedule-time">60分</div><p class="schedule-desc">セミナー本編<br><span class="muted">採用3ステップの具体的な内容</span></p></div>
@@ -337,7 +351,7 @@
 
     <section class="page-section closing">
       <div class="container">
-        <h2 class="closing-title">「うちみたいな会社に、人は来ない」<br>——そう思っていた会社が、変わりはじめています。</h2>
+        <h2 class="closing-title">うちみたいな会社に人は来ない<br>そう思っていた会社が、変わりはじめています。</h2>
         <div class="cta-wrap">
           <a class="cta-button" href="https://reserve.peraichi.com/r/b194f80c">開催日を確認して申し込む</a>
         </div>
