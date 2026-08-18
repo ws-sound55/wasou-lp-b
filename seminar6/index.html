@@ -62,7 +62,7 @@
     .marker { background: var(--pale); font-weight: 900; padding: 0 0.15em; }
 
     .hero { padding: 20px 0 48px; }
-    .hero-target { font-size: 20px; font-weight: 700; margin-bottom: 14px; }
+    .hero-target { display: inline-block; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 3px solid var(--teal); color: var(--teal); font-size: 20px; font-weight: 900; }
     .hero-title { font-size: 36px; margin-bottom: 28px; letter-spacing: -0.035em; white-space: nowrap; }
     .metric, .free { color: var(--wine); }
     .hero-speaker { display: flex; align-items: center; gap: 12px; margin: 16px 0; text-align: left; }
@@ -90,15 +90,15 @@
       text-decoration: none;
     }
     .cta-note { margin: 12px 0 0; font-size: 17px; color: var(--navy); font-weight: 700; line-height: 1.9; }
+    .cta-note-sp-break { display: none; }
+    .cta-note-pc-separator { display: inline; }
     .hero-support { margin: 0; color: var(--muted); }
 
     .intro-grid, .profile-grid { display: grid; gap: 24px; }
-    .intro-photo {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      object-position: center top;
-    }
+    .intro-grid { gap: 20px; }
+    .intro-photo-wrap { margin: 0; }
+    .intro-photo { width: 100%; height: auto; }
+    .intro-photo-caption { margin: 8px 0 0; color: var(--muted); font-size: 14px; line-height: 1.9; }
     .intro-title { font-size: 23px; margin-bottom: 16px; }
     .data-band { margin-top: 40px; padding: 24px 20px; background: var(--pale); }
     .data-band p:last-child { margin-bottom: 0; }
@@ -204,12 +204,19 @@
       .hero-portrait-name { margin: 16px 0 0; color: var(--navy); font-size: 18px; font-weight: 900; line-height: 1.5; }
       .hero-portrait-role { margin: 2px 0 0; color: var(--muted); font-size: 15px; line-height: 1.6; }
       .closing-title { font-size: 23px; letter-spacing: normal; }
-      .intro-grid { grid-template-columns: 120px 1fr; align-items: start; }
+      .intro-grid { grid-template-columns: minmax(0, 300px) 1fr; align-items: start; gap: 24px; }
       .profile-grid { grid-template-columns: 280px 1fr; align-items: start; }
       .steps, .result-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
       .step, .result-item { border-bottom: 1px solid var(--teal); }
       .result-item { border-bottom-color: var(--navy); }
       .mobile-cta { display: none; }
+      .cta-note-sp-break { display: none; }
+      .cta-note-pc-separator { display: inline; }
+    }
+    @media (max-width: 700px) {
+      .cta-note { font-size: 16px; line-height: 1.7; }
+      .cta-note-sp-break { display: block; }
+      .cta-note-pc-separator { display: none; }
     }
   </style>
 </head>
@@ -236,7 +243,7 @@
           </div>
           <div class="cta-wrap">
             <a class="cta-button" href="https://reserve.peraichi.com/r/b194f80c">開催日を確認して申し込む</a>
-            <p class="cta-note">参加費<span class="free">無料</span>／毎月12社限定／所要2時間（本編60分・以降は任意）</p>
+            <p class="cta-note">参加費<span class="free">無料</span>／毎月12社限定<span class="cta-note-pc-separator">／</span><br class="cta-note-sp-break">所要2時間（本編60分・以降は任意）</p>
           </div>
           <p class="hero-support">── 求人媒体・採用ページからの応募が、そこまで増えた企業があります。</p>
           <p class="hero-support">先日お渡ししたご案内の、セミナーお申し込みページです。</p>
@@ -251,7 +258,10 @@
 
     <section class="page-section pale">
       <div class="container intro-grid">
-        <img class="intro-photo" src="assets/hirose-square.jpg" alt="廣瀬祥久">
+        <div class="intro-photo-wrap">
+          <img class="intro-photo" src="assets/kimono-work.jpg" alt="着物専門店での現場写真">
+          <p class="intro-photo-caption">着物専門店の常務取締役だった当時。</p>
+        </div>
         <div class="section-copy">
           <div class="section-rule"></div>
           <h2 class="intro-title">日本で最も人が集まらない業界にいました。</h2>
