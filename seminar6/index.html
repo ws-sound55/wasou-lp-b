@@ -61,14 +61,16 @@
     .strong { font-weight: 900; }
     .marker { background: var(--pale); font-weight: 900; padding: 0 0.15em; }
 
-    .hero { padding: 56px 0 64px; }
+    .hero { padding: 40px 0 48px; }
     .hero-target { font-size: 16px; font-weight: 700; margin-bottom: 14px; }
     .hero-title { font-size: 36px; margin-bottom: 28px; letter-spacing: -0.035em; white-space: nowrap; }
     .metric, .free { color: var(--wine); }
-    .hero-speaker { display: flex; align-items: center; gap: 12px; margin: 24px 0; text-align: left; }
+    .hero-speaker { display: flex; align-items: center; gap: 12px; margin: 16px 0; text-align: left; }
+    .hero-speaker > div { min-width: 0; }
+    .hero-portrait-col { display: none; }
     .hero-speaker-photo { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; object-position: center top; flex: 0 0 56px; }
-    .hero-speaker-name { margin: 0; color: var(--navy); font-size: 16px; font-weight: 900; line-height: 1.5; letter-spacing: -0.07em; white-space: nowrap; }
-    .hero-speaker-role { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; letter-spacing: -0.06em; white-space: nowrap; }
+    .hero-speaker-name { margin: 0; color: var(--navy); font-size: 16px; font-weight: 900; line-height: 1.5; letter-spacing: -0.07em; }
+    .hero-speaker-role { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; letter-spacing: -0.06em; }
     .cta-wrap { margin: 40px 0; text-align: center; }
     .hero .cta-wrap { margin: 0 0 40px; }
     .cta-button {
@@ -190,9 +192,17 @@
         line-height: 1.4;
         text-decoration: none;
       }
-      .page-section { padding: 88px 0; }
-      .hero { padding: 96px 0; }
-      .hero-title { font-size: 46px; }
+      .container { width: min(100% - 80px, 1100px); }
+      .page-section { padding: 48px 0; }
+      .hero { padding: 40px 0 48px; }
+      .hero .container { display: grid; grid-template-columns: minmax(0, 58fr) minmax(0, 42fr); align-items: center; gap: 40px; }
+      .hero-content { min-width: 0; }
+      .hero-title { font-size: 56px; }
+      .hero .hero-speaker { display: none; }
+      .hero-portrait-col { display: block; text-align: center; }
+      .hero-portrait { width: 100%; max-width: 420px; margin: 0 auto; }
+      .hero-portrait-name { margin: 16px 0 0; color: var(--navy); font-size: 16px; font-weight: 900; line-height: 1.5; }
+      .hero-portrait-role { margin: 2px 0 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
       .closing-title { font-size: 23px; letter-spacing: normal; }
       .intro-grid { grid-template-columns: 120px 1fr; align-items: start; }
       .profile-grid { grid-template-columns: 280px 1fr; align-items: start; }
@@ -214,21 +224,28 @@
   <main>
     <section class="hero">
       <div class="container">
-        <p class="hero-target">2代目・3代目経営者の方へ</p>
-        <h1 class="hero-title">応募が<span class="metric">2〜3倍以上</span>に<br>しかも辞めない</h1>
-        <div class="hero-speaker">
-          <img class="hero-speaker-photo" src="assets/hirose-square.jpg" alt="廣瀬祥久">
-          <div>
-            <p class="hero-speaker-name">廣瀬 祥久／和奏人事パートナーズ 代表</p>
-            <p class="hero-speaker-role">着物業界から転身した、採用・人事コンサルタント</p>
+        <div class="hero-content">
+          <p class="hero-target">2代目・3代目経営者の方へ</p>
+          <h1 class="hero-title">応募が<span class="metric">2〜3倍以上</span>に<br>しかも辞めない</h1>
+          <div class="hero-speaker">
+            <img class="hero-speaker-photo" src="assets/hirose-square.jpg" alt="廣瀬祥久">
+            <div>
+              <p class="hero-speaker-name">廣瀬 祥久／和奏人事パートナーズ 代表</p>
+              <p class="hero-speaker-role">着物業界から転身した、採用・人事コンサルタント</p>
+            </div>
           </div>
+          <div class="cta-wrap">
+            <a class="cta-button" href="https://reserve.peraichi.com/r/b194f80c">開催日を確認して申し込む</a>
+            <p class="cta-note">参加費<span class="free">無料</span>／毎月12社限定／所要2時間（本編60分・以降は任意）</p>
+          </div>
+          <p class="hero-support">── 求人媒体・採用ページからの応募が、そこまで増えた企業があります。</p>
+          <p class="hero-support">先日お渡ししたご案内の、セミナーお申し込みページです。</p>
         </div>
-        <div class="cta-wrap">
-          <a class="cta-button" href="https://reserve.peraichi.com/r/b194f80c">開催日を確認して申し込む</a>
-          <p class="cta-note">参加費<span class="free">無料</span>／毎月12社限定／所要2時間（本編60分・以降は任意）</p>
+        <div class="hero-portrait-col">
+          <img class="hero-portrait" src="assets/hirose-portrait.jpg" alt="廣瀬祥久">
+          <p class="hero-portrait-name">廣瀬 祥久／和奏人事パートナーズ 代表</p>
+          <p class="hero-portrait-role">着物業界から転身した、採用・人事コンサルタント</p>
         </div>
-        <p class="hero-support">── 求人媒体・採用ページからの応募が、そこまで増えた企業があります。</p>
-        <p class="hero-support">先日お渡ししたご案内の、セミナーお申し込みページです。</p>
       </div>
     </section>
 
