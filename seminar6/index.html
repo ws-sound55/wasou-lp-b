@@ -93,6 +93,7 @@
     .cta-note-sp-break { display: none; }
     .cta-note-pc-separator { display: inline; }
     .hero-support { margin: 0; color: var(--muted); }
+    .hero-support-pc-break { display: none; }
 
     .intro-grid, .profile-grid { display: grid; gap: 24px; }
     .intro-grid { gap: 20px; }
@@ -155,8 +156,10 @@
     .closing .cta-note { color: var(--pale); }
 
     .site-footer { padding: 40px 0 32px; background: var(--white); }
-    .footer-copy { margin: 0; font-size: 16px; line-height: 1.9; }
-    .footer-disclaimer { margin: 24px 0 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
+    .footer-logo { display: block; width: auto; height: 40px; margin: 0 0 20px; }
+    .footer-copy { margin: 0; color: var(--navy); font-size: 16px; line-height: 1.8; }
+    .footer-line { display: block; white-space: nowrap; }
+    .footer-disclaimer { margin: 20px 0 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
 
     .mobile-cta {
       position: fixed;
@@ -214,11 +217,15 @@
       .mobile-cta { display: none; }
       .cta-note-sp-break { display: none; }
       .cta-note-pc-separator { display: inline; }
+      .hero-support-pc-break { display: inline; }
     }
     @media (max-width: 700px) {
       .cta-note { font-size: 16px; line-height: 1.7; }
       .cta-note-sp-break { display: block; }
       .cta-note-pc-separator { display: none; }
+      .hero-speaker-role { font-size: 12.5px; white-space: nowrap; letter-spacing: -0.08em; }
+      .footer-copy { font-size: 15px; letter-spacing: -0.06em; }
+      .site-footer .container { width: min(100% - 20px, 800px); }
     }
   </style>
 </head>
@@ -247,8 +254,7 @@
             <a class="cta-button" href="https://reserve.peraichi.com/r/b194f80c">開催日を確認して申し込む</a>
             <p class="cta-note">参加費<span class="free">無料</span>／各回5社までの少人数制<span class="cta-note-pc-separator">／</span><br class="cta-note-sp-break">所要2時間（本編60分・以降は任意）</p>
           </div>
-          <p class="hero-support">── 求人媒体・採用ページからの応募が、そこまで増えた企業があります。</p>
-          <p class="hero-support">先日お渡ししたご案内の、セミナーお申し込みページです。</p>
+          <p class="hero-support">求人媒体・採用ページからの応募が、そこまで増えた企業があります。<br class="hero-support-pc-break">先日お渡ししたご案内の、セミナーお申し込みページです。</p>
         </div>
         <div class="hero-portrait-col">
           <img class="hero-portrait" src="assets/hirose-square.jpg" alt="廣瀬祥久">
@@ -266,8 +272,8 @@
         </div>
         <div class="section-copy">
           <div class="section-rule"></div>
-          <h2 class="intro-title">日本で最も人が集まらない業界にいました。</h2>
-          <p>着物業界です。転職を考えたとき、「着物店で働こう」と思う人は、ほとんどいません。着物の知識もない。だから「自分にできそうだ」とも思えない。</p>
+          <h2 class="intro-title">応募が来ない会社の気持ちは、よく分かります。</h2>
+          <p>私がいたのは、国内でも人が集まらない業界の代表格、着物業界です。転職を考えたとき、「着物店で働こう」と思う人は、ほとんどいません。着物の知識もない。だから「自分にできそうだ」とも思えない。</p>
           <p class="strong">買い手市場と言われた時代でさえ、応募が来ませんでした。</p>
           <p>私はその業界で、常務取締役として14年、求人と向き合ってきました。</p>
         </div>
@@ -350,7 +356,6 @@
           <div class="benefit-item"><h3>① 採用力チェックシート（9つの質問）</h3><p>自社の採用状況を9つの質問で診断できるシートを進呈します。セミナー後、自社で現状を確認していただけます。</p></div>
           <div class="benefit-item"><h3>② 貴社の求人原稿を無料診断（ご希望の方のみ）</h3><p>いま出されている求人原稿を拝見し、改善点をお伝えします。後日メールでお返しします。</p></div>
         </div>
-        <p class="deadline">※本ご案内での受付は、2026年11月10日（火）まで</p>
       </div>
     </section>
 
@@ -396,7 +401,8 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p class="footer-copy">和奏人事パートナーズ　株式会社和装コンサルタンツ<br>〒108-0074　東京都港区高輪2-14-17 グレイス高輪ビル8階<br>TEL 03-6869-6780　https://wasou-jinji.jp/</p>
+      <img class="footer-logo" src="assets/logo-horizontal.png" alt="和奏人事パートナーズ">
+      <p class="footer-copy"><span class="footer-line">〒108-0074</span><span class="footer-line">東京都港区高輪2-14-17 グレイス高輪ビル8階</span><span class="footer-line">TEL 03-6869-6780　https://wasou-jinji.jp/</span></p>
       <p class="footer-disclaimer">※記載の実績は個別事例であり、同様の成果を保証するものではありません。</p>
     </div>
   </footer>
