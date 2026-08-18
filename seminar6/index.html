@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>採用3ステップセミナー｜和奏人事パートナーズ</title>
+  <meta name="description" content="応募が2〜3倍以上に増えた企業があります。2代目・3代目経営者のための無料セミナー。参加費無料・毎月12社限定。">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #16263F;
+      --teal: #00A3A6;
+      --pale: #EEF7F8;
+      --wine: #A4243B;
+      --muted: #6F757E;
+      --white: #FFFFFF;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--navy);
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.8;
+      padding-bottom: 56px;
+    }
+    img { display: block; max-width: 100%; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-weight: 900; line-height: 1.45; }
+    a { color: inherit; }
+
+    .site-header {
+      background: var(--white);
+      border-bottom: 1px solid var(--pale);
+    }
+    .header-inner {
+      width: min(100% - 40px, 1000px);
+      min-height: 64px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .header-logo { width: min(240px, 62vw); }
+    .header-cta { display: none; }
+
+    .page-section { padding: 64px 0; }
+    .page-section.pale { background: var(--pale); }
+    .container { width: min(100% - 40px, 800px); margin: 0 auto; }
+    .section-rule { width: 48px; height: 3px; background: var(--teal); margin: 0 0 16px; }
+    .section-title { font-size: 23px; margin-bottom: 16px; letter-spacing: 0.01em; }
+    .section-copy p + p { margin-top: 24px; }
+    .muted { color: var(--muted); }
+    .strong { font-weight: 900; }
+    .marker { background: var(--pale); font-weight: 900; padding: 0 0.15em; }
+
+    .hero { padding: 56px 0 64px; }
+    .hero-target { font-size: 16px; font-weight: 700; margin-bottom: 14px; }
+    .hero-title { font-size: clamp(30px, 8.6vw, 46px); margin-bottom: 28px; letter-spacing: -0.025em; }
+    .metric, .free { color: var(--wine); }
+    .cta-wrap { margin: 40px 0; text-align: center; }
+    .cta-button {
+      width: min(100%, 540px);
+      min-height: 56px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 20px;
+      background: var(--wine);
+      border: 1px solid var(--wine);
+      border-radius: 4px;
+      color: var(--white);
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 1.4;
+      text-decoration: none;
+    }
+    .cta-note { margin: 12px 0 0; font-size: 12px; color: var(--muted); line-height: 1.7; }
+    .hero-support { margin: 0; color: var(--muted); }
+
+    .intro-grid, .profile-grid { display: grid; gap: 24px; }
+    .intro-photo {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .intro-title { font-size: 23px; margin-bottom: 16px; }
+    .data-band { margin-top: 40px; padding: 24px 20px; background: var(--pale); }
+    .data-band p:last-child { margin-bottom: 0; }
+    .data-number { margin: 8px 0; font-size: 32px; font-weight: 900; line-height: 1.3; }
+    .source-note { margin-top: 10px; font-size: 12px; color: var(--muted); line-height: 1.7; }
+
+    .steps { margin-top: 32px; }
+    .step { padding: 20px 0; border-top: 1px solid var(--teal); }
+    .step:last-child { border-bottom: 1px solid var(--teal); }
+    .step-number { color: var(--teal); font-size: 13px; font-weight: 900; letter-spacing: 0.05em; }
+    .step-title { margin: 4px 0; font-size: 18px; }
+    .step-detail { margin: 0; color: var(--muted); font-size: 14px; }
+    .step-conclusion { margin: 32px 0 0; }
+
+    .result-list { margin-top: 32px; }
+    .result-item { padding: 20px 0; border-top: 1px solid var(--navy); }
+    .result-item:last-child { border-bottom: 1px solid var(--navy); }
+    .result-period { margin: 0 0 2px; font-size: 14px; font-weight: 900; }
+    .result-number { margin: 0; color: var(--wine); font-size: 28px; font-weight: 900; line-height: 1.35; }
+    .result-industry { margin: 4px 0 6px; font-size: 16px; font-weight: 900; }
+    .result-description { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+
+    .schedule { margin-top: 32px; }
+    .schedule-row { display: grid; grid-template-columns: 76px 1fr; gap: 12px; padding: 15px 0; border-top: 1px solid var(--teal); }
+    .schedule-row:last-child { border-bottom: 1px solid var(--teal); }
+    .schedule-time { font-weight: 900; }
+    .schedule-desc { margin: 0; }
+    .schedule-copy { margin-top: 32px; }
+
+    .fee-title { margin-bottom: 24px; font-size: 28px; }
+    .fee-limit { font-size: 20px; font-weight: 900; margin-bottom: 8px; }
+    .benefit { margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--teal); }
+    .benefit h3 { margin-bottom: 8px; font-size: 18px; }
+    .deadline { margin-top: 32px; color: var(--muted); font-size: 12px; }
+
+    .quote { margin: 0 0 32px; padding-left: 16px; border-left: 5px solid var(--wine); font-size: 20px; font-weight: 900; line-height: 1.65; }
+    .profile-photo { width: 100%; height: 360px; object-fit: cover; object-position: center top; }
+    .profile-name { margin-bottom: 4px; font-size: 20px; font-weight: 900; }
+    .profile-role { margin-bottom: 24px; color: var(--muted); font-size: 16px; }
+    .profile-record { margin: 24px 0 0; color: var(--teal); font-weight: 900; }
+
+    .faq-list { margin-top: 32px; }
+    .faq-item { border-top: 1px solid var(--teal); }
+    .faq-item:last-child { border-bottom: 1px solid var(--teal); }
+    .faq-item summary { cursor: pointer; list-style: none; padding: 18px 0; font-weight: 900; line-height: 1.7; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-answer { padding: 0 0 20px; color: var(--muted); line-height: 1.8; }
+
+    .closing { background: var(--navy); color: var(--white); }
+    .closing-title { margin-bottom: 24px; font-size: 23px; }
+    .closing .cta-note { color: var(--pale); }
+
+    .site-footer { padding: 40px 0 32px; background: var(--white); }
+    .footer-copy { margin: 0; font-size: 14px; line-height: 1.9; }
+    .footer-disclaimer { margin: 24px 0 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
+
+    .mobile-cta {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+      display: block;
+      height: 56px;
+      padding: 0 20px;
+      background: var(--wine);
+      color: var(--white);
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 56px;
+      text-align: center;
+      text-decoration: none;
+      transform: translateY(100%);
+    }
+    .mobile-cta.is-visible { transform: translateY(0); }
+
+    @media (min-width: 701px) {
+      body { padding-bottom: 0; }
+      .header-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        padding: 8px 16px;
+        background: var(--wine);
+        border-radius: 4px;
+        color: var(--white);
+        font-size: 14px;
+        font-weight: 900;
+        line-height: 1.4;
+        text-decoration: none;
+      }
+      .page-section { padding: 88px 0; }
+      .hero { padding: 96px 0; }
+      .hero-title { font-size: 46px; }
+      .intro-grid { grid-template-columns: 120px 1fr; align-items: start; }
+      .profile-grid { grid-template-columns: 280px 1fr; align-items: start; }
+      .steps, .result-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+      .step, .result-item { border-bottom: 1px solid var(--teal); }
+      .result-item { border-bottom-color: var(--navy); }
+      .mobile-cta { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <img class="header-logo" src="assets/logo-horizontal.png" alt="和奏人事パートナーズ">
+      <a class="header-cta" href="https://reserve.peraichi.com/r/b194f80c">開催日を確認して申し込む</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="hero-target">2代目・3代目経営者の方へ</p>
+        <h1 class="hero-title">応募が、<span class="metric">2〜3倍以上</span>に。<br>しかも、辞めない。</h1>
+        <div class="cta-wrap">
+          <a class="cta-button" href="https://reserve.peraichi.com/r/b194f80c">開催日を確認して申し込む</a>
+          <p class="cta-note">参加費<span class="free">無料</span>／毎月12社限定／所要2時間（本編60分・以降は任意）</p>
+        </div>
+        <p class="hero-support">── 求人媒体・採用ページからの応募が、そこまで増えた企業があります。</p>
+        <p class="hero-support">先日お渡ししたご案内の、セミナーお申し込みページです。</p>
+      </div>
+    </section>
+
+    <section class="page-section pale">
+      <div class="container intro-grid">
+        <img class="intro-photo" src="assets/hirose-square.jpg" alt="廣瀬祥久">
+        <div class="section-copy">
+          <div class="section-rule"></div>
+          <h2 class="intro-title">日本で最も、人が集まらない業界にいました。</h2>
+          <p>着物業界です。転職を考えたとき、「着物店で働こう」と思う人は、ほとんどいません。着物の知識もない。だから「自分にできそうだ」とも思えない。</p>
+          <p class="strong">買い手市場と言われた時代でさえ、応募が来ませんでした。</p>
+          <p>私はその業界で、常務取締役として14年、求人と向き合ってきました。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container section-copy">
+        <div class="section-rule"></div>
+        <h2 class="section-title">だから、他の業界のほうが「まだ、やりやすい」のです。</h2>
+        <p>誤解を恐れずに言えば——建設業も、運送業も、慢性的な人手不足と言われますが、「きつくても、やってみようか」と考える人は一定数います。市場が存在するのです。</p>
+        <p>着物業界には、それすらありませんでした。</p>
+        <p>選択肢に上がらない会社に、どうすれば人が来るのか。それを14年考え続けた結果が、いまお伝えしている方法です。</p>
+        <div class="data-band">
+          <p>いま支援しているのは、歯科衛生士の採用です。</p>
+          <p class="data-number">求人倍率 <span class="metric">23.1倍</span></p>
+          <p class="source-note">※全国歯科衛生士教育協議会／令和8年6月公表。養成校の就職者に対する求人人数倍率。<br>おそらく、いま日本で最も採用が難しい職種のひとつです。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container section-copy">
+        <div class="section-rule"></div>
+        <h2 class="section-title">採用がうまくいかない原因は、求人票ではありません。</h2>
+        <p>人事コンサルタントからの提案を、これまで何度も受けてこられたと思います。</p>
+        <p>求人票の書き方、媒体の選び方、面接の手法——そのどれもが「伝える」段階の話です。</p>
+        <p>私たちがお伝えするのは、その手前の2段階です。</p>
+        <div class="steps">
+          <div class="step"><div class="step-number">STEP 1</div><h3 class="step-title">まず、社内の意思を一つにする</h3><p class="step-detail">同族間・幹部間のズレをなくす</p></div>
+          <div class="step"><div class="step-number">STEP 2</div><h3 class="step-title">次に、求める人物像を絞り込む</h3><p class="step-detail">事業の未来から逆算して選ぶ</p></div>
+          <div class="step"><div class="step-number">STEP 3</div><h3 class="step-title">最後に、響く言葉で届ける</h3><p class="step-detail">働きたい人の心を動かす原稿に</p></div>
+        </div>
+        <p class="step-conclusion">同族会社の場合、STEP 1を飛ばすと、STEP 3で何を書いても効きません。<br>社内で「どんな人が欲しいのか」が揃っていない状態で募集をかけているからです。</p>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container">
+        <div class="section-rule"></div>
+        <h2 class="section-title">支援先での実績（一例）</h2>
+        <div class="result-list">
+          <article class="result-item"><p class="result-period">1ヶ月間で</p><p class="result-number">19名応募／6名採用</p><p class="result-industry">着物専門店</p><p class="result-description">1年間で約1,000万円かけても応募ゼロ。うち5名が現在でも活躍中。</p></article>
+          <article class="result-item"><p class="result-period">2ヶ月間で</p><p class="result-number">103名応募／9名採用</p><p class="result-industry">都内・不動産会社</p><p class="result-description">大手媒体に3ヶ月90万円で応募30名。うち7名が現在でも活躍中。</p></article>
+          <article class="result-item"><p class="result-period">2ヶ月間で</p><p class="result-number">22名応募／3名採用</p><p class="result-industry">地方・食品加工会社</p><p class="result-description">あらゆる媒体で2年間に応募4名。現在、3名とも活躍中。</p></article>
+        </div>
+        <div class="cta-wrap">
+          <a class="cta-button" href="https://reserve.peraichi.com/r/b194f80c">開催日を確認して申し込む</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section pale">
+      <div class="container section-copy">
+        <div class="section-rule"></div>
+        <h2 class="section-title">当日の流れを、すべて先にお伝えします。</h2>
+        <p>「無料セミナー」と聞くと、売り込みを警戒される方が多いと思います。当然のことです。ですので、当日の時間の使い方を、申し込む前にすべて公開します。</p>
+        <div class="schedule">
+          <div class="schedule-row"><div class="schedule-time">60分</div><p class="schedule-desc">セミナー本編<br><span class="muted">採用3ステップの具体的な内容</span></p></div>
+          <div class="schedule-row"><div class="schedule-time">30分</div><p class="schedule-desc">弊社サービスのご案内<br><span class="muted">ご支援内容と費用感をお伝えします</span></p></div>
+          <div class="schedule-row"><div class="schedule-time">30分</div><p class="schedule-desc">個別相談（ご希望の方のみ）<br><span class="muted">貴社の状況を伺い、その場でお答えします</span></p></div>
+        </div>
+        <div class="schedule-copy">
+          <p><span class="strong">個別相談は任意です。90分の時点でご退席いただいて構いません。</span><br>その場でお引き止めすることも、後日しつこくご連絡することもありません。</p>
+          <p>ご案内の30分を設けているのは、隠すよりお伝えしたほうが誠実だと考えているからです。内容にご興味がなければ、そこで判断していただければ結構です。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container section-copy">
+        <div class="section-rule"></div>
+        <h2 class="fee-title">参加費：<span class="free">無料</span></h2>
+        <p class="fee-limit">毎月12社限定</p>
+        <p>一社一社と丁寧に向き合うため、人数を絞って開催しています。</p>
+        <div class="benefit"><h3>なぜ無料なのか</h3><p>まずは私たちの考え方と手法そのものを知っていただきたい——という思いから、無料でご提供しています。</p></div>
+        <div class="benefit"><h3>ご参加の方へ</h3><p>自社の採用状況を9つの質問で診断できる『採用力チェックシート』を進呈します。セミナー後、自社で現状を確認していただけます。</p></div>
+        <p class="deadline">※本ご案内での受付は、2026年11月10日（火）まで</p>
+      </div>
+    </section>
+
+    <section class="page-section pale">
+      <div class="container">
+        <p class="quote">「震災で融資が途絶え、150名の仲間の職を守りきれなかった。」</p>
+        <div class="profile-grid">
+          <img class="profile-photo" src="assets/hirose-portrait.jpg" alt="廣瀬祥久">
+          <div class="section-copy">
+            <p class="profile-name">廣瀬 祥久　和奏人事パートナーズ 代表</p>
+            <p class="profile-role">着物業界から異色の転身を遂げた、採用・人事コンサルタント</p>
+            <p>大卒後、叔父が経営する30数店舗の着物専門店に入社し、常務取締役として経営再建に奔走。買い手市場の時代でさえ求人難だった着物業界で、悪戦苦闘の末に独自の採用求人戦略を作り上げ、2017年「求人とは&quot;働きたい人の集客&quot;である」という発想に到達。「小手先の採用テクニックは必ず失敗する。採用求人は&quot;事業成長からの逆算&quot;で設計すべき」との信念の元、2代目・3代目が経営する求人難の企業に伴走しています。</p>
+            <p class="profile-record">独立から14年／これまでに支援した同族企業 34社／1社あたりの平均支援期間 3年3ヶ月</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container">
+        <div class="section-rule"></div>
+        <h2 class="section-title">よくあるご質問</h2>
+        <div class="faq-list">
+          <details class="faq-item"><summary>Q. 今お願いしている人材紹介会社やコンサルタントを、切り替える必要がありますか。</summary><div class="faq-answer">A. いいえ。切り替えは不要です。現在の取り組みを続けたまま、応募が集まる状態をつくることは可能です。むしろ、いま出している求人がなぜ機能していないのかを整理することが先です。契約の解約や乗り換えを、こちらからお勧めすることはありません。</div></details>
+          <details class="faq-item"><summary>Q. 着物業界以外でも対応できますか。</summary><div class="faq-answer">A. はい。建設、運送、製造、医療など幅広い業種でご支援しています。現在は歯科衛生士（求人倍率23.1倍）の採用支援にも取り組んでいます。業界の知識よりも、採用の順番が結果を決めるためです。</div></details>
+          <details class="faq-item"><summary>Q. 費用はどのくらいかかりますか。</summary><div class="faq-answer">A. ご支援の内容・期間によって異なるため、当日のご案内（30分）で具体的にお伝えします。その場でご契約をお願いすることはありません。</div></details>
+          <details class="faq-item"><summary>Q. 参加後に営業の連絡は来ますか。</summary><div class="faq-answer">A. セミナー当日に30分のサービスご案内の時間を設けています。それ以外に、後日しつこくご連絡することはありません。</div></details>
+          <details class="faq-item"><summary>Q. 社員や後継者と一緒に参加できますか。</summary><div class="faq-answer">A. はい。むしろ推奨しています。採用の1番目のステップは「社内の意思を一つにする」ことですので、意思決定に関わる方とご一緒のほうが効果的です。</div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section closing">
+      <div class="container">
+        <h2 class="closing-title">「うちみたいな会社に、人は来ない」<br>——そう思っていた会社が、変わりはじめています。</h2>
+        <div class="cta-wrap">
+          <a class="cta-button" href="https://reserve.peraichi.com/r/b194f80c">開催日を確認して申し込む</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-copy">和奏人事パートナーズ　株式会社和装コンサルタンツ<br>〒108-0074　東京都港区高輪2-14-17 グレイス高輪ビル8階<br>TEL 03-6869-6780　https://wasou-jinji.jp/</p>
+      <p class="footer-disclaimer">※記載の実績は個別事例であり、同様の成果を保証するものではありません。</p>
+    </div>
+  </footer>
+
+  <a class="mobile-cta" href="https://reserve.peraichi.com/r/b194f80c">申し込む（無料）</a>
+
+  <script>
+    const mobileCta = document.querySelector('.mobile-cta');
+    const showPoint = window.innerHeight * 0.7;
+    const updateMobileCta = () => mobileCta.classList.toggle('is-visible', window.scrollY > showPoint);
+    window.addEventListener('scroll', updateMobileCta, { passive: true });
+    updateMobileCta();
+  </script>
+</body>
+</html>
