@@ -211,6 +211,183 @@
       .footer-logo { height:64px; }
       .mobile-cta { display:none; }
     }
+
+    /* Responsive improvement pass: preserve the v7 copy and solve readability with layout only. */
+    .sp-only { display:none; }
+    .copy > p { max-width:720px; }
+    .hero h1 { letter-spacing:-0.04em; }
+    .hero-intro p { margin:0; }
+    .hero-intro p + p { margin-top:10px; }
+    .hero .rule { margin:24px 0; }
+    .voices-key { max-width:720px; margin:28px 0 !important; padding:16px 0 16px 18px; border-left:4px solid var(--teal); color:var(--navy); font-size:21px; font-weight:900; line-height:1.65; }
+    .voice { position:relative; padding:18px; }
+    .voice::before { content:attr(data-axis); position:absolute; top:-13px; left:14px; padding:1px 8px; background:var(--white); color:var(--teal); font-size:14px; font-weight:900; line-height:1.5; }
+    .voice.you::before { color:var(--red); }
+    .bucket-labels { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin:10px 0 0; }
+    .bucket-labels span { padding:4px 9px; border:1px solid var(--teal); color:var(--navy); font-size:14px; font-weight:900; line-height:1.45; }
+    .solution-turn { background:var(--navy); color:var(--white); }
+    .solution-turn .comfort h2, .solution-turn h2, .solution-turn p { color:var(--white); }
+    .solution-turn .order-line { color:var(--teal); }
+    .solution-turn .copy { max-width:820px; }
+    .steps-grid { counter-reset:step; }
+    .step-card { min-width:0; }
+    .step-detail { scroll-margin-top:24px; }
+    .persona-tags span { border:1px solid var(--teal); }
+    .result-retain { padding-top:10px; border-top:1px solid var(--teal); color:var(--navy); }
+    .schedule-row.optional { background:rgba(0,163,166,.08); }
+    .schedule-row.optional .schedule-time { color:var(--muted); }
+    .faq summary { min-height:56px; display:flex; align-items:center; }
+    .apply-set { max-width:560px; }
+
+    @media (max-width:700px) {
+      body { font-size:16.5px; line-height:1.82; }
+      .container { width:calc(100% - 40px); }
+      .section { padding:52px 0; }
+      .section-title { margin-bottom:18px; font-size:24px; line-height:1.45; letter-spacing:-0.035em; }
+      .copy p { margin-bottom:14px; }
+      .copy > p { max-width:none; }
+      .sp-only { display:initial; }
+      .hero { padding:24px 0 56px; }
+      .hero-grid { gap:0; }
+      .hero-grid > div:first-child { display:flex; flex-direction:column; }
+      .audience { order:1; margin:0 0 10px; font-size:17px; }
+      .hero h1 { order:2; }
+      .hero-intro { order:3; }
+      .hero .rule { order:4; }
+      .hero-result-title { order:5; }
+      .result-stair { order:6; }
+      .hero-question { order:7; }
+      .hero .apply-set { order:8; }
+      .hero .source-note { order:9; }
+      .hero-person { order:10; }
+      .audience { margin:0 0 10px; font-size:17px; }
+      .hero h1 { margin:0 0 22px; font-size:28px; line-height:1.32; letter-spacing:-0.055em; white-space:normal; }
+      .hero-intro { line-height:1.82; }
+      .hero-intro p + p { margin-top:10px; }
+      .hero .rule { margin:26px 0 22px; }
+      .hero-result-title { margin:0 0 12px; font-size:18px; line-height:1.55; }
+      .result-stair { display:grid; gap:11px; margin:0 0 28px; }
+      .result-stair p, .result-stair p:nth-child(2), .result-stair p:nth-child(3) { padding:0 0 0 13px; position:relative; font-size:16.5px; line-height:1.7; }
+      .result-stair p::before { content:""; position:absolute; top:.74em; left:0; width:5px; height:5px; border-radius:50%; background:var(--teal); }
+      .hero-person { width:100%; margin:26px 0 0; padding:0; }
+      .hero-person img { width:96px; height:96px; }
+      .hero-person-name { font-size:16px; }
+      .hero-person-role { font-size:14px; line-height:1.65; }
+      .hero-question { margin:0 0 14px; font-size:20px; line-height:1.5; }
+      .apply-set { width:100%; margin:0; }
+      .apply-button { width:100%; min-height:54px; font-size:17px; }
+      .apply-note { margin-top:12px; font-size:14px; line-height:1.65; }
+      .hero .source-note { margin-top:14px !important; font-size:13px; line-height:1.65; }
+      .hero-photo-panel { display:none; }
+      .loop { width:100%; margin:28px auto; }
+      .loop-item { padding:16px 14px; font-size:16.5px; }
+      .loop-arrow { margin:8px 0; font-size:24px; }
+      .loop-back { margin-top:6px; }
+      .voices { gap:26px; margin:32px 0 24px; }
+      .voice { padding:20px 16px 16px; }
+      .voice-quote { font-size:18px; line-height:1.7; }
+      .voices-key { margin:26px 0 !important; padding:14px 0 14px 15px; font-size:19px; line-height:1.65; }
+      .bucket-wrap { margin:28px auto; }
+      .bucket-svg { width:min(280px,100%); }
+      .bucket-caption { font-size:16px; }
+      .comfort h2 { font-size:27px; line-height:1.38; }
+      .solution-turn { padding-top:60px; padding-bottom:60px; }
+      .steps-grid { gap:18px; margin:28px 0 32px; }
+      .step-card { padding:16px 0 0; }
+      .step-no { font-size:15px; }
+      .step-word { font-size:25px; }
+      .step-main { font-size:19px; line-height:1.6; }
+      .step-sub { font-size:16px; }
+      .step-detail { padding:28px 0; }
+      .step-detail h3 { font-size:20px; line-height:1.55; }
+      .persona-tags { display:grid; grid-template-columns:1fr; gap:8px; }
+      .persona-tags span { padding:10px 12px; font-size:16px; }
+      .results-grid { gap:18px; }
+      .result-card { padding:18px; }
+      .result-num { font-size:27px; }
+      .result-retain { font-size:18px; }
+      .time-change { gap:18px; }
+      .change-case { padding:18px 0; }
+      .reason-grid { gap:28px; }
+      .quote-block { font-size:21px; }
+      .takeaway-list li { padding:15px 0; }
+      .schedule-row { grid-template-columns:64px 1fr; padding:16px 0; }
+      .schedule-detail { font-size:14px; }
+      .faq summary { padding-top:16px; padding-bottom:16px; font-size:17px; line-height:1.65; }
+      .faq-answer { font-size:16px; line-height:1.82; }
+      .profile-grid { gap:24px; }
+      .final-cta h2 { font-size:23px; line-height:1.55; }
+      .site-footer { padding-bottom:34px; }
+      .footer-address span { white-space:normal; }
+      .mobile-cta { height:52px; font-size:17px; }
+    }
+
+    @media (max-width:400px) {
+      .hero .container { width:calc(100% - 28px); }
+      .hero h1 { letter-spacing:-0.06em; }
+    }
+
+    @media (min-width:401px) and (max-width:700px) {
+      .hero h1 { font-size:30px; letter-spacing:-0.055em; }
+    }
+
+    @media (min-width:701px) {
+      .section { padding:80px 0; }
+      .section-title { margin-bottom:22px; font-size:30px; line-height:1.42; }
+      .copy > p { max-width:720px; }
+      .hero { padding:44px 0 72px; }
+      .hero-grid { grid-template-columns:minmax(0, 1fr) 420px; gap:56px; }
+      .hero h1 { margin:0 0 25px; font-size:42px; line-height:1.3; letter-spacing:-0.035em; }
+      .hero-intro { max-width:690px; }
+      .hero .rule { max-width:680px; margin:26px 0; }
+      .hero-result-title { margin-bottom:14px; }
+      .result-stair { max-width:680px; margin-bottom:30px; }
+      .result-stair p, .result-stair p:nth-child(2), .result-stair p:nth-child(3) { padding-left:0; }
+      .hero-question { margin-bottom:14px; }
+      .hero-photo-panel img { width:100%; max-width:380px; margin-bottom:16px; }
+      .hero-photo-name { font-size:20px; }
+      .hero-photo-role { font-size:16px; }
+      .apply-set { margin-top:32px; }
+      .apply-button { width:100%; }
+      .loop { width:600px; max-width:100%; margin:36px auto; }
+      .loop-item { padding:18px; font-size:18px; }
+      .loop-arrow { margin:10px 0; font-size:26px; }
+      .voices { grid-template-columns:repeat(3, minmax(0,1fr)); gap:28px; margin:40px 0 32px; }
+      .voice { min-height:182px; padding:28px 20px 20px; }
+      .voice-quote { font-size:19px; }
+      .voices-key { margin:32px 0 !important; }
+      .bucket-section .container { display:grid; grid-template-columns:minmax(0,1fr) 400px; column-gap:64px; align-items:center; }
+      .bucket-section .container > h2, .bucket-section .container > p { grid-column:1; }
+      .bucket-section .bucket-wrap { grid-column:2; grid-row:1 / span 8; margin:0; }
+      .bucket-section .bucket-svg { width:360px; max-width:100%; }
+      .bucket-section .bucket-labels { margin-top:14px; }
+      .solution-turn { padding-top:88px; padding-bottom:88px; }
+      .solution-turn .copy { max-width:800px; }
+      .steps-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; margin:36px 0 48px; }
+      .step-card { padding:20px 18px 0; border:1px solid var(--teal); border-bottom:0; }
+      .step-word { font-size:30px; }
+      .step-detail { padding:38px 0; }
+      .step-detail h3 { font-size:22px; }
+      .persona-tags { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; max-width:720px; }
+      .persona-tags span { padding:10px 12px; }
+      .principles { max-width:720px; }
+      .results-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; margin-top:32px; }
+      .result-card { padding:22px; }
+      .result-retain { min-height:94px; }
+      .time-change { grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px; }
+      .change-case { padding:22px; border:1px solid var(--teal); }
+      .schedule { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0; }
+      .schedule-row { grid-template-columns:1fr; padding:22px; border:1px solid var(--teal); border-top:0; }
+      .schedule-row:first-child { border-top:1px solid var(--teal); }
+      .schedule-time { margin-bottom:8px; font-size:21px; }
+      .schedule-row.optional { background:rgba(0,163,166,.08); }
+      .reason-grid { grid-template-columns:340px minmax(0,1fr); gap:56px; }
+      .reason-image img { width:340px; }
+      .profile-grid { grid-template-columns:220px minmax(0,1fr); gap:48px; }
+      .profile-image { width:220px; }
+      .final-cta { padding-top:88px; padding-bottom:88px; }
+      .final-cta h2 { font-size:30px; line-height:1.45; }
+    }
   </style>
 </head>
 <body>
@@ -227,15 +404,15 @@
         <div>
           <p class="audience">2代目・3代目経営者の方へ</p>
           <h1>本来は現場がやることを、<br>社長がやっていませんか。</h1>
-          <p class="hero-intro">任せられる人がいない。いても、その人はもう手一杯。<br>現場に出ていなくても、同じです。人に関する判断が、すべて自分のところに上がってくる。</p>
+          <div class="hero-intro"><p>任せられる人がいない。いても、その人はもう手一杯。</p><p>現場に出ていなくても、同じです。人に関する判断が、すべて自分のところに上がってくる。</p></div>
           <div class="rule"></div>
-          <p class="hero-result-title">その状態から抜け出した会社があります。</p>
+          <p class="hero-result-title">その状態から抜け出した<br class="sp-only">会社があります。</p>
           <div class="result-stair">
             <p>応募が2〜3倍以上に増えた会社。</p>
             <p>採用した人が2年以上定着している会社。</p>
             <p>そして、社長自身が現場から離れられた会社もあります。</p>
           </div>
-          <p class="hero-question">御社の採用は、どこから直すべきか。</p>
+          <p class="hero-question">御社の採用は、<br class="sp-only">どこから直すべきか。</p>
           <div class="hero-person">
             <img src="assets/hirose-square-v7.jpg" alt="廣瀬祥久">
             <div><p class="hero-person-name">廣瀬 祥久／和奏人事パートナーズ 代表</p><p class="hero-person-role">同族会社の内側で14年。採用・人事コンサルタント</p></div>
@@ -292,15 +469,15 @@
 
     <section class="section">
       <div class="container copy">
-        <h2 class="section-title">同族会社の採用には、<br>求人を出す前に揃えることがあります。</h2>
+        <h2 class="section-title">同族会社の採用には、<br>求人を出す前に<br class="sp-only">揃えることがあります。</h2>
         <p>採用の話になると、社内でこんなことが起きていないでしょうか。</p>
         <div class="voices">
-          <div class="voice"><p class="voice-role">先代</p><p class="voice-quote">「うちが大事にしてきたことを、分かってくれる人がいい」</p></div>
-          <div class="voice"><p class="voice-role">古参幹部</p><p class="voice-quote">「そんな人は、うちには合わないよ」</p></div>
-          <div class="voice you"><p class="voice-role">現社長（あなた）</p><p class="voice-quote">「これからの会社には、違う人材が必要だ」</p></div>
+          <div class="voice" data-axis="価値"><p class="voice-role">先代</p><p class="voice-quote">「うちが大事にしてきたことを、分かってくれる人がいい」</p></div>
+          <div class="voice" data-axis="現場"><p class="voice-role">古参幹部</p><p class="voice-quote">「そんな人は、うちには合わないよ」</p></div>
+          <div class="voice you" data-axis="未来"><p class="voice-role">現社長（あなた）</p><p class="voice-quote">「これからの会社には、違う人材が必要だ」</p></div>
         </div>
         <p>厄介なのは、三人とも会社のことを思って言っていることです。</p>
-        <p>そして三人とも、「欲しい人が決まっていない」わけではありません。ただ、それぞれが頭の中で思い浮かべている人物が、違うのです。</p>
+        <p class="voices-key">そして三人とも、「欲しい人が決まっていない」わけではありません。ただ、それぞれが頭の中で思い浮かべている人物が、違うのです。</p>
         <p>だから、決着がつきません。誰かが折れたように見えても、腹落ちしているとは限りません。結論だけが決まり、認識が揃わないまま募集が始まります。</p>
         <p>その結果、何が起きるか。</p>
         <ul class="impact-list"><li>応募が来ても、社内で判断が割れる</li><li>採用しても「聞いていた話と違う」と、早期に辞められる</li><li>求人原稿に書くことが、毎回ぶれる</li></ul>
@@ -311,7 +488,7 @@
       </div>
     </section>
 
-    <section class="section pale">
+    <section class="section pale bucket-section">
       <div class="container copy">
         <h2 class="section-title">採っても辞める会社に、<br>広告費だけ足しても意味がありません。</h2>
         <p>応募を増やす方法は、たしかにあります。私たちもお伝えします。</p>
@@ -327,6 +504,7 @@
             <path d="M148 198 C140 210 140 216 148 220 C156 216 156 210 148 198" fill="#00A3A6" opacity=".55"/>
           </svg>
           <p class="bucket-caption">入れても、貯まらない。</p>
+          <div class="bucket-labels"><span>採用費＝水</span><span>早期離職＝漏れ</span></div>
         </div>
         <p>しかし、バケツに穴が空いたまま水を注いでも、水は貯まりません。</p>
         <p>採用した人が半年で辞める会社は、また採用費をかけて、また同じ求人を出すことになります。人が入れ替わるたびに、教える時間も、現場の負担も、増えていきます。</p>
@@ -345,7 +523,7 @@
       </div>
     </section>
 
-    <section class="section pale comfort">
+    <section class="section pale comfort solution-turn">
       <div class="container copy">
         <h2>大丈夫です。<br>まだ、打つ手はあります。</h2>
         <p>買い手市場と言われた時代でさえ応募が来なかった会社を、応募が来る状態へ変えてきました。</p>
@@ -356,7 +534,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section steps-section">
       <div class="container copy">
         <h2 class="section-title">求人を出すのは、3番目です。</h2>
         <p>求人票の書き方、媒体の選び方、面接の手法——これまで提案を受けてきたものは、そのほとんどが「3番目」の話ではなかったでしょうか。</p>
@@ -424,7 +602,7 @@
 
     <section class="section pale">
       <div class="container copy">
-        <h2 class="section-title">このセミナーで持ち帰っていただくこと</h2>
+        <h2 class="section-title">このセミナーで<br class="sp-only">持ち帰っていただくこと</h2>
         <ul class="takeaway-list"><li><span class="check">✓</span><span>自社の採用が、どこで止まっているのかを切り分けられる</span></li><li><span class="check">✓</span><span>広告費を増やす前に、改善の優先順位がつく</span></li><li><span class="check">✓</span><span>欲しい人材について、社内で共通認識をつくれる</span></li><li><span class="check">✓</span><span>現在の求人原稿の不足点をチェックできる</span></li><li><span class="check">✓</span><span>早期離職につながる「採用時点のズレ」を確認できる</span></li></ul>
         <p class="emphasis">「聞いて終わり」にはしません。</p><p>セミナー後、ご参加の方には次の2つをお渡しします。</p>
         <div class="bonus"><h3>① 採用力チェックシート（9つの質問）</h3><p>自社の採用状況を9つの質問で診断できるシートです。セミナーの内容を、その日のうちに自社に当てはめられます。</p><h3>② 貴社の求人原稿を無料診断（ご希望の方のみ）</h3><p>いま出されている求人原稿を拝見し、改善点をお伝えします。後日メールでお返しします。</p></div>
@@ -432,11 +610,11 @@
       </div>
     </section>
 
-    <section class="section pale">
+    <section class="section pale schedule-section">
       <div class="container copy">
-        <h2 class="section-title">当日の流れを、すべて先にお伝えします。</h2>
+        <h2 class="section-title">当日の流れを、<br class="sp-only">すべて先にお伝えします。</h2>
         <p>「無料セミナー」と聞くと、売り込みを警戒される方が多いと思います。当然のことです。ですので、当日の時間の使い方を、申し込む前にすべて公開します。</p>
-        <div class="schedule"><div class="schedule-row"><div class="schedule-time">60分</div><div><p class="schedule-title">セミナー本編</p><p class="schedule-detail">採用3ステップの具体的な内容</p></div></div><div class="schedule-row"><div class="schedule-time">30分</div><div><p class="schedule-title">支援事例・支援方法・費用のご案内</p><p class="schedule-detail">ご支援の内容と費用感をお伝えします</p></div></div><div class="schedule-row"><div class="schedule-time">30分</div><div><p class="schedule-title">個別相談（ご希望の方のみ）</p><p class="schedule-detail">貴社の状況を伺い、その場でお答えします</p></div></div></div>
+        <div class="schedule"><div class="schedule-row"><div class="schedule-time">60分</div><div><p class="schedule-title">セミナー本編</p><p class="schedule-detail">採用3ステップの具体的な内容</p></div></div><div class="schedule-row"><div class="schedule-time">30分</div><div><p class="schedule-title">支援事例・支援方法・費用のご案内</p><p class="schedule-detail">ご支援の内容と費用感をお伝えします</p></div></div><div class="schedule-row optional"><div class="schedule-time">30分</div><div><p class="schedule-title">個別相談（ご希望の方のみ）</p><p class="schedule-detail">貴社の状況を伺い、その場でお答えします</p></div></div></div>
         <p>所要90分です。個別相談は任意ですので、90分の時点でご退席いただけます。</p><p>その場でお引き止めすることも、後日しつこくご連絡することもありません。</p><p class="source-note">※求人原稿の無料診断をご希望の方は、当日お申し出ください（後日メールでお返しします）。</p>
         <div class="fee-area"><p class="fee-free">参加費：<span class="red">無料</span></p><p class="fee-limit">各回5社までの少人数制</p><p>一社一社と丁寧に向き合うため、人数を絞って開催しています。</p><p class="step-main">なぜ無料なのか</p><p>このセミナーは、私たちの考え方が貴社に合うかを知っていただく場でもあります。そして私たちにとっても、貴社の人の問題に本当にお役に立てるかを確認する、最初の機会です。</p><p>そのため、参加費はいただいていません。</p></div>
       </div>
@@ -464,7 +642,7 @@
 
     <section class="section final-cta">
       <div class="container">
-        <h2>「うちみたいな会社に人は来ない」<br>そう思っていた会社が、変わりはじめています。</h2>
+        <h2>「うちみたいな会社に人は来ない」<br>そう思っていた会社が、<br class="sp-only">変わりはじめています。</h2>
         <div class="apply-set"><p class="apply-question">御社の採用は、どこから直すべきか。</p><a class="apply-button" href="https://reserve.peraichi.com/r/b194f80c">開催日を確認して申し込む</a><p class="apply-note">参加費<span class="red">無料</span>／各回5社までの少人数制／所要90分</p></div>
       </div>
     </section>
@@ -482,8 +660,14 @@
   <script>
     const mobileCta = document.querySelector('.mobile-cta');
     const hero = document.querySelector('.hero');
-    const updateMobileCta = () => mobileCta.classList.toggle('is-visible', window.scrollY > hero.offsetHeight);
+    const finalCta = document.querySelector('.final-cta');
+    const updateMobileCta = () => {
+      const heroPassed = window.scrollY > hero.offsetTop + hero.offsetHeight;
+      const finalCtaNearby = window.scrollY + window.innerHeight * 0.62 >= finalCta.offsetTop;
+      mobileCta.classList.toggle('is-visible', heroPassed && !finalCtaNearby);
+    };
     window.addEventListener('scroll', updateMobileCta, { passive: true });
+    window.addEventListener('resize', updateMobileCta);
     updateMobileCta();
   </script>
 </body>
