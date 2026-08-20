@@ -414,6 +414,49 @@
       .final-cta h2 { font-size:18px; line-height:1.65; letter-spacing:-0.035em; text-wrap:balance; }
     }
 
+    /* Third responsive pass: preserve the v7 copy and refine hierarchy, breaks and diagrams only. */
+    .voice::before { display:none; }
+    .pc-only { display:none; }
+    .apply-separator { display:none; }
+    .apply-note-main, .apply-note-time { display:block; }
+    .worry-heading { margin:0 0 18px; font-size:19px; font-weight:900; line-height:1.6; }
+
+    @media (max-width:700px) {
+      .audience { font-size:16px; font-weight:900; }
+      .hero-intro p { line-height:1.7; }
+      .hero-result-title { font-size:17px; line-height:1.5; letter-spacing:-0.04em; white-space:nowrap; }
+      .hero-question { font-size:17px; letter-spacing:-0.045em; white-space:nowrap; }
+      .hero .apply-note { line-height:1.8; }
+      .apply-note-main, .apply-note-time { white-space:nowrap; }
+      .issue-title, .cause-title { font-size:22px; letter-spacing:-0.055em; white-space:nowrap; }
+      .voice-role { font-size:19px; line-height:1.45; }
+      .voice { padding-top:16px; }
+      .bucket-section .container { width:calc(100% - 16px); }
+      .bucket-section .section-title { font-size:19.5px; letter-spacing:-0.08em; line-height:1.55; }
+      .worry-heading { font-size:17px; letter-spacing:-0.045em; white-space:nowrap; }
+      .step-card { padding:16px 14px 0; border:1px solid var(--teal); }
+      .profile-name { font-size:15px; line-height:1.45; letter-spacing:-0.05em; white-space:nowrap; }
+      .profile-role { font-size:16px; line-height:1.65; }
+      .final-cta .apply-question { font-size:16px; letter-spacing:-0.025em; white-space:nowrap; }
+      .bonus h3 { font-size:19px; line-height:1.55; }
+    }
+
+    @media (min-width:701px) {
+      .audience { font-size:18px; font-weight:900; }
+      .hero-photo-panel img { width:300px; max-width:100%; }
+      .hero-photo-name { font-size:18px; }
+      .hero-photo-role { font-size:13px; letter-spacing:-0.02em; }
+      .hero .apply-note { line-height:1.75; }
+      .voice-role { font-size:20px; line-height:1.45; }
+      .bucket-section .container { grid-template-columns:minmax(0,1fr) 360px; column-gap:48px; }
+      .step-card { padding-right:10px; padding-left:10px; border-bottom:1px solid var(--teal); }
+      .step-card:first-child .step-main { font-size:19px; letter-spacing:-0.06em; white-space:nowrap; }
+      .bonus h3 { font-size:21px; line-height:1.55; }
+      .pc-only { display:initial; }
+      .hero-grid { grid-template-columns:minmax(0, 1fr) 340px; }
+    }
+
+
   </style>
 </head>
 <body>
@@ -430,24 +473,24 @@
         <div>
           <p class="audience">2代目・3代目経営者の方へ</p>
           <h1>本来は現場がやることを、<br>社長がやっていませんか。</h1>
-          <div class="hero-intro"><p>任せられる人がいない。いても、その人はもう手一杯。</p><p>現場に出ていなくても、同じです。人に関する判断が、すべて自分のところに上がってくる。</p></div>
+          <div class="hero-intro"><p>任せられる人がいない。<br class="sp-only">いても、その人はもう手一杯。</p><p>現場に出ていなくても、同じです。<br class="pc-only"><br class="sp-only">人に関する判断が、<br class="sp-only">すべて自分のところに上がってくる。</p></div>
           <div class="rule"></div>
-          <p class="hero-result-title">その状態から抜け出した<br class="sp-only">会社があります。</p>
+          <p class="hero-result-title">その状態から抜け出した会社があります。</p>
           <div class="result-stair">
             <p>応募が<span class="nowrap">2〜3倍以上</span>に増えた会社。</p>
             <p>採用した人が<span class="nowrap">2年以上</span>定着している会社。</p>
             <p>そして、社長自身が現場から離れられた会社もあります。</p>
           </div>
-          <p class="hero-question">御社の採用は、<br class="sp-only">どこから直すべきか。</p>
+          <p class="hero-question">御社の採用は、どこから直すべきか。</p>
           <div class="hero-person">
             <img src="assets/hirose-square-v7.jpg" alt="廣瀬祥久">
             <div><p class="hero-person-name">廣瀬 祥久／和奏人事パートナーズ 代表</p><p class="hero-person-role">同族会社の内側で14年。採用・人事コンサルタント</p></div>
           </div>
           <div class="apply-set">
             <a class="apply-button" href="https://reserve.peraichi.com/r/b194f80c">開催日を確認して申し込む</a>
-            <p class="apply-note">参加費<span class="red">無料</span>／各回5社までの少人数制／所要90分（＋個別相談30分・ご希望の方のみ）</p>
+            <p class="apply-note"><span class="apply-note-main">参加費<span class="red">無料</span>／各回5社までの少人数制<span class="apply-separator">／</span></span><span class="apply-note-time">所要90分（＋個別相談30分・ご希望の方のみ）</span></p>
           </div>
-          <p class="source-note" style="text-align:center;margin-top:18px;">先日お渡ししたご案内の、セミナーお申し込みページです。</p>
+          <p class="source-note" style="text-align:center;margin-top:18px;">先日お渡ししたご案内の、<br class="sp-only">セミナーお申し込みページです。</p>
         </div>
         <div class="hero-photo-panel">
           <img src="assets/hirose-square-v7.jpg" alt="廣瀬祥久">
@@ -459,7 +502,7 @@
 
     <section class="section">
       <div class="container">
-        <h2 class="section-title">こんな状態が、<br class="sp-only">続いていませんか。</h2>
+        <h2 class="section-title issue-title">こんな状態が、続いていませんか。</h2>
         <ul class="issue-list">
           <li><span class="x">✕</span><span>求人を出しても、応募が来ない。ひどい月は応募ゼロということも。</span></li>
           <li><span class="x">✕</span><span>応募が来ても「採用したいのは、この人じゃない」というミスマッチばかり。</span></li>
@@ -472,7 +515,7 @@
 
     <section class="section pale">
       <div class="container copy">
-        <h2 class="section-title">なぜ、応募が来ないのか。</h2>
+        <h2 class="section-title cause-title">なぜ、応募が来ないのか。</h2>
         <p>会社が無名だから。業界に人気がないから。——もちろん、それも影響します。しかし、それだけではありません。</p>
         <p>応募が集まらない会社に共通しているのは、採用を「求人を出すこと」から始めてしまっていることです。</p>
         <p>採用には、順番があります。家づくりと同じで、土台から積み上げなければ、上に何を載せても崩れます。</p>
@@ -498,9 +541,9 @@
         <h2 class="section-title">同族会社の採用には、<br>求人を出す前に<br class="sp-only">揃えることがあります。</h2>
         <p>採用の話になると、社内でこんなことが起きていないでしょうか。</p>
         <div class="voices">
-          <div class="voice" data-axis="価値"><p class="voice-role">先代</p><p class="voice-quote">「うちが大事にしてきたことを、分かってくれる人がいい」</p></div>
-          <div class="voice" data-axis="現場"><p class="voice-role">古参幹部</p><p class="voice-quote">「そんな人は、うちには合わないよ」</p></div>
-          <div class="voice you" data-axis="未来"><p class="voice-role">現社長（あなた）</p><p class="voice-quote">「これからの会社には、違う人材が必要だ」</p></div>
+          <div class="voice"><p class="voice-role">先代</p><p class="voice-quote">「うちが大事にしてきたことを、分かってくれる人がいい」</p></div>
+          <div class="voice"><p class="voice-role">古参幹部</p><p class="voice-quote">「そんな人は、うちには合わないよ」</p></div>
+          <div class="voice you"><p class="voice-role">現社長（あなた）</p><p class="voice-quote">「これからの会社には、違う人材が必要だ」</p></div>
         </div>
         <p>厄介なのは、三人とも会社のことを思って言っていることです。</p>
         <p class="voices-key">そして三人とも、「欲しい人が決まっていない」わけではありません。ただ、それぞれが頭の中で思い浮かべている人物が、違うのです。</p>
@@ -516,18 +559,19 @@
 
     <section class="section pale bucket-section">
       <div class="container copy">
-        <h2 class="section-title">採っても辞める会社に、<br>広告費だけ足しても意味がありません。</h2>
+        <h2 class="section-title bucket-title">採っても辞める会社に、<br>広告費だけ足しても意味がありません。</h2>
         <p>応募を増やす方法は、たしかにあります。私たちもお伝えします。</p>
         <div class="bucket-wrap">
           <svg class="bucket-svg" viewBox="0 0 200 220" role="img" aria-label="穴の空いたバケツの図解">
             <path d="M45 65 L58 175 Q100 194 142 175 L155 65" fill="none" stroke="#16263F" stroke-width="3"/>
             <path d="M38 65 H162" fill="none" stroke="#16263F" stroke-width="3"/>
-            <ellipse cx="128" cy="174" rx="9" ry="4" fill="#16263F"/>
+            <ellipse cx="112" cy="178" rx="7" ry="3" fill="#16263F"/>
+            <ellipse cx="138" cy="177" rx="7" ry="3" fill="#16263F"/>
             <path d="M80 22 C70 36 70 43 80 48 C90 43 90 36 80 22" fill="#00A3A6"/>
             <path d="M105 8 C95 22 95 29 105 34 C115 29 115 22 105 8" fill="#00A3A6"/>
             <path d="M130 25 C120 39 120 46 130 51 C140 46 140 39 130 25" fill="#00A3A6"/>
-            <path d="M130 190 C122 202 122 208 130 213 C138 208 138 202 130 190" fill="#00A3A6" opacity=".55"/>
-            <path d="M148 198 C140 210 140 216 148 220 C156 216 156 210 148 198" fill="#00A3A6" opacity=".55"/>
+            <path d="M112 190 C105 202 105 208 112 213 C119 208 119 202 112 190" fill="#00A3A6" opacity=".55"/>
+            <path d="M138 190 C131 202 131 208 138 213 C145 208 145 202 138 190" fill="#00A3A6" opacity=".55"/>
           </svg>
           <p class="bucket-caption">入れても、貯まらない。</p>
           <div class="bucket-labels"><span>採用費＝水</span><span>早期離職＝漏れ</span></div>
@@ -542,7 +586,7 @@
     <section class="section">
       <div class="container copy">
         <h2 class="section-title">まだ、打つ手はあります</h2>
-        <p>もしかしたら、<br class="sp-only">こう思っていませんか。</p>
+        <p class="worry-heading">もしかしたら、こう思っていませんか。</p>
         <ul class="worry-list"><li>⇒ うちの条件では、難しいだろう</li><li>⇒ この業界だから、仕方ない</li><li>⇒ 採用できても、また辞められてしまうのではないか</li></ul>
         <p>そう感じるのは当然です。実際、それらは採用に影響します。ただ、それだけで結果が決まるわけではありません。</p>
         <p>同じ条件のまま、採用が変わった会社があります。</p>
@@ -662,7 +706,7 @@
     <section class="section pale">
       <div class="container profile-grid">
         <img class="profile-image" src="assets/hirose-portrait-v7.jpg" alt="廣瀬祥久">
-        <div class="copy"><p class="quote-block">「震災で融資が途絶え、150名の仲間の職を守りきれなかった。」</p><p class="origin-line">あの経験が、「人が残れる会社」を考え続ける原点になりました。</p><h2 class="profile-name">廣瀬 祥久　和奏人事パートナーズ 代表</h2><p class="profile-role">同族会社の内側で14年。採用・人事コンサルタント</p><p>叔父が経営する30数店舗の着物専門店で常務取締役として経営再建に奔走。2012年に独立し、採用支援を重ねる中で、2017年「求人とは“働きたい人の集客”である」という発想に到達。「小手先の採用テクニックは必ず失敗する。採用求人は“事業成長からの逆算”で設計すべき」との信念の元、2代目・3代目が経営する求人難の企業に伴走しています。</p><p class="profile-stats">独立から14年／これまでに支援した同族企業 34社／1社あたりの平均支援期間 3年3ヶ月</p></div>
+        <div class="copy"><p class="quote-block">「震災で融資が途絶え、150名の仲間の職を守りきれなかった。」</p><p class="origin-line">あの経験が、「人が残れる会社」を考え続ける原点になりました。</p><h2 class="profile-name">廣瀬 祥久　和奏人事パートナーズ 代表</h2><p class="profile-role">同族会社の内側で14年。<br class="sp-only">採用・人事コンサルタント</p><p>叔父が経営する30数店舗の着物専門店で常務取締役として経営再建に奔走。2012年に独立し、採用支援を重ねる中で、2017年「求人とは“働きたい人の集客”である」という発想に到達。「小手先の採用テクニックは必ず失敗する。採用求人は“事業成長からの逆算”で設計すべき」との信念の元、2代目・3代目が経営する求人難の企業に伴走しています。</p><p class="profile-stats">独立から14年／これまでに支援した同族企業 34社／1社あたりの平均支援期間 3年3ヶ月</p></div>
       </div>
     </section>
 
