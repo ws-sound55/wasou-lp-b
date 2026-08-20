@@ -322,9 +322,8 @@
       .mobile-cta { height:52px; font-size:17px; }
     }
 
-    @media (max-width:400px) {
-      .hero .container { width:calc(100% - 28px); }
-      .hero h1 { letter-spacing:-0.06em; }
+    @media (max-width:370px) {
+      .hero h1 { font-size:28px; letter-spacing:-0.14em; }
     }
 
     @media (min-width:401px) and (max-width:700px) {
@@ -344,7 +343,7 @@
       .result-stair { max-width:680px; margin-bottom:30px; }
       .result-stair p, .result-stair p:nth-child(2), .result-stair p:nth-child(3) { padding-left:0; }
       .hero-question { margin-bottom:14px; }
-      .hero-photo-panel img { width:100%; max-width:380px; margin-bottom:16px; }
+      .hero-photo-panel img { width:100%; max-width:340px; margin-bottom:16px; }
       .hero-photo-name { font-size:20px; }
       .hero-photo-role { font-size:16px; }
       .apply-set { margin-top:32px; }
@@ -388,6 +387,33 @@
       .final-cta { padding-top:88px; padding-bottom:88px; }
       .final-cta h2 { font-size:30px; line-height:1.45; }
     }
+    /* Second responsive pass: mobile-first information hierarchy without copy changes. */
+    .nowrap { white-space:nowrap; }
+    .result-stair .nowrap { font-weight:900; }
+
+    @media (max-width:700px) {
+      .container { width:calc(100% - 40px); }
+      .hero { padding-top:24px; padding-bottom:56px; }
+      .hero-grid > div:first-child { min-width:0; }
+      .hero .rule { order:4; margin:26px 0 24px; }
+      .hero-question { order:5; margin:0 0 14px; }
+      .hero .apply-set { order:6; margin:0; }
+      .hero .source-note { order:7; margin-top:14px !important; }
+      .hero-result-title { order:8; margin-top:28px; margin-bottom:12px; }
+      .result-stair { order:9; margin-bottom:0; }
+      .hero-person { order:10; }
+      .result-stair p { font-size:16.5px; }
+      .section-title { text-wrap:balance; }
+      .copy p { letter-spacing:-0.01em; }
+      .step-card { display:block; }
+      .step-word { margin-top:6px; margin-bottom:6px; }
+      .step-main { max-width:18em; }
+      .bucket-section .section-title { font-size:18px; letter-spacing:-0.07em; line-height:1.55; }
+      .steps-section .section-title { font-size:21px; letter-spacing:-0.03em; white-space:nowrap; }
+      .comfort h2 { font-size:24px; line-height:1.5; }
+      .final-cta h2 { font-size:18px; line-height:1.65; letter-spacing:-0.035em; text-wrap:balance; }
+    }
+
   </style>
 </head>
 <body>
@@ -408,8 +434,8 @@
           <div class="rule"></div>
           <p class="hero-result-title">その状態から抜け出した<br class="sp-only">会社があります。</p>
           <div class="result-stair">
-            <p>応募が2〜3倍以上に増えた会社。</p>
-            <p>採用した人が2年以上定着している会社。</p>
+            <p>応募が<span class="nowrap">2〜3倍以上</span>に増えた会社。</p>
+            <p>採用した人が<span class="nowrap">2年以上</span>定着している会社。</p>
             <p>そして、社長自身が現場から離れられた会社もあります。</p>
           </div>
           <p class="hero-question">御社の採用は、<br class="sp-only">どこから直すべきか。</p>
@@ -433,7 +459,7 @@
 
     <section class="section">
       <div class="container">
-        <h2 class="section-title">こんな状態が、続いていませんか。</h2>
+        <h2 class="section-title">こんな状態が、<br class="sp-only">続いていませんか。</h2>
         <ul class="issue-list">
           <li><span class="x">✕</span><span>求人を出しても、応募が来ない。ひどい月は応募ゼロということも。</span></li>
           <li><span class="x">✕</span><span>応募が来ても「採用したいのは、この人じゃない」というミスマッチばかり。</span></li>
@@ -516,7 +542,7 @@
     <section class="section">
       <div class="container copy">
         <h2 class="section-title">まだ、打つ手はあります</h2>
-        <p>もしかしたら、こう思っていませんか。</p>
+        <p>もしかしたら、<br class="sp-only">こう思っていませんか。</p>
         <ul class="worry-list"><li>⇒ うちの条件では、難しいだろう</li><li>⇒ この業界だから、仕方ない</li><li>⇒ 採用できても、また辞められてしまうのではないか</li></ul>
         <p>そう感じるのは当然です。実際、それらは採用に影響します。ただ、それだけで結果が決まるわけではありません。</p>
         <p>同じ条件のまま、採用が変わった会社があります。</p>
