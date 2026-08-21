@@ -185,6 +185,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       margin-top: 0.85rem;
       letter-spacing: 0.02em;
     }
+    .case-prelude { margin:0 0 0.15rem; color: var(--navy-dark); font-size:0.67em; font-weight:700; line-height:1.55; }
+    .case-result { margin:0; color: var(--navy-dark); font-size:1em; font-weight:900; line-height:1.4; }
+    .case-result .num-highlight { font-size:1.15em; white-space:nowrap; }
+    .case-other { margin:0.45rem 0 0; color: var(--navy-dark); font-size:0.72em; font-weight:700; line-height:1.55; }
+    .case-other-prefix { color:#666; font-size:0.8em; font-weight:500; white-space:nowrap; }
+    .hero-case-note { max-width:720px; margin:16px auto 2.25rem; color:#666; font-size:13px; font-weight:400; line-height:1.6; text-align:center; }
     .banner-divider { display: none; border: none; }
 
     /* PC/SP切り替え */
@@ -893,9 +899,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .col-image-arrow { font-size: 2.5rem !important; }
       .hero { padding: 2.75rem 1.25rem 2.25rem; }
       .hero-target { font-size: clamp(1.55rem, 7vw, 2rem); }
-      .hero-result-banner { padding: 1.5rem 1rem; }
+      .hero-result-banner { padding: 1.5rem 1rem; margin-bottom:0; }
       .hero-result-banner .banner-main { font-size: clamp(1.45rem, 6.5vw, 2.2rem); }
       .hero-result-banner .banner-label { font-size: clamp(1.2rem, 4.5vw, 1.5rem); }
+      .case-prelude { font-size:0.67em; white-space:nowrap; }
+      .case-other { font-size:0.72em; }
+      .hero-case-note { margin:16px auto 2.25rem; padding:0 0.5rem; }
       .two-col { flex-direction: column; }
       .col-image { width: 100%; }
       .problem-grid { grid-template-columns: 1fr; }
@@ -962,20 +971,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-result-banner">
       <div class="banner-label">✔ 事例</div>
       <!-- PC用 -->
-      <div class="banner-main banner-main-pc" style="line-height:1.5;">
-        大手求人媒体の<span class="num-highlight accent-red">3倍以上</span>の応募<br>
-        離職率<span class="num-highlight">46.8%</span>が<span class="num-highlight accent-red">15.1%</span>に改善
+      <div class="banner-main banner-main-pc">
+        <p class="case-prelude">1年間で約1,000万円かけても、応募はゼロ。</p>
+        <p class="case-result">その会社が、<span class="num-highlight accent-red">1ヶ月で19名</span>。</p>
+        <p class="case-other"><span class="case-other-prefix">（別の支援先では）</span>離職率<span class="num-highlight">46.8%</span> → <span class="num-highlight accent-red">15.1%</span>に改善</p>
       </div>
       <!-- スマホ用 -->
-      <div class="banner-main banner-main-sp" style="font-size:clamp(1.45rem,6.5vw,2.2rem);line-height:1.5;display:none;">
-        大手の求人媒体の<br>
-        <span class="num-highlight accent-red">3倍以上</span>の応募
-        <hr class="banner-divider">
-        離職率<span class="num-highlight">46.8%</span>が<br>
-        <span class="num-highlight accent-red">15.1%</span>に改善
+      <div class="banner-main banner-main-sp" style="display:none;">
+        <p class="case-prelude">1年間で約1,000万円かけても、<br>応募はゼロ。</p>
+        <p class="case-result">その会社が、<span class="num-highlight accent-red">1ヶ月で19名</span>。</p>
+        <p class="case-other"><span class="case-other-prefix">（別の支援先では）</span>離職率<span class="num-highlight">46.8%</span> → <span class="num-highlight accent-red">15.1%</span>に改善</p>
       </div>
-      <div class="banner-sub">変えたのは、創業家の方向性と価値観</div>
+      <div class="banner-sub">変えたのは、<span class="sp-br-inline"><br></span>創業家の方向性と価値観</div>
     </div>
+    <p class="hero-case-note">※支援先の個別事例です。同様の成果を保証するものではありません。</p>
 
     <h1 class="hero-main">
       2代目・3代目が経営する企業の<br class="sp-br">「人の問題」には、<br>
