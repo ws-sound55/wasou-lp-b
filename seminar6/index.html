@@ -11,7 +11,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>採用3ステップセミナー｜和奏人事パートナーズ</title>
-  <meta name="description" content="本来は現場がやることを、社長がやっていませんか。応募が2〜3倍以上に増え、2年以上定着している会社があります。2代目・3代目経営者のための無料セミナー。参加費無料・各回5社限定。">
+  <meta name="description" content="本来は現場がやることを、社長がやっていませんか。1年間1,000万円かけても応募ゼロだった会社が、1ヶ月で19名。2代目・3代目経営者のための無料セミナー。参加費無料・各回5社限定。">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,9 +48,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .hero-intro { margin:0; }
     .hero-result-title { margin:0 0 12px; font-size:20px; font-weight:900; }
     .result-stair { margin:0 0 22px; }
-    .result-stair p { margin:0; font-size:17px; line-height:1.8; }
-    .result-stair p:nth-child(2) { padding-left:12px; }
-    .result-stair p:nth-child(3) { padding-left:24px; font-weight:900; }
+    .result-stair p { margin:0; }
+    .hero-case-prelude { color:var(--muted); font-size:18px; font-weight:500; line-height:1.8; }
+    .hero-case-main { color:var(--navy); font-size:16px; font-weight:900; line-height:1.45; letter-spacing:-0.035em; white-space:nowrap; }
+    .hero-case-main .hero-case-number { color:var(--red); font-size:clamp(1.75rem, 7.5vw, 2rem); font-weight:900; white-space:nowrap; }
+    .hero-case-others { margin-top:24px !important; color:var(--muted); font-size:16px; font-weight:500; line-height:1.75; }
+    .hero-case-final { margin-top:24px !important; color:var(--navy); font-size:18px; font-weight:900; line-height:1.8; }
+    .hero-case-note { margin-top:16px !important; color:var(--muted); font-size:13px; font-weight:400; line-height:1.6; }
     .hero-question { margin:0 0 18px; font-size:23px; font-weight:900; line-height:1.6; }
     .hero-person { display:flex; align-items:center; gap:12px; margin:18px 0; }
     .hero-person img { width:56px; height:56px; object-fit:cover; border-radius:50%; }
@@ -464,6 +468,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
 
+    /* 新しい実績列には指定サイズを優先し、既存の階段表示用の箇条書き記号を継承させない。 */
+    @media (max-width:700px) {
+      .result-stair .hero-case-prelude { font-size:18px; }
+      .result-stair .hero-case-main { font-size:18px; }
+      .result-stair .hero-case-others { font-size:16px; }
+      .result-stair .hero-case-final { font-size:18px; }
+      .result-stair .hero-case-note { font-size:13px; }
+      .result-stair .hero-case-prelude::before, .result-stair .hero-case-main::before, .result-stair .hero-case-others::before, .result-stair .hero-case-final::before, .result-stair .hero-case-note::before { content:none; }
+    }
+
+    /* 320px最小幅では文字を縮めず、意味単位で折り返して横スクロールを防ぐ。 */
+    @media (max-width:340px) {
+      .hero-result-title { white-space:normal; }
+      .hero-case-prelude, .hero-case-main, .hero-case-others, .hero-case-final, .hero-case-note { min-width:0; max-width:100%; }
+      .hero-case-main { letter-spacing:-0.05em; }
+      .issue-title { white-space:normal; }
+    }
+
   </style>
 </head>
 <body>
@@ -488,9 +510,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="rule"></div>
           <p class="hero-result-title">その状態から抜け出した会社があります。</p>
           <div class="result-stair">
-            <p>応募が<span class="nowrap">2〜3倍以上</span>に増えた会社。</p>
-            <p>採用した人が<span class="nowrap">2年以上</span>定着している会社。</p>
-            <p>そして、社長自身が現場から離れられた会社もあります。</p>
+            <p class="hero-case-prelude">1年間で約1,000万円かけても、<br>応募はゼロ。</p>
+            <p class="hero-case-main">その会社が、<span class="hero-case-number">1ヶ月で19名</span>。</p>
+            <p class="hero-case-others">ほかにも——2年間で応募4名だった会社が、2ヶ月で22名。<br>3ヶ月90万円で30名だった会社が、2ヶ月で103名。</p>
+            <p class="hero-case-final">そして、社長自身が現場から離れられた会社もあります。</p>
+            <p class="hero-case-note">※支援先の個別事例です。同様の成果を保証するものではありません。</p>
           </div>
           <p class="hero-question">御社の採用は、どこから直すべきか。</p>
           <div class="hero-person">
