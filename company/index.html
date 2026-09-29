@@ -9,6 +9,9 @@
 <meta name="description" content="和奏人事パートナーズは、中小企業・同族企業を中心に、創業家ガバナンス、理念・行動指針、人事制度、定着・育成、採用まで、人と組織の問題を経営の根本から整える支援を行っています。株式会社和装コンサルタンツの会社概要をご紹介します。">
 <title>会社概要｜和奏人事パートナーズ｜株式会社和装コンサルタンツ</title>
 <link rel="stylesheet" href="styles.css">
+
+<link rel="stylesheet" href="../assets/css/page-top.css">
+<script src="../assets/js/page-top.js" defer></script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -177,5 +180,7 @@ const button=document.querySelector('.menu-button');const mobileNav=document.get
 button.addEventListener('click',()=>{const open=mobileNav.hidden;mobileNav.hidden=!open;button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',open?'メニューを閉じる':'メニューを開く');button.textContent=open?'×':'☰'});
 mobileNav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{mobileNav.hidden=true;button.setAttribute('aria-expanded','false');button.setAttribute('aria-label','メニューを開く');button.textContent='☰'}));
 </script>
+
+<button class="site-page-top" type="button" aria-label="ページの先頭へ戻る" aria-hidden="true">↑</button>
 </body>
 </html>

@@ -17,6 +17,9 @@
 @media(max-width:900px){.header-inner{min-height:70px}.brand img{width:190px}.desktop-nav{display:none}.menu-button{display:inline-flex;width:48px;height:48px;padding:0;border:0;background:transparent;color:var(--navy);align-items:center;justify-content:center;font-size:27px;cursor:pointer}.mobile-nav{display:block;position:absolute;z-index:30;top:100%;right:0;left:0;padding:14px 24px 24px;background:var(--white);border-bottom:1px solid var(--line)}.mobile-nav[hidden]{display:none}.mobile-nav a{display:block;padding:13px 0;border-bottom:1px solid var(--line);color:var(--navy);font-size:15px;font-weight:600;text-decoration:none}.mobile-nav a:last-child{margin-top:16px;padding:13px 18px;border:0;border-radius:999px;background:var(--navy);color:var(--white);text-align:center}.hero-inner{grid-template-columns:1fr;gap:34px;min-height:0;padding:90px 0 74px}.hero-visual{order:2}.flow-visual{min-height:245px}.why-layout{grid-template-columns:1fr;gap:42px}.why-layout .line-figure{order:2}.force-grid,.promise-grid{grid-template-columns:1fr}.force-card{min-height:0}.representative-layout{grid-template-columns:1fr;gap:42px}.profile-wrap{max-width:280px}.footer-inner{align-items:flex-start;flex-direction:column}.footer-copy{text-align:left}}
 @media(max-width:640px){body{font-size:16px}.sp-break{display:inline}.header-inner{width:calc(100% - 40px)}.brand img{width:174px}.section{padding:72px 20px}.hero-inner{width:calc(100% - 40px);padding:73px 0 62px;gap:30px}.hero h1{font-size:clamp(31px,9.4vw,39px);line-height:1.52}.hero-copy{margin-top:23px;font-size:16px;line-height:1.95}.flow-visual{min-height:210px}.section-title{font-size:clamp(26px,7vw,34px);line-height:1.58}.section-copy,.forces-intro,.align-copy,.representative-copy,.cta-copy{font-size:16px;line-height:1.93}.section-copy{margin-top:26px}.section-copy p,.align-copy p,.representative-copy p{margin-bottom:23px}.quote-block{margin:43px 0;padding:25px 0;font-size:25px;line-height:1.75}.force-grid,.promise-grid{gap:16px;margin-top:34px}.force-card,.promise-card{padding:28px 23px}.force-close{margin-top:42px;font-size:24px;text-align:left}.foundation .section-title{font-size:27px}.foundation .question{margin:28px 0;font-size:21px}.align-emphasis{margin-top:41px;font-size:25px}.foundation-flow{margin-top:42px;font-size:20px}.representative-layout{gap:34px}.profile-wrap{max-width:220px}.final-cta{padding:77px 20px}.cta-button{width:100%;margin-top:34px;padding:0 18px}.cta-note{font-size:13px}.site-footer{padding:30px 20px}.footer-logo{width:175px}.footer-copy{font-size:12px}}
 </style>
+
+<link rel="stylesheet" href="../assets/css/page-top.css">
+<script src="../assets/js/page-top.js" defer></script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -251,5 +254,7 @@ const button=document.querySelector('.menu-button');const mobileNav=document.get
 button.addEventListener('click',()=>{const open=mobileNav.hidden;mobileNav.hidden=!open;button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',open?'メニューを閉じる':'メニューを開く');button.textContent=open?'×':'☰'});
 mobileNav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{mobileNav.hidden=true;button.setAttribute('aria-expanded','false');button.setAttribute('aria-label','メニューを開く');button.textContent='☰'}));
 </script>
+
+<button class="site-page-top" type="button" aria-label="ページの先頭へ戻る" aria-hidden="true">↑</button>
 </body>
 </html>
