@@ -57,5 +57,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://wasou-jinji.jp/column/category/recruitment/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://wasou-jinji.jp/column/why-no-applicants/</loc>
+    <lastmod>Tue Sep 29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
   <!-- COLUMN_URLS:END -->
 </urlset>
