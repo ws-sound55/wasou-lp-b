@@ -14,13 +14,6 @@ if ('IntersectionObserver' in window) {
   io.observe(hero);
 }
 
-document.querySelectorAll('a[href="https://reserve.peraichi.com/r/b194f80c"][target="_blank"][rel="noopener"]').forEach(a => {
-  a.addEventListener('click', e => {
-    e.preventDefault();
-    document.getElementById('application').scrollIntoView({behavior:'smooth', block:'start'});
-  });
-});
-
 const menuTrigger = document.querySelector('.hero-menu-trigger');
 const mobileMenu = document.getElementById('mobileMenu');
 const menuClose = document.querySelector('.mobile-menu-close');
