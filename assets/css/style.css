@@ -925,27 +925,42 @@ body{
   top:0;
   height:9.6%;
 }
+.hero-nav-label-mask{
+  position:absolute;
+  z-index:25;
+  left:45.2%;
+  top:3.6%;
+  width:35.0%;
+  height:3.5%;
+  background:var(--white);
+}
+.hero-nav-reflow{
+  position:absolute;
+  z-index:30;
+  top:3.45%;
+  left:45.2%;
+  width:35.0%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.hero-nav-reflow a{
+  color:var(--navy);
+  font-family:"Noto Serif JP","Yu Mincho","Hiragino Mincho ProN",serif;
+  font-size:clamp(10px,1.03vw,17px);
+  font-weight:700;
+  line-height:1;
+  text-decoration:none;
+  white-space:nowrap;
+}
 .hero-nav-link:focus-visible,
+.hero-nav-reflow a:focus-visible,
 .hero-menu-trigger:focus-visible,
 .mobile-menu a:focus-visible,
 .mobile-menu button:focus-visible{
   outline:3px solid var(--teal);
   outline-offset:-3px;
 }
-.hero-nav-thought{left:44.4%;width:7.8%;}
-.hero-nav-services{left:52.2%;width:6.1%;}
-.hero-nav-seminar{left:58.3%;width:5.8%;}
-.hero-nav-cases-mask{
-  position:absolute;
-  z-index:25;
-  left:64.7%;
-  top:3.8%;
-  width:5.3%;
-  height:3.1%;
-  background:var(--white);
-}
-.hero-nav-column{left:70.4%;width:4.6%;}
-.hero-nav-company{left:75.0%;width:5.9%;}
 .hero-nav-contact{left:80.9%;width:14.2%;}
 .hero-menu-trigger,
 .mobile-menu{display:none;}
