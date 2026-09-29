@@ -88,3 +88,8 @@ a{color:inherit}
 @media(max-width:640px){.hero-main{font-size:32px;letter-spacing:-.045em}.hero-main-first{white-space:nowrap}}
 
 @media(max-width:380px){.hero-main{font-size:30px;letter-spacing:-.055em}}
+
+.case-card .after-label{position:relative;padding-top:25px}
+.case-card .after-label:before{content:"↓";position:absolute;top:0;left:0;color:var(--gold);font-family:"Noto Serif JP","Yu Mincho",serif;font-size:18px;line-height:1}
+
+.case-card{border:1px solid var(--line);border-top:2px solid var(--gold)}
