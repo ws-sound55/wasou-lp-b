@@ -1,5 +1,5 @@
 (() => {
-  const trigger = document.querySelector('.site-menu-trigger');
+  const trigger = document.querySelector('.site-menu-trigger, .hero-menu-trigger');
   const menu = document.querySelector('.site-mobile-nav');
   if (!trigger || !menu) return;
 

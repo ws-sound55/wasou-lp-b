@@ -955,15 +955,12 @@ body{
 }
 .hero-nav-link:focus-visible,
 .hero-nav-reflow a:focus-visible,
-.hero-menu-trigger:focus-visible,
-.mobile-menu a:focus-visible,
-.mobile-menu button:focus-visible{
+.hero-menu-trigger:focus-visible{
   outline:3px solid var(--teal);
   outline-offset:-3px;
 }
 .hero-nav-contact{left:80.9%;width:14.2%;}
-.hero-menu-trigger,
-.mobile-menu{display:none;}
+.hero-menu-trigger{display:none;}
 
 @media (max-width:640px){
   .hero-nav-desktop{display:none;}
@@ -980,72 +977,5 @@ body{
   }
   .hero-menu-trigger span{
     display:none;
-  }
-  .mobile-menu{
-    display:block;
-    position:absolute;
-    z-index:40;
-    top:0;
-    right:0;
-    left:0;
-    padding:18px 20px 24px;
-    background:var(--white);
-    border-bottom:1px solid var(--line);
-    text-align:left;
-    line-height:1.5;
-  }
-  .mobile-menu[hidden]{display:none;}
-  .mobile-menu-top{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    color:var(--navy);
-    font-size:13px;
-    font-weight:700;
-    letter-spacing:.14em;
-  }
-  .mobile-menu-close{
-    width:38px;
-    height:38px;
-    padding:0;
-    border:0;
-    background:transparent;
-    color:var(--navy);
-    font-size:32px;
-    line-height:1;
-    cursor:pointer;
-  }
-  .mobile-menu-links{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    border-top:1px solid var(--line);
-    margin-top:10px;
-  }
-  .mobile-menu-links a{
-    padding:15px 8px;
-    border-bottom:1px solid var(--line);
-    color:var(--navy);
-    font-size:15px;
-    font-weight:700;
-    text-decoration:none;
-  }
-  .mobile-menu-links a:nth-child(odd){border-right:1px solid var(--line);}
-  .mobile-menu-links a:last-child{
-    grid-column:1/-1;
-    border-right:0;
-    text-align:center;
-  }
-  .mobile-menu-contact{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    min-height:48px;
-    margin-top:20px;
-    border-radius:999px;
-    background:var(--navy);
-    color:var(--white);
-    font-size:16px;
-    font-weight:700;
-    text-decoration:none;
   }
 }

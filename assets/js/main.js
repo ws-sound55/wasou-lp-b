@@ -13,25 +13,3 @@ if ('IntersectionObserver' in window) {
   }, {threshold:0.02});
   io.observe(hero);
 }
-
-const menuTrigger = document.querySelector('.hero-menu-trigger');
-const mobileMenu = document.getElementById('mobileMenu');
-const menuClose = document.querySelector('.mobile-menu-close');
-
-function closeMobileMenu() {
-  if (!menuTrigger || !mobileMenu) return;
-  mobileMenu.hidden = true;
-  menuTrigger.setAttribute('aria-expanded', 'false');
-  menuTrigger.setAttribute('aria-label', 'メニューを開く');
-}
-
-if (menuTrigger && mobileMenu) {
-  menuTrigger.addEventListener('click', () => {
-    const isOpen = !mobileMenu.hidden;
-    mobileMenu.hidden = isOpen;
-    menuTrigger.setAttribute('aria-expanded', String(!isOpen));
-    menuTrigger.setAttribute('aria-label', isOpen ? 'メニューを開く' : 'メニューを閉じる');
-  });
-  menuClose?.addEventListener('click', closeMobileMenu);
-  mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileMenu));
-}
