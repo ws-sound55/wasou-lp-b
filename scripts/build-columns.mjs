@@ -8,6 +8,7 @@ const sourceDir = process.env.COLUMNS_SOURCE || path.join(root, 'content', 'colu
 const outputDir = process.env.COLUMNS_OUTPUT || path.join(root, 'column');
 const sitemapPath = process.env.COLUMNS_SITEMAP === 'false' ? null : path.join(root, 'sitemap.xml');
 const siteUrl = 'https://wasou-jinji.jp';
+const consultationUrl = 'https://reserve.peraichi.com/r/b194f80c/select_date?course=82468';
 const categoryMap = {
   'family-governance': '創業家・同族経営',
   'philosophy-organization': '理念・組織づくり',
@@ -75,7 +76,7 @@ const tags = post => `<span class="column-tags">${post.categories.map(category =
 const card = post => `<article class="column-card" data-column-card data-categories="${post.categories.join('|')}">${post.eyecatch ? `<a class="column-card-image" href="/column/${attr(post.slug)}/" aria-label="${attr(post.title)}を読む"><img src="${attr(post.eyecatch)}" alt=""></a>` : ''}<div class="column-card-meta"><time datetime="${attr(post.published_at)}">${formatDate(post.published_at)}</time>${tags(post)}${post.wasou_view ? '<span class="column-tag">WASOU VIEW</span>' : ''}</div><h2><a href="/column/${attr(post.slug)}/">${esc(post.title)}</a></h2><p>${esc(post.excerpt)}</p><a class="column-card-link" href="/column/${attr(post.slug)}/">続きを読む</a></article>`;
 const breadcrumb = (items) => `<nav class="column-breadcrumb" aria-label="パンくずリスト">${items.map((item, index) => index === items.length - 1 ? `<span>${esc(item.label)}</span>` : `<a href="${attr(item.href)}">${esc(item.label)}</a> <span aria-hidden="true">/</span> `).join('')}</nav>`;
 const normaliseHeadings = body => body.replace(/^# (.+)$/gm, '## $1');
-const articleCta = () => `<aside class="article-cta"><button type="button" disabled aria-disabled="true">個別相談を申し込む</button></aside>`;
+const articleCta = () => `<aside class="article-cta"><a href="${consultationUrl}" target="_blank" rel="noopener">個別相談を申し込む</a></aside>`;
 const author = () => `<aside class="article-author"><h2>著者</h2><div class="author-inner"><img src="/assets/images/profile.jpg" alt="廣瀬 祥久"><div><p class="author-name">廣瀬 祥久<br>和奏人事パートナーズ 代表</p><p>中小企業の採用・人事・組織づくりを支援。<br>求人だけを見るのではなく、理念・評価・育成・定着・創業家まで含め、「人が集まり、育ち、定着する会社」を経営者と一緒につくっています。</p><p class="author-copy">一人一人の音（個性・使命）を、一つの和に。</p></div></div></aside>`;
 const categoryIndex = posts => Object.keys(categoryMap).filter(category => posts.some(post => post.categories.includes(category)));
 const pageMeta = post => ({title: post.seo_title || `${post.title}｜和奏人事パートナーズ`, description: post.seo_description || post.excerpt || post.intro, canonical: `${siteUrl}/column/${post.slug}/`});
