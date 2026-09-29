@@ -17,8 +17,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <link rel="stylesheet" href="assets/css/page-top.css">
 <script src="assets/js/page-top.js" defer></script>
+
+<link rel="stylesheet" href="assets/css/site-menu.css">
+<script src="assets/js/site-menu.js" defer></script>
 </head>
-<body>
+<body class="site-menu-enabled">
+<button class="site-menu-trigger" type="button" aria-label="メニューを開く" aria-controls="siteMobileNav" aria-expanded="false"><span></span><span></span><span></span></button>
+<nav class="site-mobile-nav" id="siteMobileNav" aria-label="サイトメニュー" hidden>
+  <div class="site-mobile-nav-head"><span class="site-mobile-nav-title">MENU</span><button class="site-mobile-nav-close" type="button" aria-label="メニューを閉じる">×</button></div>
+  <div class="site-mobile-nav-links">
+    <a href="/">TOPページ</a>
+    <a href="/philosophy/">私たちの想い</a>
+    <a href="/coming-soon/">サービス</a>
+    <a href="/seminar6/">セミナー</a>
+    <a href="/coming-soon/">コラム</a>
+    <a href="/company/">会社概要</a>
+    <a href="/contact/">お問い合わせ</a>
+  </div>
+</nav>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFHHHFDB"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
