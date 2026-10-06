@@ -68,5 +68,11 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://wasou-jinji.jp/column/recruiting-before-job-posting/</loc>
+    <lastmod>Tue Oct 06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
   <!-- COLUMN_URLS:END -->
 </urlset>
