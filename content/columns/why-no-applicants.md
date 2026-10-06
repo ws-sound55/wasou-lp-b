@@ -11,6 +11,8 @@ eyecatch: /assets/column/images/chatgpt-2026929-180300.png
 pickup: true
 wasou_view: true
 show_article_cta: true
+related_articles:
+  - recruiting-before-job-posting
 seo_title: 求人を出しても応募が来ない理由とは？中小企業の採用で見直すべきこと｜和奏人事パートナーズ
 seo_description: 求人を出しても応募が来ない原因は、給与や立地だけではありません。多くの中小企業に共通するのが、求職者が知りたい会社情報の不足です。採用市場が厳しくなる中で、求職者から選ばれる企業になるために、まず見直すべきポイントを解説します。
 ogp_image: /assets/column/images/file-1.png
