@@ -7,6 +7,7 @@ const root = process.cwd();
 const sourceDir = process.env.COLUMNS_SOURCE || path.join(root, 'content', 'columns');
 const outputDir = process.env.COLUMNS_OUTPUT || path.join(root, 'column');
 const sitemapPath = process.env.COLUMNS_SITEMAP === 'false' ? null : path.join(root, 'sitemap.xml');
+const htmlSitemapPath = path.join(root, 'sitemap', 'index.html');
 const siteUrl = 'https://wasou-jinji.jp';
 const consultationUrl = 'https://reserve.peraichi.com/r/b194f80c/select_date?course=82468';
 const categoryMap = {
@@ -89,6 +90,21 @@ const author = () => `<aside class="article-author"><h2>著者</h2><div class="a
 const categoryIndex = posts => Object.keys(categoryMap).filter(category => posts.some(post => post.categories.includes(category)));
 const pageMeta = post => ({title: post.seo_title || `${post.title}｜和奏人事パートナーズ`, description: post.seo_description || post.excerpt || post.intro, canonical: `${siteUrl}/column/${post.slug}/`});
 const write = async (file, content) => { await fs.mkdir(path.dirname(file), {recursive:true}); await fs.writeFile(file, content, 'utf8'); };
+const updateHtmlSitemap = async posts => {
+  let html;
+  try {
+    html = await fs.readFile(htmlSitemapPath, 'utf8');
+  } catch {
+    throw new Error(`HTML sitemap not found: ${htmlSitemapPath}`);
+  }
+  const links = posts.map(post => `  <li><a href="/column/${attr(post.slug)}/">${esc(post.title)}</a></li>`).join('\n');
+  const block = `<!-- COLUMN_ARTICLE_LINKS:START -->\n${links}\n<!-- COLUMN_ARTICLE_LINKS:END -->`;
+  const markerPattern = /<!-- COLUMN_ARTICLE_LINKS:START -->[\s\S]*?<!-- COLUMN_ARTICLE_LINKS:END -->/;
+  if (!markerPattern.test(html)) {
+    throw new Error('HTML sitemap column link markers are missing.');
+  }
+  await fs.writeFile(htmlSitemapPath, html.replace(markerPattern, block), 'utf8');
+};
 const generatedMarker = path.join(outputDir, '.generated-pages.json');
 const previous = async () => { try { return JSON.parse(await fs.readFile(generatedMarker, 'utf8')); } catch { return {paths: []}; } };
 const removePrevious = async marker => {
@@ -139,6 +155,7 @@ const build = async () => {
     sitemap = markerPattern.test(sitemap) ? sitemap.replace(markerPattern, block) : sitemap.replace('</urlset>', `${block}\n</urlset>`);
     await fs.writeFile(sitemapPath, sitemap, 'utf8');
   }
+  await updateHtmlSitemap(posts);
   console.log(`Generated ${posts.length} published article(s), ${categories.length} category page(s).`);
 };
 await build();
