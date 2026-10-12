@@ -24,6 +24,17 @@ const services = {
   'retention-development': {label: '定着・育成', href: '/service/#retention'},
   'recruitment-strategy': {label: '採用戦略・求人', href: '/service/#recruitment'}
 };
+const categoryDetails = {
+  recruitment: {
+    description: '採用・求人に関するコラム一覧です。中小企業・同族企業の経営者に向けて、応募が集まらない理由、採りたい人に届く求人のつくり方、採用と定着をつなぐ考え方を解説します。',
+    guideTitle: '採用の悩みを、求人原稿だけで終わらせないために',
+    guideText: '応募数だけでなく、求職者がどこで離れているのか、入社後に働き続けられる環境が整っているかまでを、一つながりで見直します。記事で考え方を知ったうえで、御社の状況に合わせた相談も可能です。',
+    serviceHref: '/service/#recruitment',
+    serviceLabel: '採用戦略・求人の支援内容を見る',
+    consultationHref: '/consultation.html',
+    consultationLabel: '無料相談で採用課題を整理する'
+  }
+};
 const md = new MarkdownIt({html:false,linkify:true,typographer:true});
 const esc = (value = '') => String(value).replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#039;','"':'&quot;'}[char]));
 const attr = (value = '') => esc(value).replace(/`/g, '&#096;');
@@ -127,9 +138,14 @@ const build = async () => {
   generated.push('index.html');
   for (const category of categories) {
     const filtered = posts.filter(post => post.categories.includes(category));
-    const categoryMain = `${nav('column')}<main>${breadcrumb([{label:'TOP',href:'/'},{label:'コラム',href:'/column/'},{label:categoryMap[category]}])}<section class="column-hero"><div class="column-hero-inner"><span class="column-eyebrow">COLUMN CATEGORY</span><h1>${esc(categoryMap[category])}</h1><p>「${esc(categoryMap[category])}」に関する記事一覧です。</p></div></section><div class="column-main"><div class="column-container"><div class="column-grid">${filtered.map(card).join('')}</div></div></div></main>${footer()}`;
+    const detail = categoryDetails[category];
+    const canonical = `${siteUrl}/column/category/${category}/`;
+    const description = detail?.description || `${categoryMap[category]}に関するコラム一覧です。`;
+    const guide = detail ? `<section class="category-guide" aria-labelledby="category-guide-title"><span class="column-eyebrow">READ &amp; CONSULT</span><h2 id="category-guide-title">${esc(detail.guideTitle)}</h2><p>${esc(detail.guideText)}</p><nav class="category-guide-links" aria-label="${esc(categoryMap[category])}の関連ページ"><a href="${attr(detail.serviceHref)}">${esc(detail.serviceLabel)}</a><a href="${attr(detail.consultationHref)}">${esc(detail.consultationLabel)}</a></nav></section>` : '';
+    const structuredData = JSON.stringify({'@context':'https://schema.org','@type':'CollectionPage',name:`${categoryMap[category]}｜コラム｜和奏人事パートナーズ`,description,url:canonical,inLanguage:'ja-JP',isPartOf:{'@type':'WebSite',name:'和奏人事パートナーズ',url:siteUrl},mainEntity:{'@type':'ItemList',numberOfItems:filtered.length,itemListElement:filtered.map((post,index)=>({'@type':'ListItem',position:index + 1,name:post.title,url:`${siteUrl}/column/${post.slug}/`}))}});
+    const categoryMain = `${nav('column')}<main>${breadcrumb([{label:'TOP',href:'/'},{label:'コラム',href:'/column/'},{label:categoryMap[category]}])}<section class="column-hero"><div class="column-hero-inner"><span class="column-eyebrow">COLUMN CATEGORY</span><h1>${esc(categoryMap[category])}</h1><p>${esc(description)}</p></div></section><div class="column-main"><div class="column-container">${guide}<div class="column-grid">${filtered.map(card).join('')}</div></div></div></main>${footer()}`;
     const categoryPath = path.join('category', category, 'index.html');
-    await write(path.join(outputDir, categoryPath), layout({title:`${categoryMap[category]}｜コラム｜和奏人事パートナーズ`, description:`${categoryMap[category]}に関するコラム一覧です。`, canonical:`${siteUrl}/column/category/${category}/`, body:categoryMain}));
+    await write(path.join(outputDir, categoryPath), layout({title:`${categoryMap[category]}｜コラム｜和奏人事パートナーズ`, description, canonical, body:categoryMain, structuredData}));
     generated.push(categoryPath);
   }
   for (const post of posts) {
@@ -146,8 +162,11 @@ const build = async () => {
   if (sitemapPath) {
     let sitemap = await fs.readFile(sitemapPath, 'utf8');
     const urls = [
-      {loc:`${siteUrl}/column/`, priority:'0.7'},
-      ...categories.map(category => ({loc:`${siteUrl}/column/category/${category}/`, priority:'0.5'})),
+      {loc:`${siteUrl}/column/`, lastmod:posts[0]?.updated_at || posts[0]?.published_at, priority:'0.7'},
+      ...categories.map(category => {
+        const newest = posts.find(post => post.categories.includes(category));
+        return {loc:`${siteUrl}/column/category/${category}/`, lastmod:newest?.updated_at || newest?.published_at, priority:'0.5'};
+      }),
       ...posts.map(post => ({loc:`${siteUrl}/column/${post.slug}/`, lastmod:post.updated_at || post.published_at, priority:'0.6'}))
     ];
     const block = `  <!-- COLUMN_URLS:START -->\n${urls.map(url => `  <url>\n    <loc>${url.loc}</loc>${url.lastmod ? `\n    <lastmod>${url.lastmod}</lastmod>` : ''}\n    <changefreq>monthly</changefreq>\n    <priority>${url.priority}</priority>\n  </url>`).join('\n')}\n  <!-- COLUMN_URLS:END -->`;

@@ -8,6 +8,8 @@ const sourceDir = path.join(root, 'content', 'columns');
 const columnDir = path.join(root, 'column');
 const sitemapPath = path.join(root, 'sitemap.xml');
 const htmlSitemapPath = path.join(root, 'sitemap', 'index.html');
+const consultationPath = path.join(root, 'consultation.html');
+const legalPath = path.join(root, 'tokutei.html');
 const categoryMap = new Set([
   'family-governance',
   'philosophy-organization',
@@ -54,16 +56,31 @@ const has = (content, expected, label) => {
 };
 
 const posts = await readPosts();
-const [columnIndex, xmlSitemap, htmlSitemap, robots] = await Promise.all([
+const [columnIndex, xmlSitemap, htmlSitemap, robots, consultationPage, legalPage] = await Promise.all([
   read(path.join(columnDir, 'index.html')),
   read(sitemapPath),
   read(htmlSitemapPath),
-  read(path.join(root, 'robots.txt'))
+  read(path.join(root, 'robots.txt')),
+  read(consultationPath),
+  read(legalPath)
 ]);
 
 has(robots, `Sitemap: ${siteUrl}/sitemap.xml`, 'robots.txt sitemap declaration');
 has(htmlSitemap, '<!-- COLUMN_ARTICLE_LINKS:START -->', 'HTML sitemap start marker');
 has(htmlSitemap, '<!-- COLUMN_ARTICLE_LINKS:END -->', 'HTML sitemap end marker');
+
+for (const page of [
+  {label:'consultation', route:'/consultation.html', content:consultationPage},
+  {label:'tokutei', route:'/tokutei.html', content:legalPage}
+]) {
+  const canonical = `${siteUrl}${page.route}`;
+  has(page.content, `<link rel="canonical" href="${canonical}">`, `${page.label} canonical`);
+  has(page.content, '<meta name="description"', `${page.label} description`);
+  has(page.content, '<meta name="robots" content="index,follow">', `${page.label} indexability`);
+  has(page.content, '"@type":"WebPage"', `${page.label} WebPage schema`);
+  has(xmlSitemap, `<loc>${canonical}</loc>`, `${page.label} XML sitemap URL`);
+  has(htmlSitemap, `href="${page.route}"`, `${page.label} HTML sitemap link`);
+}
 
 for (const post of posts) {
   const route = `/column/${post.slug}/`;
@@ -87,6 +104,22 @@ for (const post of posts) {
   has(xmlSitemap, `<loc>${canonical}</loc>`, `${post.slug} XML sitemap URL`);
   has(xmlSitemap, `<lastmod>${post.updatedAt}</lastmod>`, `${post.slug} XML sitemap date`);
   has(htmlSitemap, `href="${route}"`, `${post.slug} HTML sitemap link`);
+}
+
+for (const category of categoryMap) {
+  const categoryPosts = posts.filter(post => post.categories.includes(category));
+  if (categoryPosts.length === 0) continue;
+  const route = `/column/category/${category}/`;
+  const canonical = `${siteUrl}${route}`;
+  const categoryPage = await read(path.join(columnDir, 'category', category, 'index.html')).catch(() => {
+    fail(`generated category missing: ${category}`);
+    return '';
+  });
+  has(categoryPage, `<link rel="canonical" href="${canonical}">`, `${category} category canonical`);
+  has(categoryPage, '"@type":"CollectionPage"', `${category} CollectionPage schema`);
+  if (categoryPage.includes('name="robots" content="noindex')) fail(`${category} category must be indexable`);
+  has(xmlSitemap, `<loc>${canonical}</loc>`, `${category} XML sitemap URL`);
+  has(xmlSitemap, '<lastmod>', `${category} XML sitemap update date`);
 }
 
 if (process.exitCode) process.exit(process.exitCode);
