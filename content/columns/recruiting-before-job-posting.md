@@ -8,7 +8,7 @@ published_at: 2026-10-06
 intro: 求人原稿を改善すれば、本当に採用はうまくいくのでしょうか。採用でまず考えるべきなのは、文章の書き方ではありません。「自社は何者なのか」「どんな価値を持っているのか」「誰に来てほしいのか」を明確にすることです。求人原稿を書く前に、中小企業の経営者が考えておきたい採用の基本を解説します。
 excerpt: 採用で最初に考えるべきなのは、求人原稿の書き方ではありません。自社とは何か、どんな価値があるのか、そして誰に来てほしいのか。「伝える」前に考えるべき採用の基本を解説します。
 eyecatch: /assets/column/images/chatgpt-2026106-143448.png
-pickup: true
+pickup: false
 wasou_view: true
 show_article_cta: true
 related_articles:
