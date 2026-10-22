@@ -4,7 +4,7 @@ title: ファミリー企業の採用Messageは「自分ごと化」から考え
 slug: family-business-recruiting-message
 categories:
   - recruitment
-published_at: 2026-10-23
+published_at: 2026-10-22
 intro: 採用Messageとは、会社が言いたいことを並べることではありません。採りたい人が「これは自分のことだ」と感じ、そこで働く自分を想像できる言葉へ変えることです。「一度辞めた社員が戻ってくる会社」という同じConceptでも、誰に届けるかによってMessageは変わります。和奏式・MASP-CM法と求職者心理8段階モデルから、求職者を「同化＝自分ごと化」へ導くMessageの考え方を解説します。
 excerpt: 同じ会社の価値でも、誰に届けるかでMessageは変わります。「一度辞めた社員が戻ってくる会社」を例に、採りたい人が「これは自分のことだ」と感じる採用Messageのつくり方を解説します。
 eyecatch: /assets/column/images/file-9.png
