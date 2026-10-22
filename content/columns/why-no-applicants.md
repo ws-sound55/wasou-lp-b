@@ -15,7 +15,7 @@ related_articles:
   - recruiting-before-job-posting
 seo_title: 求人を出しても応募が来ない理由｜先代から会社を引き継いだファミリー企業の採用｜和奏人事パートナーズ
 seo_description: 求人を出しても応募が来ない原因は、給与や立地だけではありません。先代から会社を引き継いだファミリー企業で起こりやすい「会社の価値が求職者に伝わっていない」という問題と、採用で最初に見直すべきポイントを解説します。
-ogp_image: /assets/column/images/file-1.png
+ogp_image: /assets/column/images/file-6.png
 ---
 ## なぜ、求人を出しても応募が来ないのか？
 
