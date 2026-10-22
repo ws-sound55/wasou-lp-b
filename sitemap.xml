@@ -93,4 +93,10 @@
     <priority>0.6</priority>
   </url>
   <!-- COLUMN_URLS:END -->
+  <url>
+    <loc>https://wasou-jinji.jp/seminar11/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
