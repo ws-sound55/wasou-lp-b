@@ -8,6 +8,7 @@ const sourceDir = process.env.COLUMNS_SOURCE || path.join(root, 'content', 'colu
 const outputDir = process.env.COLUMNS_OUTPUT || path.join(root, 'column');
 const sitemapPath = process.env.COLUMNS_SITEMAP === 'false' ? null : path.join(root, 'sitemap.xml');
 const htmlSitemapPath = path.join(root, 'sitemap', 'index.html');
+const topPagePath = path.join(root, 'index.html');
 const siteUrl = 'https://wasou-jinji.jp';
 const consultationUrl = 'https://reserve.peraichi.com/r/b194f80c/select_date?course=82468';
 const categoryMap = {
@@ -105,6 +106,29 @@ const updateHtmlSitemap = async posts => {
   }
   await fs.writeFile(htmlSitemapPath, html.replace(markerPattern, block), 'utf8');
 };
+const topColumnCard = post => {
+  const href = `/column/${attr(post.slug)}/`;
+  const image = post.eyecatch
+    ? `<a class="top-column-image" href="${href}" aria-label="${attr(post.title)}を読む"><img src="${attr(post.eyecatch)}" alt="" loading="lazy" decoding="async"></a>`
+    : '<div class="top-column-image-placeholder" aria-hidden="true"><span>COLUMN</span></div>';
+  return `<article class="top-column-card">${image}<div class="top-column-card-body"><p class="top-column-date">${formatDate(post.published_at)}</p><h3><a href="${href}">${esc(post.title)}</a></h3><p>${esc(post.excerpt)}</p><a class="top-column-read" href="${href}">記事を読む</a></div></article>`;
+};
+const updateTopColumns = async posts => {
+  let html;
+  try {
+    html = await fs.readFile(topPagePath, 'utf8');
+  } catch {
+    throw new Error(`Top page not found: ${topPagePath}`);
+  }
+  const latest = posts.slice(0, 3);
+  const cards = latest.length ? latest.map(topColumnCard).join('\n') : '<article class="top-column-card"><div class="top-column-image-placeholder" aria-hidden="true"><span>COLUMN</span></div><div class="top-column-card-body"><p class="top-column-date">準備中</p><h3>コラムを読み込んでいます。</h3><p>公開済みの最新コラムをここに表示します。</p></div></article>';
+  const block = `<!-- TOP_LATEST_COLUMNS:START -->\n    <div class="top-column-grid" aria-label="最新コラム">${cards}</div>\n    <!-- TOP_LATEST_COLUMNS:END -->`;
+  const markerPattern = /<!-- TOP_LATEST_COLUMNS:START -->[\s\S]*?<!-- TOP_LATEST_COLUMNS:END -->/;
+  if (!markerPattern.test(html)) {
+    throw new Error('Top-page latest column markers are missing.');
+  }
+  await fs.writeFile(topPagePath, html.replace(markerPattern, block), 'utf8');
+};
 const generatedMarker = path.join(outputDir, '.generated-pages.json');
 const previous = async () => { try { return JSON.parse(await fs.readFile(generatedMarker, 'utf8')); } catch { return {paths: []}; } };
 const removePrevious = async marker => {
@@ -156,6 +180,7 @@ const build = async () => {
     await fs.writeFile(sitemapPath, sitemap, 'utf8');
   }
   await updateHtmlSitemap(posts);
+  await updateTopColumns(posts);
   console.log(`Generated ${posts.length} published article(s), ${categories.length} category page(s).`);
 };
 await build();
