@@ -40,7 +40,7 @@
 
 /* Keep fixed navigation from covering column eyecatch text while the section is in view. */
 .top-corporate.top-destinations-in-view .site-page-top,
-.top-corporate.top-columns-in-view .site-page-top{opacity:0;pointer-events:none}
+.top-corporate.top-columns-in-view .site-page-top{display:none;opacity:0;pointer-events:none}
 
 
 /* 2026-10-23: reading-size refinement for the preview top only. */
