@@ -8,7 +8,14 @@
   'use strict';
 
   const selector = 'h1,h2,h3,h4,p,li,dd,dt,summary,figcaption,label,.article-related .related-grid > a';
-  const skip = (element) => element.closest('nav,footer') || element.dataset.jpWrapSkip !== undefined;
+  // Wrapping a direct text node in a flex/grid item turns it into a separate
+  // layout item in some browsers.  Leave those elements to their own layout
+  // and use explicit .jp-keep groups where a phrase needs protection.
+  const skip = (element) => {
+    if (element.closest('nav,footer') || element.dataset.jpWrapSkip !== undefined) return true;
+    const display = window.getComputedStyle(element).display;
+    return display.includes('flex') || display.includes('grid');
+  };
   const clean = (value) => value.replace(/\s+/g, '');
   const tailSize = 6;
 
