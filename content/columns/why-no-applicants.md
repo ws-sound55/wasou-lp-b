@@ -2,7 +2,8 @@
 published: true
 title: なぜ、求人を出しても応募が来ないのか？ 先代から引き継いだ経営者が最初に見直すべきこと
 title_keep_phrases:
-  - 最初に見直すべきこと
+  - 最初に
+  - 見直すべきこと
 slug: why-no-applicants
 categories:
   - recruitment
@@ -442,4 +443,3 @@ Indeedに掲載する。
 **「伝える」前に、会社を整え、採りたい人を決める**
 
 という採用の考え方について、もう少し具体的にお伝えします。
-
