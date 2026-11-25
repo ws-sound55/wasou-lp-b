@@ -31,11 +31,11 @@ PAGES = [
     'privacy.html', 'tokutei.html', 'sitemap/index.html',
 ]
 REDIRECT_HASHES = {
-    'ad-a/index.html': '886e30a5270dc7b6f57c701084a837be5247ba68da546aef8dd6826ca1ead05b',
-    'ad-b/index.html': '886e30a5270dc7b6f57c701084a837be5247ba68da546aef8dd6826ca1ead05b',
-    'seminar6/index.html': '886e30a5270dc7b6f57c701084a837be5247ba68da546aef8dd6826ca1ead05b',
-    'governancesaiyouseminar/index.html': 'b7b648608e0502fac685c0f3d30eb98518dacbecef03416592de617117c13423',
-    'home/index.html': '017aba7a8e1ed2374727e83dc8e75596842af6b51f48cf0161df85555f318f1f',
+    'ad-a/index.html': 'e7127e897a78dc9b4a425c96dfc19c0c2bdd6830bac9f93ad8058217144d2947',
+    'ad-b/index.html': 'e7127e897a78dc9b4a425c96dfc19c0c2bdd6830bac9f93ad8058217144d2947',
+    'seminar6/index.html': 'e7127e897a78dc9b4a425c96dfc19c0c2bdd6830bac9f93ad8058217144d2947',
+    'governancesaiyouseminar/index.html': '97faa5251f0f4d290f6bd33911fc32707d596538956420f3502d00eae869b423',
+    'home/index.html': 'dd1cab8e6b604aae0f3338a74f2f114d684035511eba83b865780270bda781c6',
 }
 VOID = set('area base br col embed hr img input link meta param source track wbr'.split())
 DESKTOP_CLASSES = set('site-desktop-nav desktop-nav family-desktop-nav corporate-desktop-nav column-desktop-nav sitemap-nav'.split())
@@ -217,7 +217,7 @@ def run(root):
     for file, expected_hash in REDIRECT_HASHES.items():
         path = root / file
         if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != expected_hash:
-            failures[file] = ['redirect-only HTML differs from approved 2026-11-25 baseline']
+            failures[file] = ['redirect-only HTML differs from query-preserving 2026-11-25 baseline']
         elif not any(n.attrs.get('http-equiv', '').lower() == 'refresh' for n in Document(path.read_text(encoding='utf-8')).nodes('meta')):
             failures[file] = ['redirect meta refresh missing']
     if (root / 'coming-soon').exists():
@@ -239,7 +239,7 @@ def main():
             for error in errors:
                 print(f'FAIL {file}: {error}')
         if not failures:
-            print(f'PASS: {len(PAGES)} normal pages, {len(REDIRECT_HASHES)} unchanged redirects; assets {VERSION}; coming-soon absent (404).')
+            print(f'PASS: {len(PAGES)} normal pages, {len(REDIRECT_HASHES)} query-preserving redirects; assets {VERSION}; coming-soon absent (404).')
     raise SystemExit(bool(failures))
 
 

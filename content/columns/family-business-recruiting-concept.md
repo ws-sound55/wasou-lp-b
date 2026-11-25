@@ -1,10 +1,13 @@
 ---
 published: true
 title: 自社の価値は「当たり前」の中にある ― 一度辞めた社員が戻ってくる会社に学ぶ、採用Conceptのつくり方
+title_keep_phrases:
+  - つくり方
 slug: family-business-recruiting-concept
 categories:
   - recruitment
 published_at: 2026-10-22
+updated_at: 2026-11-25
 intro: 自社では「普通」「当たり前」と思っていることの中に、採りたい人の心を動かす価値が眠っていることがあります。「一度辞めた社員が、また戻ってくる会社。」という事実は、なぜ強い採用メッセージになるのでしょうか。和奏式・MASP-CM法の「Concept」を通じて、ファミリー企業の中に眠る価値の見つけ方と言語化、さらに既存社員への情報発信まで考えます。
 excerpt: 「一度辞めた社員が、また戻ってくる」。自社では当たり前に見える事実も、求職者にとっては大きな価値かもしれません。ファミリー企業の中に眠る強みを、採りたい人にとって意味のあるConceptへ変える方法を解説します。
 eyecatch: /assets/column/images/file-7.png

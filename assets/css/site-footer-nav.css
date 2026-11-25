@@ -75,3 +75,6 @@
     margin-top: 24px;
   }
 }
+
+/* Quality preview: required copyright only; existing footer rules remain unchanged. */
+.site-copyright { width: min(1160px, 100%); margin: 20px auto 0; padding: 0 12px; color: inherit; font-size: 14px; line-height: 1.7; text-align: center; overflow-wrap: break-word; }
