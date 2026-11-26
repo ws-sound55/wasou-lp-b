@@ -18,9 +18,15 @@ NAV = [
     ('会社概要', '/company/'),
     ('ご相談・お問い合わせ', '/contact/'),
 ]
+PC_NAV = [item for item in NAV if item[1] != '/family-governance/']
+SPECIALISTS = [('採用コンサルティング', '/recruitment/'), ('社員定着・育成・人事制度', '/retention/')]
+MOBILE_NAV = [('TOPページ', '/')] + NAV[:3] + SPECIALISTS + NAV[3:]
+DROPDOWN_NAV = [('総合サービス', '/service/')] + SPECIALISTS + [('ファミリーガバナンス', '/family-governance/')]
+NAV_VERSION = '20261126-services-1'
 PAGES = [
     'index.html', 'family/index.html', 'philosophy/index.html',
     'service/index.html', 'family-governance/index.html', 'seminar11/index.html',
+    'recruitment/index.html', 'retention/index.html',
     'column/index.html', 'column/category/recruitment/index.html',
     'column/family-business-recruiting-concept/index.html',
     'column/family-business-recruiting-message/index.html',
@@ -122,8 +128,14 @@ def resolved_path(value, file):
     return urlsplit(urljoin('https://wasou-jinji.jp' + page_url(file), value)).path
 
 
+def visible_text(node):
+    if node.attrs.get('aria-hidden') == 'true':
+        return ''
+    return ''.join(visible_text(child) if isinstance(child, Node) else child for child in node.children)
+
+
 def links(node):
-    return [(''.join(a.text().split()), a.attrs.get('href')) for a in node.nodes('a')]
+    return [(''.join(visible_text(a).split()), a.attrs.get('href')) for a in node.nodes('a')]
 
 
 def verify_page(root, file):
@@ -141,14 +153,25 @@ def verify_page(root, file):
     desktop = [n for n in doc.nodes('nav') if DESKTOP_CLASSES.intersection(n.attrs.get('class', '').split())]
     check(len(desktop) == 1, 'desktop global navigation must exist once')
     for nav in desktop:
-        check(links(nav) == NAV, 'desktop navigation labels/URLs/order differ from TOP')
+        root_anchors = [a for a in nav.nodes('a') if not any(p.has_class('wasou-service-dropdown') for p in a.ancestors())]
+        check([(''.join(visible_text(a).split()), a.attrs.get('href')) for a in root_anchors] == PC_NAV, 'desktop root navigation labels/URLs/order differ from TOP')
+        panels = [p for p in nav.nodes() if p.has_class('wasou-service-dropdown')]
+        toggles = [b for b in nav.nodes('button') if b.has_class('wasou-service-toggle')]
+        check(len(panels) == 1 and len(toggles) == 1, 'one service disclosure is required')
+        for panel in panels:
+            items = [a for a in panel.nodes('a') if a.has_class('wasou-service-item')]
+            actual = [(''.join(next((n.text() for n in a.nodes() if n.has_class('wasou-service-title')), '').split()), a.attrs.get('href')) for a in items]
+            check(actual == DROPDOWN_NAV, 'service dropdown labels/URLs/order differ from TOP')
+            check('hidden' in panel.attrs, 'service dropdown must initially be hidden')
+            if len(toggles) == 1:
+                check(toggles[0].attrs.get('aria-controls') == panel.attrs.get('id') and toggles[0].attrs.get('aria-expanded') == 'false', 'service disclosure ARIA mismatch')
         check(any(a.tag == 'header' for a in nav.ancestors()), 'desktop navigation must be inside a header')
     mobile = doc.select_class('site-mobile-nav')
     triggers = doc.select_class('site-menu-trigger')
     check(len(mobile) == 1 and mobile[0].tag == 'nav', 'mobile navigation must exist once')
     check(len(triggers) == 1 and triggers[0].tag == 'button', 'menu trigger must exist once')
     for nav in mobile:
-        check(links(nav) == [('TOPページ', '/')] + NAV, 'mobile navigation labels/URLs/order differ from TOP')
+        check(links(nav) == MOBILE_NAV, 'mobile navigation labels/URLs/order differ from TOP')
         check('hidden' in nav.attrs, 'mobile navigation must initially be hidden')
         closes = [n for n in nav.nodes('button') if n.has_class('site-mobile-nav-close')]
         check(len(closes) == 1, 'mobile close button must exist once')
@@ -190,6 +213,11 @@ def verify_page(root, file):
     check(len(footer_assets) <= 1, 'footer nav stylesheet duplicated')
     for node in footer_assets:
         check(urlsplit(node.attrs['href']).query == 'v=' + VERSION, 'footer nav stylesheet version mismatch')
+    for tag, attr, expected in [('link', 'href', '/assets/css/service-navigation.css'), ('script', 'src', '/assets/js/service-navigation.js')]:
+        found = [n for n in doc.nodes(tag) if resolved_path(n.attrs.get(attr, ''), file) == expected]
+        check(len(found) == 1 and (root / expected.lstrip('/')).is_file(), expected + ' must exist and be loaded once')
+        for node in found:
+            check(urlsplit(node.attrs[attr]).query == 'v=' + NAV_VERSION, expected + ' version mismatch')
     for anchor in doc.nodes('a'):
         if anchor.attrs.get('aria-current') == 'page':
             check(resolved_path(anchor.attrs.get('href', ''), file) == page_url(file), 'aria-current=page points to a different page')

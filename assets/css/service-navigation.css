@@ -1,0 +1,224 @@
+/* 2026-11-26: 共通navのサービス導線だけを拡張するopt-in stylesheet。
+   ロゴ、ヘッダーの高さ、既存rootリンク・問い合わせCTA、本文は変更しない。 */
+.site-menu-enabled .wasou-service-nav,
+.site-menu-enabled .wasou-service-nav .wasou-service-group {
+  overflow: visible;
+}
+.site-menu-enabled .wasou-service-nav .wasou-service-group {
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 2px;
+}
+/* ラッパー追加で外れたTOP/family固有のrootリンク余白だけを引き継ぐ。 */
+.site-menu-enabled :is(.corporate-desktop-nav, .family-desktop-nav).wasou-service-nav .wasou-service-group > a {
+  position: relative;
+  padding: 8px 0;
+}
+.site-menu-enabled :is(.corporate-desktop-nav, .family-desktop-nav).wasou-service-nav .wasou-service-group > a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .22s ease;
+}
+.site-menu-enabled :is(.corporate-desktop-nav, .family-desktop-nav).wasou-service-nav .wasou-service-group > a:is(:hover, :focus-visible, [aria-current="page"])::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.site-menu-enabled .wasou-service-nav .wasou-service-toggle {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 32px;
+  min-height: 32px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.site-menu-enabled .wasou-service-nav .wasou-service-toggle > span {
+  font-size: 10px;
+}
+.site-menu-enabled .wasou-service-nav .wasou-service-toggle:is(:hover, [aria-expanded="true"]) {
+  border-color: #dce4e8;
+  background: #f5f3eb;
+}
+/* パネル右端をservice group右端へ揃え、rootnavの右側scrollWidthを増やさない。
+   JSはviewportの左右を補正するだけで、rootnavやbrandを圧縮しない。 */
+.site-menu-enabled .wasou-service-nav .wasou-service-dropdown {
+  position: absolute;
+  z-index: 1;
+  top: calc(100% + 10px);
+  right: var(--wasou-service-right, 0px);
+  display: grid;
+  box-sizing: border-box;
+  width: min(392px, calc(100vw - 32px));
+  max-height: var(--wasou-service-max-height, calc(100dvh - 120px));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 6px 16px;
+  border: 1px solid #dce4e8;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0 8px 22px rgb(24 51 78 / 10%);
+  color: #18334e;
+  font-family: "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+  white-space: normal;
+}
+.site-menu-enabled .wasou-service-nav .wasou-service-dropdown[hidden] {
+  display: none !important;
+}
+/* a:last-child等の旧CTA規則と、ページ固有nav a規則を新領域だけで上書き。
+   rootcontact・rootリンクの色/文字サイズには適用しない。 */
+.site-menu-enabled .wasou-service-nav .wasou-service-dropdown > a.wasou-service-item {
+  --wasou-service-accent: #18334e;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 72px;
+  margin: 0;
+  padding: 16px 4px 16px 16px;
+  border: 0;
+  border-bottom: 1px solid #e5e8e9;
+  border-radius: 0;
+  background: transparent;
+  color: #18334e;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.6;
+  text-align: left;
+  text-decoration: none;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  touch-action: manipulation;
+}
+.site-menu-enabled .wasou-service-nav .wasou-service-dropdown > a.wasou-service-item:last-child {
+  border-bottom: 0;
+}
+.site-menu-enabled .wasou-service-nav .wasou-service-dropdown > a.wasou-service-recruitment {
+  --wasou-service-accent: #183f36;
+}
+.site-menu-enabled .wasou-service-nav .wasou-service-dropdown > a.wasou-service-retention {
+  --wasou-service-accent: #14565b;
+}
+.site-menu-enabled .wasou-service-nav .wasou-service-dropdown > a.wasou-service-governance {
+  /* FG実ページの --wine を採用。提案色#632B40より既存デザインを優先。 */
+  --wasou-service-accent: #8e2f3f;
+}
+.site-menu-enabled .wasou-service-nav .wasou-service-dropdown > a.wasou-service-item::before {
+  content: "";
+  position: absolute;
+  top: 17px;
+  bottom: 17px;
+  left: 0;
+  width: 3px;
+  background: var(--wasou-service-accent);
+}
+.site-menu-enabled .wasou-service-nav .wasou-service-dropdown > a.wasou-service-item::after {
+  /* 旧nav a::afterの装飾が右矢印や区切り線と重ならない。 */
+  content: none;
+  display: none;
+}
+.site-menu-enabled .wasou-service-nav .wasou-service-copy {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+}
+.site-menu-enabled .wasou-service-nav .wasou-service-title {
+  color: var(--wasou-service-accent);
+}
+.site-menu-enabled .wasou-service-nav .wasou-service-description {
+  color: #53616b;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+.site-menu-enabled .wasou-service-nav .wasou-service-arrow {
+  flex: 0 0 auto;
+  color: var(--wasou-service-accent);
+  font-size: 18px;
+}
+.site-menu-enabled .wasou-service-nav .wasou-service-dropdown > a.wasou-service-item:is(:hover, [aria-current="page"]) {
+  background: #f5f3eb;
+}
+.site-menu-enabled .wasou-service-nav .wasou-service-dropdown > a.wasou-service-item[aria-current="page"] .wasou-service-title {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.site-menu-enabled .wasou-service-nav .wasou-service-group > :is(a, button):focus-visible,
+.site-menu-enabled .wasou-service-nav .wasou-service-dropdown > a.wasou-service-item:focus-visible {
+  outline: 3px solid #18a6a6;
+  outline-offset: 3px;
+}
+/* 開いているnavを含む既存headerだけを本文より前へ。sticky等は維持。
+   staticなcontact/seminar headerのみpositionの基準を与える。 */
+.site-menu-enabled :is(.site-header, .flyer-header):has(.wasou-service-nav) {
+  position: relative;
+}
+.site-menu-enabled header:has(.wasou-service-nav),
+.site-menu-enabled header :is(.header-inner, .family-header-inner, .corporate-header-inner, .column-header-inner, .global-site-header-inner, .flyer-header-inner):has(.wasou-service-nav) {
+  overflow: visible;
+}
+.site-menu-enabled header:has(.wasou-service-group.wasou-service-open) {
+  z-index: 120;
+}
+/* SPは既存modalの通常aを追加するだけ。独立FG、スクロール/開閉は既存仕様。 */
+.site-menu-enabled .site-mobile-nav .site-mobile-nav-links > a.wasou-mobile-service-link {
+  --wasou-mobile-accent: #183f36;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 56px;
+  margin-left: 16px;
+  padding: 12px 14px 12px 16px;
+  border-left: 3px solid var(--wasou-mobile-accent);
+  background: #f5f3eb;
+  color: var(--wasou-mobile-accent);
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.site-menu-enabled .site-mobile-nav .site-mobile-nav-links > a.wasou-mobile-retention {
+  --wasou-mobile-accent: #14565b;
+}
+.site-menu-enabled .site-mobile-nav .wasou-mobile-service-link > span:first-child {
+  min-width: 0;
+}
+.site-menu-enabled .site-mobile-nav .wasou-mobile-service-arrow {
+  flex: 0 0 auto;
+}
+.site-menu-enabled .site-mobile-nav .site-mobile-nav-links > a.wasou-mobile-service-link[aria-current="page"] {
+  background: #eef4f6;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.site-menu-enabled .site-mobile-nav .site-mobile-nav-links > a.wasou-mobile-service-link:focus-visible {
+  outline: 3px solid #18a6a6;
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-menu-enabled .wasou-service-nav .wasou-service-group > a::after {
+    transition: none;
+  }
+}

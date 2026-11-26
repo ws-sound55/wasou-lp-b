@@ -1,0 +1,138 @@
+/* TOP specialist services — 2026-11-26
+ * Insert the grid inside the existing .top-shell; do not redefine its width.
+ * Load after top-corporate.css and top-impact.css.
+ * All rules are limited to the new .top-specialist-* components.
+ */
+.top-specialist-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 18px;
+  margin: 0 0 18px;
+  min-width: 0;
+}
+
+.top-specialist-grid .top-specialist-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  min-width: 0;
+  height: auto;
+  padding: clamp(24px, 3vw, 42px);
+  border: 0;
+  border-top: 2px solid #B49A60;
+  color: #FFFFFF;
+  font-family: inherit;
+  text-decoration: none;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  line-break: strict;
+}
+
+.top-specialist-card--recruitment {
+  background: #183F36;
+}
+
+.top-specialist-card--retention {
+  background: #14565B;
+}
+
+.top-specialist-kicker {
+  margin: 0 0 14px;
+  color: #F5F3EB;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
+}
+
+.top-specialist-name {
+  margin: 0;
+  color: #FFFFFF;
+  font-family: inherit;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.7;
+  letter-spacing: 0.025em;
+  text-wrap: pretty;
+}
+
+.top-specialist-copy {
+  margin: 18px 0;
+  color: #FFFFFF;
+  font-family: var(--serif, "Noto Serif JP", serif);
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: 0.025em;
+  text-wrap: balance;
+}
+
+.top-specialist-description {
+  margin: 0 0 28px;
+  color: #F5F3EB;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.9;
+  text-wrap: pretty;
+}
+
+.top-specialist-cta {
+  display: block;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(180, 154, 96, 0.65);
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.8;
+  text-wrap: balance;
+}
+
+.top-specialist-arrow {
+  color: #B49A60;
+  font-weight: 500;
+}
+
+/* Allow shared Japanese tail-helper spans to reflow, including at 200% text size.
+ * Keep this override inside the new banners rather than changing the helper.
+ */
+.top-specialist-grid span {
+  white-space: normal;
+}
+
+.top-specialist-card:hover .top-specialist-cta,
+.top-specialist-card:focus-visible .top-specialist-cta {
+  text-decoration: underline;
+  text-decoration-color: #B49A60;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+}
+
+.top-specialist-card:focus-visible {
+  outline: 3px solid #183F36;
+  outline-offset: 4px;
+}
+
+/* Match the existing TOP destination banners' single-column breakpoint.
+ * Font sizes stay unchanged; cards grow with their content.
+ */
+@media (max-width: 820px) {
+  .top-specialist-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+@media (forced-colors: active) {
+  .top-specialist-grid .top-specialist-card {
+    border: 1px solid LinkText;
+  }
+
+  .top-specialist-card:focus-visible {
+    outline-color: Highlight;
+  }
+}
