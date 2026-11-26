@@ -374,8 +374,8 @@ body.retention-page{--rt-teal:#14565B;--rt-pale:#DCEBE9;--rt-gold:#B49A60;--rt-i
 }
 @media(max-width:640px){
  .rt-hero{padding-top:0;padding-bottom:56px}
- .rt-breadcrumb{font-size:.75rem;padding:17px 0}
- .rt-hero-grid{padding-top:17px;gap:30px}
+ .rt-breadcrumb{font-size:.75rem;padding:13px 0}
+ .rt-hero-grid{padding-top:9px;gap:30px}
  .rt-hero h1{font-size:2rem;line-height:1.7}
  .rt-shoulder{font-size:.9375rem;margin-bottom:15px!important}
  .rt-eyebrow{font-size:.6875rem;letter-spacing:.12em;margin-bottom:13px!important}
