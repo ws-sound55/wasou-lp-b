@@ -396,3 +396,194 @@ body.recruitment-page{--rec-forest:#183F36;--rec-ivory:#F5F3EB;--rec-sage:#DCE5D
  .rec-consultation-name{font-size:33px}
 }
 @media(prefers-reduced-motion:reduce){.rec-button{transition:none}}
+
+/* Design refinement 20261126 — recruitment selectors only; common UI above remains intact. */
+/* 01. A concise three-stage relationship, not an alphabet grid. */
+.rec-hero-grid{align-items:start;padding-top:32px;gap:50px}
+.rec-brand-panel{padding:30px 30px 28px;justify-content:flex-start;box-shadow:0 18px 38px rgba(24,63,54,.08)}
+.rec-brand-label{margin-bottom:4px!important}
+.rec-brand-name{font-size:clamp(50px,4.8vw,67px);margin-bottom:16px!important}
+.rec-brand-promise{font-size:20px;line-height:1.75;margin-bottom:18px!important}
+.rec-brand-route{margin:4px 0 23px;padding:18px 0;border-top:1px solid #718578;border-bottom:1px solid #718578}
+.rec-brand-stage{text-align:center;min-width:0}
+.rec-brand-elements{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.rec-brand-elements>span{display:flex;min-width:0;flex-direction:column;align-items:center;gap:6px}
+.rec-brand-elements i{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid #B49A60;border-radius:50%;color:#E3D4AE;font:500 19px/1 "Noto Serif JP",serif;font-style:normal}
+.rec-brand-elements b{font:500 14px/1.5 "Noto Sans JP",sans-serif;overflow-wrap:anywhere}
+.rec-brand-stage>p{margin:9px 0 0!important;color:#F5F3EB;font-size:14px;line-height:1.7}
+.rec-brand-persona{padding:13px 12px;border:1px solid #B49A60;background:#254B40;border-radius:60px}
+.rec-brand-persona .rec-brand-elements{grid-template-columns:minmax(0,1fr)}
+.rec-brand-persona .rec-brand-elements>span{flex-direction:row;justify-content:center;gap:10px}
+.rec-brand-persona .rec-brand-elements i{background:#E3D4AE;color:#183F36;border:0;width:35px;height:35px;font-size:24px}
+.rec-brand-persona .rec-brand-elements b{font:500 24px/1.5 "Noto Serif JP",serif;color:#F5F3EB}
+.rec-brand-persona>p{margin-top:5px!important}
+.rec-brand-elements-cm{grid-template-columns:repeat(2,minmax(0,1fr));max-width:245px;margin:auto}
+.rec-route-arrow{height:26px;margin-block:5px;color:#E3D4AE;font-size:20px;line-height:26px;text-align:center}
+.rec-brand-body{font-size:15px;line-height:1.8}
+.rec-brand-body p{margin-bottom:12px}
+.rec-brand-panel .rec-button{margin-top:20px}
+/* 02. Editorial pacing: differentiated arguments, larger key copy, quiet line symbols. */
+.rec-section-heading{position:relative}
+.rec-problems .rec-after-list{padding:28px 0 0;border-top:2px solid #B49A60}
+.rec-after-list p:last-child{font-size:25px;line-height:1.8}
+.rec-pullquote{border-top:0;border-bottom:0;border-left:3px solid #B49A60;padding:18px 0 18px 28px;font-size:28px}
+.rec-info-compare{gap:38px;padding:35px;border:0;box-shadow:0 12px 32px rgba(24,63,54,.045)}
+.rec-info-compare .rec-diagram-label{font-size:15px}
+.rec-conclusion{font-size:28px;line-height:1.8}
+.rec-method-question{font-size:25px}
+.rec-method-card{border-top-width:1px;box-shadow:0 8px 22px rgba(24,63,54,.035)}
+.rec-method-initial{color:#786132}
+.rec-method-persona{border-top:3px solid #B49A60}
+.rec-concept-note,.rec-message-note{background:#F5F3EB;padding:28px 30px;border-left-width:3px}
+.rec-transform-flow li{background:transparent;border-bottom:1px solid #CDD5CD;padding-inline:12px}
+.rec-subsection>h2{padding-bottom:20px;border-bottom:1px solid #CDD5CD}
+/* 03. Stage 05 becomes a clear turning point; illustration pair shares composition. */
+.rec-mind-focus{background:#183F36;color:#F5F3EB;border:2px solid #B49A60;box-shadow:0 9px 20px rgba(24,63,54,.1)}
+.rec-mind-focus .rec-step-head h3{font-size:28px;color:#F5F3EB}
+.rec-mind-focus .rec-step-number{font-size:29px;color:#E3D4AE}
+.rec-mind-focus .rec-inner-voice{color:#F5F3EB;border-color:#728578}
+.rec-mind-focus .rec-focus-label{color:#183F36;background:#E3D4AE;padding:3px 10px;font-size:13px}
+.rec-understanding-compare{gap:28px;align-items:stretch}
+.rec-understanding-compare>div{padding:27px;background:#F5F3EB;border:1px solid #CDD5CD;border-top:3px solid #183F36}
+.rec-understanding-compare .rec-understanding-focus{background:#F5F3EB;border-color:#B49A60;border-top-width:3px;box-shadow:0 12px 26px rgba(120,97,50,.06)}
+.rec-editorial-image{display:block;width:100%;height:auto;aspect-ratio:4/3;margin:18px 0 22px;background:#F5F3EB}
+.rec-understanding-compare p{font-size:21px;line-height:1.75}
+.rec-understanding-focus p{color:#183F36;font-weight:600}
+.rec-understanding-compare h3{font-size:27px}
+.rec-compare-mark{font-family:"Noto Serif JP",serif;font-size:19px;color:#786132}
+/* 04. Value petals -> human lens -> value opening into two messages. */
+.rec-method-symbol{margin:50px 0 58px;padding:34px 28px;background:#fff;border-block:1px solid #CDD5CD}
+.rec-phase-flow{grid-template-columns:minmax(0,1fr) minmax(0,.9fr) minmax(0,1fr);align-items:start;gap:46px;margin:0}
+.rec-phase{padding:0 6px;border:0;background:transparent;text-align:center}
+.rec-phase-emblem{display:block;width:180px;max-width:100%;height:auto;margin:0 auto 21px;color:#183F36}
+.rec-phase-label{font-size:12px;margin-bottom:13px!important}
+.rec-phase-english{font-size:23px;line-height:1.7;margin-bottom:15px!important}
+.rec-phase-persona{background:transparent;border:0}
+.rec-phase-persona .rec-phase-english{font-size:36px;color:#786132;line-height:1.1;margin-bottom:22px!important}
+.rec-phase:not(:last-child)::after{content:"→";top:63px;right:-38px;width:29px;font-size:26px;color:#786132}
+.rec-persona-bridge{display:block;margin-top:19px;padding:10px 13px;border:0;border-radius:30px;background:#183F36;color:#F5F3EB;font-size:14px;line-height:1.7}
+/* 05. Two fair job adverts: identical photograph, crop and UI, distinct copy only. */
+.rec-job-mock,.rec-job-mock-method{padding:24px;background:#fff;border:1px solid #B9C1B8;border-top:3px solid #183F36;box-shadow:0 12px 30px rgba(24,63,54,.055)}
+.rec-mock-label,.rec-job-mock-method .rec-mock-label{margin-bottom:18px!important;color:#183F36;font-size:15px;line-height:1.7}
+.rec-ad-meta{display:flex;justify-content:space-between;gap:16px;padding:10px 12px;border-top:1px solid #CDD5CD;background:#F5F3EB;color:#5D665F;font-size:12px;line-height:1.7}
+.rec-job-photo{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;object-position:50% 50%;margin-bottom:24px}
+.rec-job-mock h3,.rec-job-mock:first-child h3{font-size:26px;line-height:1.8;color:#183F36;margin-bottom:25px}
+.rec-mock-body{margin-top:auto;border-top:1px solid #CDD5CD}
+.rec-photo-note{margin-top:-15px!important;margin-bottom:28px!important}
+/* 06. Quiet, semantically useful line icons for all eight services. */
+.rec-service-item{display:grid;grid-template-columns:54px minmax(0,1fr);column-gap:20px;align-content:start}
+.rec-service-icon{grid-column:1;grid-row:1 / span 2;width:48px;height:48px;color:#183F36;margin-top:3px}
+.rec-line-icon{display:block;width:48px;height:48px}
+.rec-service-number,.rec-service-item h3{grid-column:2}
+.rec-service-item>p:not(.rec-service-number),.rec-service-item>.rec-direct-flow{grid-column:1 / -1}
+.rec-service-item h3{font-size:25px;line-height:1.65;margin-bottom:24px}
+.rec-service-number{margin-bottom:9px!important}
+/* 07. Strong forest close, ivory consultation panel, original links and copy. */
+.rec-final{background:#183F36;border-top:3px solid #B49A60;color:#F5F3EB;padding-block:100px}
+.rec-final .rec-eyebrow{color:#E3D4AE}
+.rec-final h2{color:#F5F3EB;font-size:38px;line-height:1.65}
+.rec-final-grid{gap:65px;margin-top:46px;align-items:start}
+.rec-final-copy p:first-child{font-size:23px;color:#E3D4AE}
+.rec-final-copy p:last-child{font:500 28px/1.8 "Noto Serif JP",serif;color:#F5F3EB;margin-top:26px}
+.rec-consultation-panel{background:#F5F3EB;color:#2E312F;border-top:3px solid #B49A60;padding:39px 30px;box-shadow:0 20px 40px rgba(0,0,0,.1)}
+.rec-consultation-name{font-size:43px}
+.rec-consultation-panel .rec-button-outline{background:#F5F3EB;color:#183F36!important}
+.rec-consultation-panel .rec-button-outline:hover{background:#183F36;color:#fff!important}
+.rec-final-copy a:focus-visible{outline-color:#F5F3EB}
+/* Reflow every visual in normal flow; no masks, scaled text or fixed text heights. */
+@media(max-width:1000px){
+ .rec-hero-grid{gap:32px;padding-top:26px}
+ .rec-brand-panel{max-width:820px;padding:32px}
+ .rec-brand-name{font-size:66px}
+ .rec-brand-route{max-width:600px;width:100%;margin-inline:auto}
+ .rec-brand-elements{max-width:400px;width:100%;margin:auto}
+ .rec-brand-stage>p{font-size:16px}
+ .rec-method-symbol{padding:32px 22px}
+ .rec-phase-flow{grid-template-columns:minmax(0,1fr);gap:46px}
+ .rec-phase{max-width:620px;width:100%;margin:auto}
+ .rec-phase-emblem{width:160px}
+ .rec-phase:not(:last-child)::after{content:"↓";top:auto;bottom:-35px;left:calc(50% - 12px);right:auto;width:24px;height:26px;font-size:24px;line-height:26px}
+ .rec-phase-english{font-size:26px}
+ .rec-persona-bridge{max-width:360px;margin-inline:auto}
+ .rec-final-grid{gap:35px}
+}
+@media(max-width:900px){
+ .rec-job-mock,.rec-job-mock-method{padding:20px}
+ .rec-job-mock h3{font-size:25px}
+ .rec-service-grid{column-gap:36px}
+ .rec-service-item{column-gap:14px}
+ .rec-service-item h3{font-size:23px}
+ .rec-mind-focus .rec-step-head h3{font-size:25px}
+ .rec-consultation-name{font-size:35px}
+}
+@media(max-width:700px){
+ .rec-hero-grid{gap:0;padding-top:18px}
+ .rec-hero-copy{display:contents}
+ .rec-hero-copy>.rec-eyebrow{order:1;margin-bottom:10px}
+ .rec-hero-copy>.rec-shoulder{order:2;margin-bottom:12px!important}
+ .rec-hero-copy>h1{order:3}
+ .rec-hero-copy>.rec-button{order:4;margin-top:23px}
+ .rec-hero-grid>.rec-brand-panel{order:5;margin-top:26px}
+ .rec-hero-copy>.rec-hero-sub{order:6;max-width:100%;margin:27px 0 0}
+ .rec-brand-panel{padding:25px 24px}
+ .rec-brand-name{font-size:58px}
+ .rec-brand-promise{font-size:20px}
+ .rec-brand-elements{gap:9px}
+ .rec-brand-elements b{font-size:13px}
+ .rec-brand-stage>p{font-size:14px}
+ .rec-brand-persona{border-radius:38px;padding:12px}
+ .rec-brand-body{font-size:15px}
+ .rec-after-list p:last-child{font-size:23px}
+ .rec-pullquote{padding:14px 0 14px 20px;font-size:23px}
+ .rec-info-compare{padding:25px;gap:25px}
+ .rec-conclusion{font-size:24px}
+ .rec-method-question{font-size:23px}
+ .rec-understanding-compare{gap:23px}
+ .rec-understanding-compare>div{padding:24px}
+ .rec-understanding-compare h3{font-size:27px}
+ .rec-editorial-image{margin-block:17px 21px}
+ .rec-method-symbol{margin:35px 0 38px;padding:27px 20px}
+ .rec-phase-emblem{width:152px;margin-bottom:17px}
+ .rec-phase-flow{gap:44px}
+ .rec-phase{padding:0}
+ .rec-phase-english{font-size:23px}
+ .rec-phase-persona .rec-phase-english{font-size:34px;margin-bottom:19px!important}
+ .rec-phase p:last-of-type{font-size:16px}
+ .rec-persona-bridge{font-size:14px}
+ .rec-job-mock,.rec-job-mock-method{padding:23px}
+ .rec-job-mock h3{font-size:25px}
+ .rec-job-photo{margin-bottom:22px}
+ .rec-concept-note,.rec-message-note{padding:24px 20px}
+ .rec-service-item{grid-template-columns:48px minmax(0,1fr);column-gap:17px}
+ .rec-service-item h3{font-size:23px;line-height:1.7}
+ .rec-service-item>p:not(.rec-service-number){margin-bottom:17px}
+ .rec-final{padding-block:68px}
+ .rec-final h2{font-size:28px;line-height:1.7}
+ .rec-final-grid{gap:32px;margin-top:30px}
+ .rec-final-copy p:first-child{font-size:21px}
+ .rec-final-copy p:last-child{font-size:25px}
+ .rec-consultation-panel{padding:30px 24px}
+ .rec-consultation-name{font-size:37px}
+}
+@media(max-width:640px){
+ .rec-breadcrumb{padding-block:14px}
+ .rec-hero-grid{padding-top:12px}
+ .rec-hero h1{line-height:1.6}
+ .rec-brand-name{font-size:53px}
+ .rec-brand-panel{padding:25px 23px}
+ .rec-understanding-compare>div{padding:22px}
+}
+@media(max-width:360px){
+ .rec-brand-panel{padding:23px 19px}
+ .rec-brand-name{font-size:47px}
+ .rec-brand-elements b{font-size:13px}
+ .rec-brand-promise{font-size:19px}
+ .rec-brand-persona{padding:12px 9px}
+ .rec-brand-persona .rec-brand-elements b{font-size:23px}
+ .rec-job-mock,.rec-job-mock-method{padding:21px}
+ .rec-job-mock h3{font-size:24px}
+ .rec-service-item{column-gap:13px}
+ .rec-final h2{font-size:26px}
+ .rec-consultation-panel{padding:27px 21px}
+ .rec-consultation-name{font-size:33px}
+}
